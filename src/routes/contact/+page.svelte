@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { Button } from '$lib/components/ui/button/index.js';
+</script>
+
 <svelte:head>
 	<title>Contact &amp; Reservations — Spanish Fiesta &amp; Falcon Resorts</title>
 	<meta
@@ -53,12 +57,9 @@
 				</svg>
 				(250) 495-7544
 			</a>
-			<a
-				href="tel:2504957544"
-				class="mt-5 block rounded bg-resort-teal px-6 py-3 text-center font-sans font-semibold text-white transition-colors hover:bg-resort-teal/85"
-			>
+			<Button href="tel:2504957544" class="mt-5 w-full bg-resort-teal text-white hover:bg-resort-teal/85">
 				Call Falcon Resort
-			</a>
+			</Button>
 		</div>
 
 		<!-- Spanish Fiesta Resort -->
@@ -92,12 +93,9 @@
 				</svg>
 				(250) 495-6833
 			</a>
-			<a
-				href="tel:2504956833"
-				class="mt-5 block rounded bg-resort-terra px-6 py-3 text-center font-sans font-semibold text-white transition-colors hover:bg-resort-terra/85"
-			>
+			<Button href="tel:2504956833" class="mt-5 w-full bg-resort-terra text-white hover:bg-resort-terra/85">
 				Call Spanish Fiesta
-			</a>
+			</Button>
 		</div>
 	</div>
 

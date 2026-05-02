@@ -6,6 +6,8 @@
 	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
 	import gallery6 from '$lib/assets/images/gallery-6.jpg?enhanced';
 
+	import { Button } from '$lib/components/ui/button/index.js';
+
 	const photos = [
 		{ src: gallery1, alt: 'Osoyoos Lake view from the resort' },
 		{ src: gallery2, alt: 'Resort pool area' },
@@ -63,10 +65,7 @@
 <section class="bg-resort-teal py-14 text-center text-white">
 	<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
 	<p class="mt-3 font-sans text-white/80">Book your stay and experience it in person.</p>
-	<a
-		href="/contact"
-		class="mt-6 inline-block rounded bg-white px-8 py-3.5 font-sans font-semibold text-resort-teal transition-colors hover:bg-white/90"
-	>
+	<Button href="/contact" size="lg" class="mt-6 bg-white px-8 text-resort-teal hover:bg-white/90">
 		Book Now
-	</a>
+	</Button>
 </section>

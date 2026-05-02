@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { Button } from '$lib/components/ui/button/index.js';
+</script>
+
 <svelte:head>
 	<title>Location &amp; Area Guide — Spanish Fiesta &amp; Falcon Resorts, Osoyoos BC</title>
 	<meta

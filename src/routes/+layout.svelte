@@ -2,6 +2,7 @@
 	import './layout.css';
 	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -50,12 +51,12 @@
 
 		<!-- Book Now CTA -->
 		<div class="flex items-center gap-4">
-			<a
+			<Button
 				href="/contact"
-				class="hidden rounded bg-resort-terra px-5 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-resort-terra/85 md:inline-block"
+				class="hidden bg-resort-terra text-white hover:bg-resort-terra/85 md:inline-flex"
 			>
 				Book Now
-			</a>
+			</Button>
 
 			<!-- Hamburger -->
 			<button
@@ -115,13 +116,13 @@
 					</li>
 				{/each}
 				<li class="pt-2">
-					<a
+					<Button
 						href="/contact"
 						onclick={() => (mobileOpen = false)}
-						class="inline-block rounded bg-resort-terra px-5 py-2 font-sans text-sm font-semibold text-white"
+						class="bg-resort-terra text-white hover:bg-resort-terra/85"
 					>
 						Book Now
-					</a>
+					</Button>
 				</li>
 			</ul>
 		</div>

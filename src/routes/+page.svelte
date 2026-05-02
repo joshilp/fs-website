@@ -2,6 +2,7 @@
 	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
 	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
 	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	const teaserPhotos = [gallery1, gallery2, gallery3];
 </script>
@@ -38,18 +39,21 @@
 			corner.
 		</p>
 		<div class="mt-8 flex flex-wrap justify-center gap-4">
-			<a
+			<Button
 				href="/contact"
-				class="rounded bg-resort-terra px-8 py-3.5 font-sans font-semibold text-white transition-colors hover:bg-resort-terra/85"
+				size="lg"
+				class="bg-resort-terra px-8 text-white hover:bg-resort-terra/85"
 			>
 				Book Your Stay
-			</a>
-			<a
+			</Button>
+			<Button
 				href="/rooms"
-				class="rounded border border-white/50 px-8 py-3.5 font-sans font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+				variant="outline"
+				size="lg"
+				class="border-white/50 bg-transparent px-8 text-white hover:border-white hover:bg-white/10 hover:text-white"
 			>
 				View Rooms
-			</a>
+			</Button>
 		</div>
 	</div>
 
@@ -244,24 +248,27 @@
 			best.
 		</p>
 		<div class="mt-8 flex flex-wrap justify-center gap-4">
-			<a
+			<Button
 				href="tel:2504957544"
-				class="rounded border border-white/60 px-7 py-3 font-sans font-semibold hover:bg-white/10 transition-colors"
+				variant="outline"
+				class="border-white/60 bg-transparent text-white hover:bg-white/10 hover:text-white"
 			>
 				Falcon: (250) 495-7544
-			</a>
-			<a
+			</Button>
+			<Button
 				href="tel:2504956833"
-				class="rounded border border-white/60 px-7 py-3 font-sans font-semibold hover:bg-white/10 transition-colors"
+				variant="outline"
+				class="border-white/60 bg-transparent text-white hover:bg-white/10 hover:text-white"
 			>
 				Spanish Fiesta: (250) 495-6833
-			</a>
+			</Button>
 		</div>
-		<a
+		<Button
 			href="/contact"
-			class="mt-6 inline-block rounded bg-white px-8 py-3.5 font-sans font-semibold text-resort-terra transition-colors hover:bg-white/90"
+			size="lg"
+			class="mt-6 bg-white px-8 text-resort-terra hover:bg-white/90"
 		>
 			Book Now Online
-		</a>
+		</Button>
 	</div>
 </section>
