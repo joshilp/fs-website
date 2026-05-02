@@ -1,2 +1,18 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--color-resort-base: #faf7f2;
+	--color-resort-teal: #2a7b8c;
+	--color-resort-sand: #c8a96e;
+	--color-resort-dark: #1e2b2f;
+	--color-resort-terra: #c4622d;
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-serif: 'Playfair Display', Georgia, serif;
+}
+
+html {
+	background-color: #faf7f2;
+	color: #1e2b2f;
+	scroll-behavior: smooth;
+}
