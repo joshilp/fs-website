@@ -4,11 +4,11 @@
 
 /* ─── Resort custom theme ─────────────────────────────── */
 @theme {
-	--color-resort-base: #faf7f2;
-	--color-resort-teal: #2a7b8c;
-	--color-resort-sand: #c8a96e;
-	--color-resort-dark: #1e2b2f;
-	--color-resort-terra: #c4622d;
+	--color-resort-base: #f7f3ec;
+	--color-resort-green: #4a7c59;
+	--color-resort-sand: #c9a86c;
+	--color-resort-dark: #0f0e0c;
+	--color-resort-brown: #8b5e3c;
 	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 	--font-serif: 'Playfair Display', Georgia, serif;
 }

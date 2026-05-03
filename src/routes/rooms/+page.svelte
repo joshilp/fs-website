@@ -62,6 +62,10 @@
 		name="description"
 		content="Comfortable, air-conditioned rooms at our two Osoyoos lakeside resorts. Steps from a private sandy beach, two pools, and a hot tub."
 	/>
+	<meta property="og:title" content="Rooms & Amenities — Spanish Fiesta & Falcon Resorts" />
+	<meta property="og:description" content="Comfortable, air-conditioned rooms steps from Osoyoos Lake. Private beach, two pools, hot tub." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://falcon-spanish.com/rooms" />
 </svelte:head>
 
 <!-- Page header -->
@@ -85,7 +89,7 @@
 <!-- Room cards -->
 <section class="mx-auto max-w-6xl px-6 py-20">
 	<div class="mb-12 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Accommodations
 		</p>
 		<h2 class="font-serif text-4xl font-bold text-resort-dark">Find your room.</h2>
@@ -114,7 +118,7 @@
 						{#each room.features as f}
 							<Badge
 								variant="outline"
-								class="border-resort-teal/30 font-sans text-xs text-resort-teal"
+								class="border-resort-green/30 font-sans text-xs text-resort-green"
 							>
 								{f}
 							</Badge>
@@ -124,7 +128,7 @@
 				<CardFooter>
 					<Button
 						href="/contact"
-						class="w-full bg-resort-terra text-white hover:bg-resort-terra/85"
+						class="w-full bg-resort-brown text-white hover:bg-resort-brown/85"
 					>
 						Book This Room
 					</Button>
@@ -140,10 +144,10 @@
 </section>
 
 <!-- Amenities grid -->
-<section class="bg-resort-teal/8 py-16">
+<section class="bg-resort-green/8 py-16">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mb-10 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 				Included
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Everything you need.</h2>
@@ -175,7 +179,7 @@
 		<Button
 			href="/contact"
 			size="lg"
-			class="mt-6 bg-resort-terra px-8 text-white hover:bg-resort-terra/85"
+			class="mt-6 bg-resort-brown px-8 text-white hover:bg-resort-brown/85"
 		>
 			Book Now
 		</Button>

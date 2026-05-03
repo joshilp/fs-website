@@ -62,10 +62,10 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-teal py-14 text-center text-white">
+<section class="bg-resort-green py-14 text-center text-white">
 	<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
 	<p class="mt-3 font-sans text-white/80">Book your stay and experience it in person.</p>
-	<Button href="/contact" size="lg" class="mt-6 bg-white px-8 text-resort-teal hover:bg-white/90">
+	<Button href="/contact" size="lg" class="mt-6 bg-white px-8 text-resort-green hover:bg-white/90">
 		Book Now
 	</Button>
 </section>

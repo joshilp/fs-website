@@ -32,7 +32,7 @@
 <section class="mx-auto max-w-5xl px-6 py-20">
 	<div class="grid gap-12 md:grid-cols-2">
 		<div>
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 				About Osoyoos
 			</p>
 			<h2 class="font-serif text-4xl font-bold leading-tight text-resort-dark">
@@ -58,7 +58,7 @@
 				{ stat: '30+', label: 'Wineries within 30 minutes' }
 			] as s}
 				<div class="flex items-center gap-5 border-b border-resort-sand/30 pb-5">
-					<span class="font-serif text-4xl font-bold text-resort-terra">{s.stat}</span>
+					<span class="font-serif text-4xl font-bold text-resort-brown">{s.stat}</span>
 					<span class="font-sans text-resort-dark/70">{s.label}</span>
 				</div>
 			{/each}
@@ -67,10 +67,10 @@
 </section>
 
 <!-- Things to do -->
-<section class="bg-resort-teal/8 py-16">
+<section class="bg-resort-green/8 py-16">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mb-10 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 				Activities
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Things to do.</h2>
@@ -114,7 +114,7 @@
 <!-- Map -->
 <section class="mx-auto max-w-6xl px-6 py-16">
 	<div class="mb-8 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Find Us
 		</p>
 		<h2 class="font-serif text-3xl font-bold text-resort-dark">Right on Main Street.</h2>

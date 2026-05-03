@@ -6,6 +6,15 @@
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
+	let scrolled = $state(false);
+
+	$effect(() => {
+		function onScroll() {
+			scrolled = window.scrollY > 60;
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 
 	const links = [
 		{ href: '/rooms', label: 'Rooms' },
@@ -14,6 +23,9 @@
 		{ href: '/contact', label: 'Contact' }
 	];
 
+	const isHome = $derived($page.url.pathname === '/');
+	const transparent = $derived(isHome && !scrolled);
+
 	function isActive(href: string) {
 		return $page.url.pathname === href;
 	}
@@ -21,15 +33,88 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'LodgingBusiness',
+				name: 'Falcon Resort',
+				url: 'https://falcon-spanish.com',
+				telephone: '+12504957544',
+				address: {
+					'@type': 'PostalAddress',
+					streetAddress: '7106 Main Street',
+					addressLocality: 'Osoyoos',
+					addressRegion: 'BC',
+					postalCode: 'V0H 1V3',
+					addressCountry: 'CA'
+				},
+				geo: { '@type': 'GeoCoordinates', latitude: 49.0317, longitude: -119.4677 },
+				amenityFeature: [
+					{ '@type': 'LocationFeatureSpecification', name: 'Beach Access', value: true },
+					{ '@type': 'LocationFeatureSpecification', name: 'Outdoor Pool', value: true },
+					{ '@type': 'LocationFeatureSpecification', name: 'Air Conditioning', value: true }
+				]
+			},
+			{
+				'@type': 'LodgingBusiness',
+				name: 'Spanish Fiesta Resort',
+				url: 'https://falcon-spanish.com',
+				telephone: '+12504956833',
+				address: {
+					'@type': 'PostalAddress',
+					streetAddress: '7104 Main Street',
+					addressLocality: 'Osoyoos',
+					addressRegion: 'BC',
+					postalCode: 'V0H 1V3',
+					addressCountry: 'CA'
+				},
+				geo: { '@type': 'GeoCoordinates', latitude: 49.0317, longitude: -119.4677 },
+				amenityFeature: [
+					{ '@type': 'LocationFeatureSpecification', name: 'Beach Access', value: true },
+					{ '@type': 'LocationFeatureSpecification', name: 'Outdoor Pool', value: true },
+					{ '@type': 'LocationFeatureSpecification', name: 'Air Conditioning', value: true }
+				]
+			}
+		]
+	})}</script>`}
 </svelte:head>
 
 <!-- Nav -->
-<header class="sticky top-0 z-50 border-b border-resort-sand/30 bg-resort-base/95 backdrop-blur-sm">
+<header
+	class="fixed top-0 z-50 w-full border-b transition-all duration-300
+	{transparent
+		? 'border-white/10 bg-transparent'
+		: 'border-resort-sand/20 bg-resort-base/97 shadow-sm backdrop-blur-md'}"
+>
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-		<!-- Logo -->
-		<a href="/" class="flex flex-col leading-tight">
-			<span class="font-serif text-lg font-semibold italic text-resort-teal">Spanish Fiesta</span>
-			<span class="font-serif text-sm text-resort-dark/70">&amp; Falcon Resorts</span>
+		<!-- Split logo: Falcon | Spanish Fiesta -->
+		<a href="/" class="flex items-center gap-2.5 group">
+			<div class="text-right leading-tight">
+				<p class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
+					Falcon
+				</p>
+				<p
+					class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
+						? 'text-white/65'
+						: 'text-resort-dark/50'}"
+				>
+					Resort
+				</p>
+			</div>
+			<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
+			<div class="text-left leading-tight">
+				<p class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
+					Spanish Fiesta
+				</p>
+				<p
+					class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
+						? 'text-white/65'
+						: 'text-resort-dark/50'}"
+				>
+					Resort
+				</p>
+			</div>
 		</a>
 
 		<!-- Desktop links -->
@@ -40,8 +125,12 @@
 						href={link.href}
 						class="font-sans text-sm font-medium transition-colors
 						{isActive(link.href)
-							? 'text-resort-teal border-b-2 border-resort-teal pb-0.5'
-							: 'text-resort-dark/70 hover:text-resort-dark'}"
+							? transparent
+								? 'text-white border-b-2 border-white pb-0.5'
+								: 'text-resort-green border-b-2 border-resort-green pb-0.5'
+							: transparent
+								? 'text-white/80 hover:text-white'
+								: 'text-resort-dark/65 hover:text-resort-dark'}"
 					>
 						{link.label}
 					</a>
@@ -49,11 +138,13 @@
 			{/each}
 		</ul>
 
-		<!-- Book Now CTA -->
+		<!-- Book Now -->
 		<div class="flex items-center gap-4">
 			<Button
 				href="/contact"
-				class="hidden bg-resort-terra text-white hover:bg-resort-terra/85 md:inline-flex"
+				class="hidden md:inline-flex {transparent
+					? 'border border-white/50 bg-transparent text-white hover:bg-white/10 hover:text-white'
+					: 'bg-resort-brown text-white hover:bg-resort-brown/85'}"
 			>
 				Book Now
 			</Button>
@@ -67,7 +158,7 @@
 				{#if mobileOpen}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-6 w-6 text-resort-dark"
+						class="h-6 w-6 {transparent ? 'text-white' : 'text-resort-dark'}"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
@@ -82,7 +173,7 @@
 				{:else}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-6 w-6 text-resort-dark"
+						class="h-6 w-6 {transparent ? 'text-white' : 'text-resort-dark'}"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
@@ -101,25 +192,26 @@
 
 	<!-- Mobile menu -->
 	{#if mobileOpen}
-		<div class="border-t border-resort-sand/30 bg-resort-base px-6 pb-4 md:hidden">
-			<ul class="flex flex-col gap-3 pt-3">
+		<div class="border-t border-resort-sand/20 bg-resort-base px-6 pb-5 md:hidden">
+			<ul class="flex flex-col gap-4 pt-4">
 				{#each links as link}
 					<li>
 						<a
 							href={link.href}
 							onclick={() => (mobileOpen = false)}
-							class="block font-sans text-base font-medium
-							{isActive(link.href) ? 'text-resort-teal' : 'text-resort-dark/70 hover:text-resort-dark'}"
+							class="block font-sans text-base font-medium {isActive(link.href)
+								? 'text-resort-green'
+								: 'text-resort-dark/65 hover:text-resort-dark'}"
 						>
 							{link.label}
 						</a>
 					</li>
 				{/each}
-				<li class="pt-2">
+				<li class="pt-1">
 					<Button
 						href="/contact"
 						onclick={() => (mobileOpen = false)}
-						class="bg-resort-terra text-white hover:bg-resort-terra/85"
+						class="bg-resort-brown text-white hover:bg-resort-brown/85"
 					>
 						Book Now
 					</Button>
@@ -128,6 +220,11 @@
 		</div>
 	{/if}
 </header>
+
+<!-- Spacer so content doesn't hide under fixed nav (only on non-home pages) -->
+{#if !isHome}
+	<div class="h-[73px]"></div>
+{/if}
 
 <!-- Page content -->
 <main>
@@ -140,20 +237,35 @@
 		<div class="grid gap-10 md:grid-cols-3">
 			<!-- Brand -->
 			<div>
-				<p class="font-serif text-xl font-semibold italic text-resort-sand">Spanish Fiesta</p>
-				<p class="font-serif text-sm text-white/60">&amp; Falcon Resorts</p>
-				<p class="mt-4 font-sans text-sm leading-relaxed text-white/60">
-					Two adjacent properties on the shores of Osoyoos Lake, in the heart of Canada's warmest
-					valley.
+				<div class="flex items-center gap-2.5">
+					<div class="text-right leading-tight">
+						<p class="font-serif text-base font-bold text-white">Falcon</p>
+						<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
+							Resort
+						</p>
+					</div>
+					<div class="h-6 w-px bg-resort-sand/30"></div>
+					<div class="text-left leading-tight">
+						<p class="font-serif text-base font-bold text-white">Spanish Fiesta</p>
+						<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
+							Resort
+						</p>
+					</div>
+				</div>
+				<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
+					Two adjacent lakeside properties in the heart of Canada's warmest valley — operated as
+					one.
 				</p>
 			</div>
 
 			<!-- Falcon Resort -->
 			<div>
-				<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+				<h3
+					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
+				>
 					Falcon Resort
 				</h3>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/70">
+				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
 					7106 Main Street<br />
 					Osoyoos, BC &nbsp;V0H 1V3<br />
 					<a href="tel:2504957544" class="hover:text-resort-sand transition-colors mt-1 inline-block"
@@ -164,10 +276,12 @@
 
 			<!-- Spanish Fiesta -->
 			<div>
-				<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+				<h3
+					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
+				>
 					Spanish Fiesta Resort
 				</h3>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/70">
+				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
 					7104 Main Street<br />
 					Osoyoos, BC &nbsp;V0H 1V3<br />
 					<a href="tel:2504956833" class="hover:text-resort-sand transition-colors mt-1 inline-block"
@@ -177,8 +291,8 @@
 			</div>
 		</div>
 
-		<div class="mt-12 border-t border-white/10 pt-6 text-center font-sans text-xs text-white/40">
-			&copy; {new Date().getFullYear()} Spanish Fiesta &amp; Falcon Resorts &mdash; Osoyoos, BC, Canada
+		<div class="mt-12 border-t border-white/8 pt-6 text-center font-sans text-xs text-white/30">
+			&copy; {new Date().getFullYear()} Falcon &amp; Spanish Fiesta Resorts &mdash; Osoyoos, BC, Canada
 		</div>
 	</div>
 </footer>

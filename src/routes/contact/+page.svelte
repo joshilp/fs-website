@@ -8,6 +8,10 @@
 		name="description"
 		content="Contact Spanish Fiesta or Falcon Resort in Osoyoos, BC to make a reservation. Call us directly or use our online booking."
 	/>
+	<meta property="og:title" content="Book Your Stay — Spanish Fiesta & Falcon Resorts, Osoyoos" />
+	<meta property="og:description" content="Make a reservation at our Osoyoos lakeside resorts. Call Falcon Resort at (250) 495-7544 or Spanish Fiesta at (250) 495-6833." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://falcon-spanish.com/contact" />
 </svelte:head>
 
 <!-- Page header -->
@@ -29,7 +33,7 @@
 		<!-- Falcon Resort -->
 		<div class="rounded-sm border border-resort-sand/30 bg-white p-8">
 			<div
-				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-teal/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-teal"
+				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
 			>
 				Falcon Resort
 			</div>
@@ -39,11 +43,11 @@
 			</address>
 			<a
 				href="tel:2504957544"
-				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-teal transition-colors"
+				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-green transition-colors"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 text-resort-teal"
+					class="h-6 w-6 text-resort-green"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -57,7 +61,7 @@
 				</svg>
 				(250) 495-7544
 			</a>
-			<Button href="tel:2504957544" class="mt-5 w-full bg-resort-teal text-white hover:bg-resort-teal/85">
+			<Button href="tel:2504957544" class="mt-5 w-full bg-resort-green text-white hover:bg-resort-green/85">
 				Call Falcon Resort
 			</Button>
 		</div>
@@ -65,7 +69,7 @@
 		<!-- Spanish Fiesta Resort -->
 		<div class="rounded-sm border border-resort-sand/30 bg-white p-8">
 			<div
-				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-terra/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-terra"
+				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-brown/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown"
 			>
 				Spanish Fiesta Resort
 			</div>
@@ -75,11 +79,11 @@
 			</address>
 			<a
 				href="tel:2504956833"
-				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-terra transition-colors"
+				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-brown transition-colors"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 text-resort-terra"
+					class="h-6 w-6 text-resort-brown"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -93,7 +97,7 @@
 				</svg>
 				(250) 495-6833
 			</a>
-			<Button href="tel:2504956833" class="mt-5 w-full bg-resort-terra text-white hover:bg-resort-terra/85">
+			<Button href="tel:2504956833" class="mt-5 w-full bg-resort-brown text-white hover:bg-resort-brown/85">
 				Call Spanish Fiesta
 			</Button>
 		</div>
@@ -101,7 +105,7 @@
 
 	<!-- Info note -->
 	<div
-		class="mt-8 rounded-sm border border-resort-teal/20 bg-resort-teal/5 p-6 text-center font-sans text-sm text-resort-dark/70"
+		class="mt-8 rounded-sm border border-resort-green/20 bg-resort-green/5 p-6 text-center font-sans text-sm text-resort-dark/70"
 	>
 		<strong class="text-resort-dark">Not sure which property to book into?</strong> No problem —
 		both resorts are managed from the same office. Call either number and we'll find you the best
