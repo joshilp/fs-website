@@ -292,7 +292,8 @@
 		</div>
 
 		<div class="mt-12 border-t border-white/8 pt-6 text-center font-sans text-xs text-white/30">
-			&copy; {new Date().getFullYear()} Falcon &amp; Spanish Fiesta Resorts &mdash; Osoyoos, BC, Canada
+			&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos, BC,
+			Canada
 		</div>
 	</div>
 </footer>

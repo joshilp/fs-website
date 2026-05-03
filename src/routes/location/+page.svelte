@@ -3,27 +3,37 @@
 </script>
 
 <svelte:head>
-	<title>Location &amp; Area Guide — Spanish Fiesta &amp; Falcon Resorts, Osoyoos BC</title>
+	<title>Osoyoos BC Location &amp; Things To Do | Falcon Resort &amp; Spanish Fiesta Resort</title>
 	<meta
 		name="description"
-		content="Located in the heart of Osoyoos, BC — Canada's warmest and sunniest spot. Explore wine country, the Okanagan desert, and Osoyoos Lake right from our door."
+		content="Falcon Resort and Spanish Fiesta Resort are on Main Street in Osoyoos, BC — steps from Osoyoos Lake. Gateway to Okanagan wine country, 200+ sunshine days, Canada's warmest freshwater lake."
 	/>
+	<meta
+		property="og:title"
+		content="Osoyoos BC Location & Things To Do | Falcon Resort & Spanish Fiesta Resort"
+	/>
+	<meta
+		property="og:description"
+		content="Right on Main Street in Osoyoos, BC — steps from the warmest freshwater lake in Canada, Okanagan wineries, and the Nk'Mip Desert."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://falcon-spanish.com/location" />
 </svelte:head>
 
 <!-- Page header -->
 <section class="relative overflow-hidden bg-resort-dark py-24 text-white">
 	<enhanced:img
 		src="$lib/assets/images/hero.jpg"
-		alt="Osoyoos Lake and desert landscape"
+		alt="Osoyoos Lake and South Okanagan desert landscape, BC"
 		class="absolute inset-0 h-full w-full object-cover opacity-20"
 	/>
 	<div class="relative mx-auto max-w-3xl px-6 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Osoyoos, BC
 		</p>
-		<h1 class="font-serif text-5xl font-bold">The destination itself.</h1>
+		<h1 class="font-serif text-5xl font-bold">Osoyoos, BC — the destination itself.</h1>
 		<p class="mt-4 font-sans text-lg text-white/75">
-			Osoyoos isn't just where we are — it's why people come.
+			Osoyoos isn't just where our motels are — it's why people come.
 		</p>
 	</div>
 </section>
@@ -119,7 +129,7 @@
 		</p>
 		<h2 class="font-serif text-3xl font-bold text-resort-dark">Right on Main Street.</h2>
 		<p class="mt-2 font-sans text-resort-dark/60">
-			Spanish Fiesta: 7104 Main St &nbsp;|&nbsp; Falcon Resort: 7106 Main St &nbsp;&mdash;&nbsp;
+			Spanish Fiesta Resort: 7104 Main St &nbsp;|&nbsp; Falcon Resort: 7106 Main St &nbsp;&mdash;&nbsp;
 			Osoyoos, BC
 		</p>
 	</div>

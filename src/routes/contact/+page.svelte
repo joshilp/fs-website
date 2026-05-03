@@ -3,13 +3,16 @@
 </script>
 
 <svelte:head>
-	<title>Contact &amp; Reservations — Spanish Fiesta &amp; Falcon Resorts</title>
+	<title>Book a Room in Osoyoos BC | Falcon Resort &amp; Spanish Fiesta Resort</title>
 	<meta
 		name="description"
-		content="Contact Spanish Fiesta or Falcon Resort in Osoyoos, BC to make a reservation. Call us directly or use our online booking."
+		content="Book a motel room in Osoyoos, BC. Call Falcon Resort at (250) 495-7544 or Spanish Fiesta Resort at (250) 495-6833. Two adjacent lakeside motels on Osoyoos Lake — we'll find you the best available room."
 	/>
-	<meta property="og:title" content="Book Your Stay — Spanish Fiesta & Falcon Resorts, Osoyoos" />
-	<meta property="og:description" content="Make a reservation at our Osoyoos lakeside resorts. Call Falcon Resort at (250) 495-7544 or Spanish Fiesta at (250) 495-6833." />
+	<meta property="og:title" content="Book a Room in Osoyoos BC | Falcon Resort & Spanish Fiesta Resort" />
+	<meta
+		property="og:description"
+		content="Book a lakeside motel room in Osoyoos BC. Falcon Resort (250) 495-7544 or Spanish Fiesta Resort (250) 495-6833."
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://falcon-spanish.com/contact" />
 </svelte:head>
@@ -20,9 +23,10 @@
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Reservations
 		</p>
-		<h1 class="font-serif text-5xl font-bold">Book Your Stay</h1>
+		<h1 class="font-serif text-5xl font-bold">Book Your Osoyoos Stay</h1>
 		<p class="mt-4 font-sans text-lg text-white/70">
-			We're happy to find the right room for you — in either property.
+			Call Falcon Resort or Spanish Fiesta Resort — we're happy to find the right room at either
+			lakeside motel.
 		</p>
 	</div>
 </section>

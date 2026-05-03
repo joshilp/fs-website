@@ -57,13 +57,16 @@
 </script>
 
 <svelte:head>
-	<title>Rooms &amp; Amenities — Spanish Fiesta &amp; Falcon Resorts</title>
+	<title>Motel Rooms in Osoyoos BC | Falcon Resort &amp; Spanish Fiesta Resort</title>
 	<meta
 		name="description"
-		content="Comfortable, air-conditioned rooms at our two Osoyoos lakeside resorts. Steps from a private sandy beach, two pools, and a hot tub."
+		content="Comfortable, air-conditioned motel rooms on Osoyoos Lake, BC. Steps from a private sandy beach, 2 outdoor pools, and a hot tub. Family rooms, studio suites, and standard rooms available."
 	/>
-	<meta property="og:title" content="Rooms & Amenities — Spanish Fiesta & Falcon Resorts" />
-	<meta property="og:description" content="Comfortable, air-conditioned rooms steps from Osoyoos Lake. Private beach, two pools, hot tub." />
+	<meta property="og:title" content="Motel Rooms in Osoyoos BC | Falcon Resort & Spanish Fiesta Resort" />
+	<meta
+		property="og:description"
+		content="Comfortable motel rooms on Osoyoos Lake. Private beach, 2 pools, hot tub. Family rooms, suites, standard rooms."
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://falcon-spanish.com/rooms" />
 </svelte:head>
@@ -72,16 +75,16 @@
 <section class="relative overflow-hidden bg-resort-dark py-24 text-white">
 	<enhanced:img
 		src="$lib/assets/images/room-placeholder.jpg"
-		alt="Resort view"
+		alt="Motel room at Falcon Resort, Osoyoos BC"
 		class="absolute inset-0 h-full w-full object-cover opacity-25"
 	/>
 	<div class="relative mx-auto max-w-4xl px-6 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Accommodations
 		</p>
-		<h1 class="font-serif text-5xl font-bold">Rooms &amp; Amenities</h1>
+		<h1 class="font-serif text-5xl font-bold">Osoyoos Motel Rooms &amp; Amenities</h1>
 		<p class="mt-4 font-sans text-lg text-white/75">
-			Clean, comfortable rooms steps from the lake — at both properties.
+			Clean, comfortable rooms steps from Osoyoos Lake — at both properties.
 		</p>
 	</div>
 </section>
@@ -105,7 +108,7 @@
 				<div class="relative overflow-hidden">
 					<enhanced:img
 						src="$lib/assets/images/room-placeholder.jpg"
-						alt={room.name}
+						alt="{room.name} at Falcon Resort and Spanish Fiesta Resort, Osoyoos BC"
 						class="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
 					/>
 				</div>
@@ -138,8 +141,8 @@
 	</div>
 
 	<p class="mt-8 text-center font-sans text-sm text-resort-dark/50">
-		Room types and availability may vary. Call us for details: Falcon (250) 495-7544 &nbsp;|&nbsp;
-		Spanish Fiesta (250) 495-6833
+		Room types and availability may vary. Call us for details: Falcon Resort (250) 495-7544
+		&nbsp;|&nbsp; Spanish Fiesta Resort (250) 495-6833
 	</p>
 </section>
 

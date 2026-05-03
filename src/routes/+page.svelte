@@ -16,15 +16,18 @@
 </script>
 
 <svelte:head>
-	<title>Spanish Fiesta &amp; Falcon Resorts — Osoyoos, BC</title>
+	<title>Osoyoos Lakeside Motels | Falcon Resort &amp; Spanish Fiesta Resort, BC</title>
 	<meta
 		name="description"
-		content="Two lakeside resorts on the shores of Osoyoos Lake in British Columbia. Private sandy beach, two pools, hot tub, and air-conditioned rooms in Canada's warmest, sunniest valley."
+		content="Two adjacent lakeside motels on Osoyoos Lake, BC. Private sandy beach, 2 outdoor pools, hot tub, air-conditioned rooms. Right on Main Street in Canada's warmest, sunniest valley."
 	/>
-	<meta property="og:title" content="Spanish Fiesta & Falcon Resorts — Osoyoos, BC" />
+	<meta
+		property="og:title"
+		content="Osoyoos Lakeside Motels | Falcon Resort & Spanish Fiesta Resort"
+	/>
 	<meta
 		property="og:description"
-		content="Two lakeside resorts on Osoyoos Lake. Private beach, pools, hot tub. Right on Main Street in Canada's sunniest corner."
+		content="Two adjacent lakeside motels on Osoyoos Lake. Private sandy beach, pools, hot tub. Right on Main Street in Canada's warmest valley."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://falcon-spanish.com" />
@@ -32,11 +35,11 @@
 
 <!-- Hero — full screen, nav overlaps via fixed positioning -->
 <section class="relative min-h-screen overflow-hidden">
-	<enhanced:img
-		src="$lib/assets/images/hero.jpg"
-		alt="Osoyoos Lake from the resort"
-		class="absolute inset-0 h-full w-full object-cover"
-	/>
+		<enhanced:img
+			src="$lib/assets/images/hero.jpg"
+			alt="Osoyoos Lake beachfront at Falcon Resort and Spanish Fiesta Resort, Osoyoos BC"
+			class="absolute inset-0 h-full w-full object-cover"
+		/>
 	<!-- Layered overlay: dark at bottom for text legibility, lighter at top for nav transparency -->
 	<div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-black/75"></div>
 
@@ -50,8 +53,8 @@
 			Where the desert<br />meets the lake.
 		</h1>
 		<p class="mt-6 max-w-lg font-sans text-lg leading-relaxed text-white/75">
-			Two adjacent properties. One private sandy beach. Right on Main Street in Canada's sunniest
-			corner.
+			Two adjacent lakeside motels on Osoyoos Lake. One private sandy beach. Right on Main Street in
+			Canada's warmest valley.
 		</p>
 		<div class="mt-10 flex flex-wrap justify-center gap-4">
 			<Button
@@ -143,13 +146,14 @@
 				Two properties,<br />one great stay.
 			</h2>
 			<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
-				The Falcon and Spanish Fiesta Resorts sit side by side on Main Street in Osoyoos, BC —
-				operated as one from a shared office between them. Whether you book into one or the other,
-				you get the same service, the same private beach, and the same incredible Okanagan sunshine.
+				The Falcon Resort and Spanish Fiesta Resort are adjacent lakeside motels on Main Street in
+				Osoyoos, BC — operated as one from a shared office between them. Whether you book into one
+				or the other, you get the same friendly service, the same private beach on Osoyoos Lake, and
+				the same incredible Okanagan sunshine.
 			</p>
 			<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
-				Osoyoos is Canada's only pocket desert — but with a warm, crystal-clear lake right at your
-				doorstep. Walk out 500 feet and still touch the sandy bottom.
+				Osoyoos is Canada's only pocket desert — but Osoyoos Lake is the warmest freshwater lake in
+				Canada, right at your doorstep. Walk out 500 feet and still touch the sandy bottom.
 			</p>
 			<Button
 				href="/rooms"
@@ -161,11 +165,11 @@
 		</div>
 		<div class="relative">
 			<div class="overflow-hidden rounded-sm">
-				<enhanced:img
-					src="$lib/assets/images/hero.jpg"
-					alt="Osoyoos Lake — steps from the resort"
-					class="h-96 w-full object-cover"
-				/>
+		<enhanced:img
+			src="$lib/assets/images/hero.jpg"
+			alt="Osoyoos Lake shoreline viewed from the resort grounds"
+			class="h-96 w-full object-cover"
+		/>
 			</div>
 			<!-- Offset caption card -->
 			<div
