@@ -93,6 +93,7 @@ Under "Amenities":
 - [ ] Beach access
 - [ ] BBQ facilities
 - [ ] Free parking
+- [ ] Free Wi-Fi
 - [ ] Outdoor seating / Patio area
 
 Under "Accessibility":
@@ -210,11 +211,26 @@ Once verified:
 
 2. **Link GBP to your website** in Search Console for extra verification signals.
 
-3. **Enable messaging** in GBP so guests can send you a message directly from Google Maps
+3. **Update the map embed URL in the website codebase:**
+   - In Google Maps, search for the verified GBP listing for each property
+   - Click **Share → Embed a map → Copy HTML**
+   - Open `src/lib/config.ts` in the project and replace the value of `site.mapEmbedUrl`
+     with the new embed URL — this will update the map on both the homepage and location page
+   - Ideally get an embed that shows both properties simultaneously (zoom out until both pins
+     are visible, then copy the embed code)
+
+4. **Enable messaging** in GBP so guests can send you a message directly from Google Maps
    (requires the Google Business app on your phone).
 
-4. **Turn on booking links** if/when you have online booking — GBP has a "Reserve a table / Book"
+5. **Turn on booking links** if/when you have online booking — GBP has a "Reserve a table / Book"
    button you can link to your booking app.
+
+6. **Set up Google Hotel Center** (next major step after GBP):
+   - GBP verification is a prerequisite for Google Hotel Center
+   - Hotel Center is what allows your nightly rates to appear in Google Hotels search results
+   - It requires a booking engine that can send live rates to Google
+   - See the separate discussion in project notes for the full Google Hotels overview
+   - Start at [hotel.google.com](https://hotel.google.com) once GBP is live
 
 ---
 
@@ -291,16 +307,24 @@ These appear directly in your Maps listing. Use them for:
 
 ## NAP Consistency Checklist
 
-Before going live, verify all of these match exactly:
+The website's NAP data is managed in one place: **`src/lib/config.ts`**. The footer, contact
+page, location page, and schema markup all pull from that file automatically. If a phone number
+or address ever changes, update it in `config.ts` and it flows everywhere on the site.
 
-| Location | Falcon Resort Entry | Spanish Fiesta Entry |
+For external platforms, verify all of these match `config.ts` exactly:
+
+| Location | Falcon Resort | Spanish Fiesta Resort |
 |---|---|---|
+| `config.ts` (source of truth) | 7106 Main Street, (250) 495-7544 | 7104 Main Street, (250) 495-6833 |
 | GBP profile | Falcon Resort | Spanish Fiesta Resort |
-| Website footer | Falcon Resort | Spanish Fiesta Resort |
-| Website contact page | 7106 Main Street, (250) 495-7544 | 7104 Main Street, (250) 495-6833 |
+| Website footer | ✓ auto from config | ✓ auto from config |
+| Website contact page | ✓ auto from config | ✓ auto from config |
 | TripAdvisor | (to fill) | (to fill) |
 | Booking.com | (to fill) | (to fill) |
 | Yellow Pages | (to fill) | (to fill) |
+| Yelp | (to fill) | (to fill) |
+| Tourism BC / Hello BC | (to fill) | (to fill) |
+| Destination Osoyoos | (to fill) | (to fill) |
 
 ---
 
