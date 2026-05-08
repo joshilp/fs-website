@@ -1,385 +1,317 @@
-# Logo & Branding Guide
+# Logo & Branding Asset Guide
 ## Falcon Resort & Spanish Fiesta Resort — Osoyoos, BC
 
----
-
-## AI Image Generation Prompts
-
-Use these prompts in **Ideogram** (best for text accuracy in logos), **Adobe Firefly**, or
-**Midjourney v6**. Ideogram is strongly recommended — it handles rendered text far better than
-DALL-E or older Midjourney versions. It's free at [ideogram.ai](https://ideogram.ai).
-
-**Important:** Even with a perfect prompt, AI-generated logos will need cleanup. The goal is to
-get a strong concept and icon you can then refine or recreate cleanly in Canva using the
-generated image as a reference. Don't expect to use the raw AI output directly — use it as a
-starting point.
-
-Generate each prompt **3–5 times** and pick the best result. Slight re-runs produce very
-different outputs.
-
----
-
-### Prompt 1 — Falcon Resort Logo
-
-```
-A professional, minimal flat vector logo for a lakeside motel called "Falcon Resort". 
-The logo is horizontal layout: a clean, bold falcon silhouette on the left side facing right 
-in a proud perched stance with its wings slightly raised, rendered as a single flat shape with 
-no gradients and no fine feather detail lines. To the right of the bird, the word "FALCON" is 
-set in a bold elegant serif typeface on the top line, and the word "RESORT" is set in a 
-smaller modern sans-serif typeface with wide letter spacing on the line below it. 
-The colour palette is strictly two colours: deep navy blue (#1E2D3D) for the text and warm 
-antique gold (#C49A3C) for the falcon silhouette and the word "RESORT". 
-The background is pure white. The overall style is upscale, clean, and timeless — 
-similar to a premium winery or boutique hotel logo. No gradients, no drop shadows, 
-no outlines, no decorative borders, no badge shape, no tagline. 
-Flat design. Vector illustration style.
-```
-
-**If the text renders wrong:** Re-run the prompt. If it keeps failing, remove the text
-description entirely and use the prompt just to generate the falcon icon — then add the
-text yourself in Canva using Playfair Display Bold + Montserrat.
-
-**Text-only fallback prompt (icon only):**
-```
-A clean, minimal flat vector icon of a peregrine falcon facing right in a proud perched 
-stance, wings slightly raised. Rendered as a single solid flat silhouette shape in warm 
-antique gold (#C49A3C) on a white background. No gradients, no outlines, no fine detail 
-lines, no feather texture. Simple bold geometric shape. Suitable for use as a logo mark. 
-Vector illustration style, professional, upscale.
-```
-
----
-
-### Prompt 2 — Spanish Fiesta Resort Logo
-
-```
-A professional, elegant flat vector logo for a lakeside motel called "Spanish Fiesta Resort". 
-The logo is horizontal layout: a clean stylised flamenco rose on the left side, rendered as 
-a flat single-colour bold silhouette shape — the rose should be graphic and simplified, 
-not photorealistic, with a clean outline and minimal petal detail, facing slightly upward. 
-To the right of the rose, the words "SPANISH FIESTA" are set in a bold elegant serif 
-typeface on the top line, and the word "RESORT" is set in a smaller modern sans-serif 
-typeface with wide letter spacing on the line below. 
-The colour palette is strictly two colours: deep terracotta brick red (#8B3A2A) for the 
-text and warm antique gold (#C49A3C) for the rose silhouette and the word "RESORT". 
-The background is pure white. The overall style is warm, refined, and timeless — 
-evoking a sophisticated Spanish or Mediterranean resort atmosphere, not a cartoon or 
-party theme. No gradients, no drop shadows, no outlines around text, no decorative 
-banners, no badge shape, no tagline. Flat design. Vector illustration style.
-```
-
-**If the text renders wrong:** Same approach as Falcon — re-run, or use the icon-only fallback
-and add text in Canva.
-
-**Text-only fallback prompt (icon only):**
-```
-A clean, minimal flat vector icon of a stylised flamenco rose, rendered as a single solid 
-flat silhouette shape in warm antique gold (#C49A3C) on a white background. The rose is 
-bold and graphic — simplified petals, no photorealistic detail, no gradients, no outlines. 
-Slightly angled, elegant. Suitable for use as a logo mark for an upscale resort. 
-Vector illustration style, professional, warm and refined.
-```
-
----
-
-### Tips for Better Results
-
-- **Ideogram:** Set style to **"Design"** or **"Illustration"** mode. Avoid "Realistic."
-- **Midjourney:** Add `--style raw --v 6` at the end, and add `no gradients, no 3D, no shadows`
-  as a negative prompt.
-- **Adobe Firefly:** Use the "Graphic" content type and turn off photorealistic generation.
-- If the colours are off, that's fine — you'll apply the exact hex values yourself in Canva.
-  Focus on getting the **shape and layout** right, not the exact colour.
-- If the falcon looks too cartoonish or too realistic, try adding `"heraldic"` or `"geometric"`
-  to the prompt.
-- If the rose looks too detailed, add `"bold silhouette"`, `"simplified"`, `"graphic"` to the
-  prompt and remove `"detail"`.
-
----
-
----
-
-## Why the Current Logos Fail
-
-Before anything else: understand why they fail, so you don't repeat the mistakes.
-
-1. **Yellow background** — reads as "cheap roadside diner," not "lakeside resort." Logo
-   backgrounds should always be transparent (or white/dark depending on use), never a fixed colour.
-2. **Clip art illustrations** — the eagle and dancer were grabbed from a stock library. They have
-   no character and look amateur because they are.
-3. **Mismatched fonts** — the gothic "Spanish Fiesta" font belongs on a horror movie poster. The
-   cursive "Falcon" script is a generic handwriting font with no personality.
-4. **No shared system** — the two logos look completely unrelated. A property group should have
-   visual cohesion.
+This document defines every logo file that needs to exist, what it's used for, and the exact
+specs required. Use this as the brief if hiring a designer, or as your checklist if doing it
+yourself.
 
 ---
 
 ## Brand Strategy
 
-You have two properties that operate as one. They should each have their own identity, but read as
-*family* — same typeface, similar layout structure, shared accent colour. Think of it like a hotel
-group: each property has a name and a mark, but they share design DNA.
+Two properties that operate as one. They each need their own distinct identity, but both should
+read as a family — same typefaces, same layout structure, shared accent colour (gold), so that
+anyone who sees both brands immediately knows they're connected.
 
-**The constraint:** Brown buildings with red trim. You can't change that yet.
+### Falcon Resort
+Dark, sophisticated, nature-driven. The falcon is iconic and local to the Okanagan. Colour
+direction: deep navy or charcoal with warm gold. The existing red trim on the building is
+background noise — a navy/gold brand makes it irrelevant.
 
-**The strategy:**
-- **Falcon Resort** — go dark and sophisticated. Deep navy or charcoal with a gold accent. The red
-  trim on the building will feel totally disconnected from a navy/gold brand, so it stops being
-  "your brand's red" and becomes just "the wall colour."
-- **Spanish Fiesta Resort** — own a *refined* version of warm red. Not fire-engine red — deep
-  terracotta/brick. The fiesta/flamenco theme actually suits Osoyoos (hot, dry,
-  desert-meets-Mediterranean). Done right, the red trim on the building could feel almost
-  intentional.
+### Spanish Fiesta Resort
+Warm, refined, Mediterranean-feeling. Osoyoos is the closest thing Canada has to a Mediterranean
+climate — arid, sunny, desert-meets-lake. The brand should own that warmth without being kitschy.
+Colour direction: deep terracotta/brick red with warm gold. Not fire-engine red. Not fiesta-party.
+Think Sonoma winery, not carnival.
+
+### What Makes Them a Family
+- Same typeface system (Playfair Display + Montserrat, or equivalent serif/sans pairing)
+- Same gold accent (`#C49A3C` or close — the designer can refine it)
+- Same layout structure (icon left, text right; or icon top, text below)
+- Same cream/off-white background tone
 
 ---
 
 ## Colour Palettes
 
 ### Falcon Resort
-
-| Swatch | Name | Hex | Use |
-|---|---|---|---|
-| Deep navy | Primary | `#1E2D3D` | Logo text, dark backgrounds |
-| Warm gold | Accent | `#C49A3C` | Bird icon, highlights |
-| Sky slate | Secondary | `#5B8FA6` | Optional accent, references the lake/sky |
-| Warm cream | Background | `#FAF6EE` | Light backgrounds |
-| White | Light text | `#FFFFFF` | Text on dark backgrounds |
+| Name | Hex | Use |
+|---|---|---|
+| Deep Navy | `#1E2D3D` | Property name text, dark backgrounds, primary |
+| Warm Gold | `#C49A3C` | Falcon icon, "RESORT" word, accent |
+| Sky Slate | `#5B8FA6` | Optional secondary — sky/lake reference |
+| Warm Cream | `#FAF6EE` | Light backgrounds |
+| White | `#FFFFFF` | Text on dark backgrounds |
 
 ### Spanish Fiesta Resort
+| Name | Hex | Use |
+|---|---|---|
+| Deep Terracotta | `#8B3A2A` | Property name text, dark backgrounds, primary |
+| Warm Gold | `#C49A3C` | **Same gold as Falcon** — the shared family colour |
+| Burgundy | `#5C1A1A` | Deep sections, footer |
+| Warm Cream | `#FAF6EE` | **Same cream as Falcon** |
+| White | `#FFFFFF` | Text on dark backgrounds |
 
-| Swatch | Name | Hex | Use |
-|---|---|---|---|
-| Deep terracotta | Primary | `#8B3A2A` | Logo text, dark backgrounds |
-| Warm gold | Accent | `#C49A3C` | **Same gold as Falcon** — the shared family colour |
-| Burgundy | Deep accent | `#5C1A1A` | Dark sections, footer |
-| Warm cream | Background | `#FAF6EE` | **Same cream as Falcon** |
-| White | Light text | `#FFFFFF` | Text on dark backgrounds |
-
-> The shared gold `#C49A3C` and shared cream `#FAF6EE` are what make these two brands feel like
-> siblings even though they have different primary colours.
+> The shared gold `#C49A3C` and shared cream `#FAF6EE` are the visual glue between the two brands.
 
 ---
 
 ## Typography
 
-Use **Playfair Display** for property names — it's already on the website, and Canva has it. It's
-elegant, readable, and has the serif weight that works at both large and small sizes.
+| Element | Font | Style |
+|---|---|---|
+| Property name | Playfair Display (or similar quality serif) | Bold |
+| "RESORT" word | Montserrat (or similar geometric sans) | SemiBold, ALL CAPS, wide letter-spacing |
+| Tagline / sub-text | Montserrat | Light or Regular, wide letter-spacing |
 
-Use **Montserrat** for "RESORT" and any subtext — clean, modern, geometric. It pairs perfectly
-with Playfair Display.
-
-| Element | Font | Style | Notes |
-|---|---|---|---|
-| Property name | Playfair Display | Bold or SemiBold | Largest element |
-| "RESORT" | Montserrat | SemiBold, ALL CAPS | ~40–50% the size of the property name, wide letter-spacing |
-| Tagline (optional) | Montserrat | Light or Regular | Small, wide letter-spacing |
-
-> In Canva: search "Playfair Display" in the font selector. If it doesn't appear, good fallbacks
-> are **Libre Baskerville** or **Cormorant Garamond**.
-
-> Do **not** use any gothic, script, or decorative display font. The property names are descriptive
-> enough on their own — they don't need a costume.
+Do not use any gothic, script, decorative, or handwritten font. The property names are
+descriptive enough — they don't need a costume.
 
 ---
 
-## Falcon Resort — Design Spec
+## The Icons
 
-### The Icon
+### Falcon Resort — The Mark
+A **falcon (or hawk/eagle of prey) silhouette**. Clean, heraldic, graphic. Options:
+- **Perched, facing right** — dignified, works well for stacked and horizontal layouts
+- **Wings slightly raised or spread** — more dynamic, good for horizontal
+- **Mid-dive/stoop** — very distinctive, harder to read at small sizes
 
-A **falcon silhouette** — facing right, either:
-- **Perched upright** — clean, heraldic feel. Good for a square/icon mark.
-- **Mid-dive/stoop with wings back** — dynamic, distinctive. Better for the horizontal logo.
+The mark should be a **flat single-colour silhouette** — no gradients, no feather detail lines,
+no outlines. One solid shape. The existing yellow sign eagle can serve as a reference for the
+pose concept, but the execution needs to be clean vector, not clip art.
 
-In Canva's Elements library, search: `falcon`, `hawk`, `bird of prey`, `raptor`.
+### Spanish Fiesta Resort — The Mark
+A **flamenco-inspired element**. In order of recommendation:
+1. **Rose** — classic Spanish/Mediterranean symbol. Clean silhouette, reads perfectly at any size.
+   Best choice for versatility across sign, card, and web.
+2. **Hand fan** — very graphic, immediately "Spanish," works beautifully at small sizes.
+3. **Flamenco dancer silhouette** — most distinctive and memorable, but needs a skilled hand to
+   execute cleanly. The full flared skirt shape is bold and readable if done right.
 
-You want something **flat and graphic** — a single-colour fill silhouette, no gradients, no
-cartoon detail lines, no outlines. If the element has lots of feather detail, it's too busy. If
-it's a clean solid shape, it's right.
-
-### Layout — Horizontal (primary version)
-
-```
-[bird icon]   FALCON
-              RESORT
-```
-
-- Bird on the left, text stacked on the right
-- "FALCON" in Playfair Display Bold — navy `#1E2D3D`
-- "RESORT" in Montserrat SemiBold ALL CAPS, wide letter-spacing — gold `#C49A3C`
-- Bird icon in gold `#C49A3C`
-- **No background fill** — transparent
-
-### Layout — Stacked (square version)
-
-```
-   [bird icon]
-     FALCON
-     RESORT
-```
-
-- Icon centred on top
-- Text centred below
-- Same colours as horizontal version
-
-### Optional Tagline
-
-```
-Osoyoos, British Columbia
-```
-
-Montserrat Light, small, wide letter-spacing, centred below "RESORT."
+Same rule: flat, single-colour, clean. Not a cartoon, not clip art, not a detailed illustration.
 
 ---
 
-## Spanish Fiesta Resort — Design Spec
+## Complete File Delivery List
 
-### The Icon
+This is every file that needs to exist. Asterisked items (**\***) are the minimum viable set to
+launch the website and get started — do these first.
 
-A **flamenco-inspired element** — not a full dancer figure (too detailed at small sizes). Options
-in order of recommendation:
+### Source Files (Required from Designer or Yourself)
 
-1. **A rose** — classic Spanish symbol, reads at any size, clean silhouette. Search: `flamenco
-   rose`, `Spanish rose`, `rose silhouette`. Best choice for versatility.
-2. **A fan** — a folded/open fan reads instantly as Spanish. Search: `Spanish fan`, `hand fan
-   silhouette`. Very clean at small sizes.
-3. **A dancer silhouette** — only if you find a clean flat silhouette (not cartoon). The full
-   flared skirt shape is very readable. Search: `flamenco dancer silhouette`, `flamenco
-   silhouette`.
+| File | Format | Notes |
+|---|---|---|
+| `falcon-logo.svg` **\*** | SVG | Master file — the horizontal lockup, fully editable vector |
+| `spanishfiesta-logo.svg` **\*** | SVG | Master file — the horizontal lockup |
+| `falcon-icon.svg` | SVG | Falcon bird mark only, no text |
+| `spanishfiesta-icon.svg` | SVG | Spanish Fiesta mark only, no text |
+| `combined-logo.svg` | SVG | "Falcon & Spanish Fiesta Resorts" combined lockup |
 
-> The rose is the safest and most scalable choice. The dancer is the most distinctive but hardest
-> to find in a quality flat version.
-
-### Layout — Horizontal (primary version)
-
-```
-[icon]   SPANISH FIESTA
-         RESORT
-```
-
-- Icon on the left, text stacked on the right
-- "SPANISH FIESTA" in Playfair Display Bold — terracotta `#8B3A2A`
-- "RESORT" in Montserrat SemiBold ALL CAPS, wide letter-spacing — gold `#C49A3C`
-- Icon in gold `#C49A3C` or terracotta `#8B3A2A`
-- **No background fill** — transparent
-
-### Layout — Stacked (square version)
-
-```
-     [icon]
-  SPANISH FIESTA
-     RESORT
-```
-
-- Icon centred on top
-- Text centred below
-- Same colours as horizontal version
+SVG is the format everything else gets derived from. If a designer delivers anything other than
+SVG source files, ask for them. Without SVG you cannot resize for large-format print without
+quality loss.
 
 ---
 
-## Files to Export from Canva
+### Website Files
 
-Make **5 exports per property** (10 files total). Name them exactly as shown.
-
-### Falcon Resort
-
-| Filename | Format | Size | Background | Use |
+| Filename | Format | Dimensions | Background | Used For |
 |---|---|---|---|---|
-| `falcon-logo-dark.png` | PNG | 1200 × 400 px | Transparent | Website nav, light backgrounds |
-| `falcon-logo-light.png` | PNG | 1200 × 400 px | Transparent | Website footer (recolour text to white) |
-| `falcon-logo-square.png` | PNG | 600 × 600 px | Transparent | GBP profile photo, social media |
-| `falcon-logo-square-white-bg.jpg` | JPG | 600 × 600 px | White | Anywhere transparency isn't supported |
-| `falcon-icon.png` | PNG | 400 × 400 px | Transparent | Favicon, small badge uses (bird only) |
+| `falcon-logo-dark.png` **\*** | PNG | 1200 × 400 px | Transparent | Nav bar (on light background), contact page |
+| `falcon-logo-light.png` **\*** | PNG | 1200 × 400 px | Transparent | Footer (white version on dark bg) |
+| `falcon-logo-square.png` | PNG | 600 × 600 px | Transparent | Social sharing, structured data |
+| `falcon-icon.png` | PNG | 400 × 400 px | Transparent | Favicon base, small badge use |
+| `spanishfiesta-logo-dark.png` **\*** | PNG | 1200 × 400 px | Transparent | Nav bar, contact page |
+| `spanishfiesta-logo-light.png` **\*** | PNG | 1200 × 400 px | Transparent | Footer |
+| `spanishfiesta-logo-square.png` | PNG | 600 × 600 px | Transparent | Social sharing |
+| `spanishfiesta-icon.png` | PNG | 400 × 400 px | Transparent | Favicon base |
+| `favicon.svg` **\*** | SVG | 32 × 32 viewBox | Transparent | Browser tab, bookmarks |
+| `favicon-512.png` | PNG | 512 × 512 px | Transparent | PWA icon, Apple touch icon |
 
-### Spanish Fiesta Resort
+> **Favicon note:** The favicon should be a simplified mark — ideally a single icon that
+> represents both (e.g. a combined "FS" monogram, or the falcon icon alone since Falcon is the
+> primary brand). At 16×16 px a full horizontal logo is completely unreadable.
 
-| Filename | Format | Size | Background | Use |
+---
+
+### Google Business Profile Photos
+
+| Filename | Format | Dimensions | Background | Used For |
 |---|---|---|---|---|
-| `spanishfiesta-logo-dark.png` | PNG | 1200 × 400 px | Transparent | Website nav, light backgrounds |
-| `spanishfiesta-logo-light.png` | PNG | 1200 × 400 px | Transparent | Website footer (recolour text to white) |
-| `spanishfiesta-logo-square.png` | PNG | 600 × 600 px | Transparent | GBP profile photo, social media |
-| `spanishfiesta-logo-square-white-bg.jpg` | JPG | 600 × 600 px | White | Anywhere transparency isn't supported |
-| `spanishfiesta-icon.png` | PNG | 400 × 400 px | Transparent | Favicon, small badge uses (icon only) |
+| `falcon-gbp-logo.jpg` | JPG | 720 × 720 px | White | GBP logo upload (transparency not supported) |
+| `spanishfiesta-gbp-logo.jpg` | JPG | 720 × 720 px | White | GBP logo upload |
 
-### How to make the "light" version
-Duplicate your dark design in Canva. Select all the dark navy/terracotta text and icon elements
-and change their colour to white `#FFFFFF`. The layout is identical — just colour-swapped.
-Export as the light version.
-
-### How to export transparent PNGs in Canva
-Download → PNG → tick **"Transparent background."**
-This works on both free and Pro Canva accounts.
+> GBP rejects transparent PNGs for the logo slot. Use white background JPG for these.
 
 ---
 
-## Canva Step-by-Step
+### Business Cards
 
-### Horizontal logo (1200 × 400 px)
+You'll need two separate card designs — one for each property — since they have different
+addresses and phone numbers. Cards for staff who work across both can use the combined lockup.
 
-1. Go to **canva.com → Create a design → Custom size → 1200 × 400 px**
-2. Make sure the background is set to **None** (no fill, no colour — not white, not yellow)
-3. Add your property name in **Playfair Display Bold** — size it large, filling most of the width
-4. Add "RESORT" on a new text block below in **Montserrat SemiBold**, ALL CAPS
-   - Increase letter-spacing to ~200–300 in the text toolbar
-   - Set colour to gold `#C49A3C`
-5. Search **Elements** for your icon, pick the cleanest flat silhouette, resize and position to
-   the left of the text
-6. Set the icon colour to gold `#C49A3C`
-7. Apply your primary colour (navy or terracotta) to the property name text
-8. Download as **PNG → Transparent background**
+**Print specs: 3.5 × 2 inches at 300 DPI = 1050 × 600 px minimum. Bleed: add 0.125" (38 px)
+on each edge if your printer requires it. Deliver as PDF or high-res PNG.**
 
-### Square logo (600 × 600 px)
-Duplicate the horizontal design, change canvas size to 600 × 600, rearrange to stacked layout
-(icon centred on top, text centred below).
+| File | Format | Notes |
+|---|---|---|
+| `falcon-businesscard-front.pdf` | PDF | Front — logo, address, phone, website |
+| `falcon-businesscard-back.pdf` | PDF | Back — optional: tagline, QR code to site, or leave clean |
+| `spanishfiesta-businesscard-front.pdf` | PDF | Front — logo, address, phone, website |
+| `spanishfiesta-businesscard-back.pdf` | PDF | Back |
+| `combined-businesscard-front.pdf` | PDF | For staff covering both properties — both property details |
 
-### Icon only (400 × 400 px)
-Duplicate the horizontal design, delete all text, centre the icon, resize to fill most of the
-canvas.
+**Business card content (Falcon):**
+```
+[Falcon Resort logo]
+7106 Main Street, Osoyoos, BC  V0H 1V3
+(250) 495-7544
+falcon-spanish.com
+```
 
-### Light (white) version
-Duplicate any of the above, select all elements, change colour to `#FFFFFF`.
+**Business card content (Spanish Fiesta):**
+```
+[Spanish Fiesta Resort logo]
+7104 Main Street, Osoyoos, BC  V0H 1V3
+(250) 495-6833
+falcon-spanish.com
+```
 
 ---
 
-## Where These Will Go on the Website
+### Physical Signs
 
-Once the files are ready, hand them over and the following will be updated:
+Work directly with your sign company and provide them the SVG source files. They will handle
+sizing and production format. Below are the sign types to plan for.
 
-| Location | File used |
-|---|---|
-| Navigation logo | `falcon-logo-dark.png` + `spanishfiesta-logo-dark.png` (or text treatment kept if logos are too complex at nav height — to be decided on sight) |
-| Footer | `falcon-logo-light.png` + `spanishfiesta-logo-light.png` (white versions on dark background) |
-| Contact page property cards | `falcon-logo-dark.png` + `spanishfiesta-logo-dark.png` at larger size |
-| GBP profile photos | `falcon-logo-square.png` + `spanishfiesta-logo-square.png` |
-| Browser favicon | Converted from `falcon-icon.png` (or a combined mark — TBD) |
+#### Front Entry Signs (Road-Facing)
+Each property should have a proper road-facing sign. The existing yellow sign for Falcon is
+a reference for location/size, but the design should match the new brand.
 
-The website's accent colours will also be updated to match the exact hex values from your
-finished logos.
+| Sign | Location | Notes |
+|---|---|---|
+| Falcon Resort entry sign | Road-facing, at 7106 Main St | Replace or re-face the existing yellow sign |
+| Spanish Fiesta Resort entry sign | Road-facing, at 7104 Main St | New sign matching brand |
+| Shared office sign | Between properties | Small sign indicating "Office / Reservations" |
+
+**Sign design should include:**
+- Property logo (icon + name)
+- Address (optional — guests arriving already know it)
+- Phone number
+- Website URL
+
+**Provide to sign company:**
+- SVG source file (they will scale it)
+- Exact hex colour codes (they'll need these for vinyl/paint matching)
+- Reference photo of existing sign location/size so they can advise on material/dimensions
+
+#### Room Number Plaques (Optional Upgrade)
+If replacing room number plaques, keep them minimal — white or cream background, property
+colour (navy or terracotta), clean sans-serif number. No logo needed at this size.
+
+#### Directional / Wayfinding
+- "Office →" or "Reception →" sign between the two properties
+- Pool area sign
+- Beach access sign
+
+These don't need the full logo — property colour + clean sans-serif text is enough.
 
 ---
 
-## Save the Logo Source Files
+### Additional Uses to Plan For
 
-When you're done, export the Canva designs as **Canva files (.canva format)** or save them in
-your Canva account. You'll need to edit them again for future uses. Also save all exported PNGs
-to:
+| Use Case | File Needed | Notes |
+|---|---|---|
+| Email signature | `falcon-logo-dark.png` or `spanishfiesta-logo-dark.png` (300 px wide) | Inline image in email client |
+| Google review QR cards (to hand guests at checkout) | Business card sized, could be a simple card with QR code + "Leave us a review" | Can be done in Canva once you have the logo |
+| TripAdvisor / Booking.com profile photo | Same as GBP — 720 × 720 JPG white bg | Each OTA has its own upload |
+| Social media profile photo | Square PNG, 600 × 600 px | If you create Instagram/Facebook pages |
+| Letterhead / invoice template | Logo + contact info in header | Useful for formal correspondence |
+
+---
+
+## Designer Brief (If Hiring)
+
+Hand this section to a designer along with this document.
+
+---
+
+**Project:** Logo design for two adjacent lakeside motels in Osoyoos, BC, Canada.
+
+**Properties:**
+- Falcon Resort — 7106 Main Street, Osoyoos BC
+- Spanish Fiesta Resort — 7104 Main Street, Osoyoos BC
+
+**What we need:**
+Two distinct but visually related logos. Each property has its own identity, but they should
+read as a family (same typeface, same layout structure, shared gold accent colour).
+
+**Falcon Resort:** A clean, sophisticated falcon (or bird of prey) mark. Flat silhouette,
+single colour. Deep navy primary `#1E2D3D`, warm gold accent `#C49A3C`.
+
+**Spanish Fiesta Resort:** A flamenco-inspired mark — rose, fan, or dancer silhouette.
+Clean, graphic, refined — not cartoonish. Deep terracotta primary `#8B3A2A`, same gold
+accent `#C49A3C`.
+
+**Typeface direction:** Quality serif for property name (Playfair Display, Garamond, or
+similar), clean geometric sans for "RESORT" and subtext (Montserrat or similar).
+
+**Deliverables required:**
+- SVG source files for all marks (editable vector, layered)
+- Horizontal lockup (icon left, text right) for each property
+- Stacked lockup (icon top, text below) for each property
+- Icon-only mark for each property
+- Light (white) version of each
+- Combined "Falcon & Spanish Fiesta Resorts" lockup
+- See full file list in this document
+
+**What to avoid:**
+- Gradients, drop shadows, bevels, 3D effects
+- Script or decorative fonts
+- Yellow backgrounds (legacy brand — being replaced)
+- Anything that looks like clip art or a stock icon
+
+**Reference direction:**
+Think boutique Okanagan winery or upscale BC lodge — refined, nature-connected, not
+corporate. The location (desert climate, warmest lake in Canada, Okanagan wine country)
+is part of the brand story.
+
+---
+
+## File Storage
+
+Save all finished files to:
 
 ```
-C:\dev\FalconSpanish\logo\
+C:\dev\FalconSpanish\brand\
+  source\
+    falcon-logo.svg
+    spanishfiesta-logo.svg
+    falcon-icon.svg
+    spanishfiesta-icon.svg
+    combined-logo.svg
+  web\
+    falcon-logo-dark.png
+    falcon-logo-light.png
+    falcon-logo-square.png
+    falcon-icon.png
+    spanishfiesta-logo-dark.png
+    spanishfiesta-logo-light.png
+    spanishfiesta-logo-square.png
+    spanishfiesta-icon.png
+    favicon.svg
+    favicon-512.png
+  print\
+    falcon-businesscard-front.pdf
+    falcon-businesscard-back.pdf
+    spanishfiesta-businesscard-front.pdf
+    spanishfiesta-businesscard-back.pdf
+    combined-businesscard-front.pdf
+  gbp\
+    falcon-gbp-logo.jpg
+    spanishfiesta-gbp-logo.jpg
 ```
 
-Suggested final folder structure:
-```
-C:\dev\FalconSpanish\logo\
-  falcon-logo-dark.png
-  falcon-logo-light.png
-  falcon-logo-square.png
-  falcon-logo-square-white-bg.jpg
-  falcon-icon.png
-  spanishfiesta-logo-dark.png
-  spanishfiesta-logo-light.png
-  spanishfiesta-logo-square.png
-  spanishfiesta-logo-square-white-bg.jpg
-  spanishfiesta-icon.png
-  resortlogo.jpg               ← keep the original, don't delete it
-```
+When web files are ready, drop the `web\` folder contents into the project and the site
+will be updated to use them.
