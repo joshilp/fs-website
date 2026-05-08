@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { properties } from '$lib/config.js';
+
+	const { falcon, spanish } = properties;
 	import {
 		Card,
 		CardContent,
@@ -141,8 +144,14 @@
 	</div>
 
 	<p class="mt-8 text-center font-sans text-sm text-resort-dark/50">
-		Room types and availability may vary. Call us for details: Falcon Resort (250) 495-7544
-		&nbsp;|&nbsp; Spanish Fiesta Resort (250) 495-6833
+		Room types and availability may vary. Call us for details:
+		<a href="tel:{falcon.phone.tel}" class="hover:text-resort-dark transition-colors"
+			>Falcon Resort {falcon.phone.display}</a
+		>
+		&nbsp;|&nbsp;
+		<a href="tel:{spanish.phone.tel}" class="hover:text-resort-dark transition-colors"
+			>Spanish Fiesta Resort {spanish.phone.display}</a
+		>
 	</p>
 </section>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { properties, site } from '$lib/config.js';
 </script>
 
 <svelte:head>
@@ -128,15 +129,19 @@
 			Find Us
 		</p>
 		<h2 class="font-serif text-3xl font-bold text-resort-dark">Right on Main Street.</h2>
-		<p class="mt-2 font-sans text-resort-dark/60">
-			Spanish Fiesta Resort: 7104 Main St &nbsp;|&nbsp; Falcon Resort: 7106 Main St &nbsp;&mdash;&nbsp;
-			Osoyoos, BC
-		</p>
+		<div class="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-1">
+			{#each [properties.spanish, properties.falcon] as p}
+				<p class="font-sans text-sm text-resort-dark/60">
+					<span class="font-medium text-resort-dark">{p.name}:</span>
+					{p.address.street}, {p.address.city}, {p.address.province}
+				</p>
+			{/each}
+		</div>
 	</div>
 	<div class="overflow-hidden rounded-sm border border-resort-sand/30">
 		<iframe
 			title="Osoyoos resort location"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.5!2d-119.4677!3d49.0317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548417b56e8d8a1b%3A0x123456789!2s7105+Main+St%2C+Osoyoos%2C+BC!5e0!3m2!1sen!2sca!4v1"
+			src={site.mapEmbedUrl}
 			class="h-96 w-full border-0"
 			allowfullscreen
 			loading="lazy"

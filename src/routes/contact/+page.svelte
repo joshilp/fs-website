@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { properties } from '$lib/config.js';
 </script>
 
 <svelte:head>
@@ -39,15 +40,18 @@
 			<div
 				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
 			>
-				Falcon Resort
+				{properties.falcon.name}
 			</div>
 			<address class="not-italic">
-				<p class="font-sans text-resort-dark/70">7106 Main Street</p>
-				<p class="font-sans text-resort-dark/70">Osoyoos, BC &nbsp;V0H 1V3</p>
+				<p class="font-sans text-resort-dark/70">{properties.falcon.address.street}</p>
+				<p class="font-sans text-resort-dark/70">
+					{properties.falcon.address.city}, {properties.falcon.address.province}&nbsp;&nbsp;{properties
+						.falcon.address.postalCode}
+				</p>
 			</address>
 			<a
-				href="tel:2504957544"
-				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-green transition-colors"
+				href="tel:{properties.falcon.phone.tel}"
+				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark transition-colors hover:text-resort-green"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +67,12 @@
 						d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
 					/>
 				</svg>
-				(250) 495-7544
+				{properties.falcon.phone.display}
 			</a>
-			<Button href="tel:2504957544" class="mt-5 w-full bg-resort-green text-white hover:bg-resort-green/85">
+			<Button
+				href="tel:{properties.falcon.phone.tel}"
+				class="mt-5 w-full bg-resort-green text-white hover:bg-resort-green/85"
+			>
 				Call Falcon Resort
 			</Button>
 		</div>
@@ -75,15 +82,18 @@
 			<div
 				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-brown/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown"
 			>
-				Spanish Fiesta Resort
+				{properties.spanish.name}
 			</div>
 			<address class="not-italic">
-				<p class="font-sans text-resort-dark/70">7104 Main Street</p>
-				<p class="font-sans text-resort-dark/70">Osoyoos, BC &nbsp;V0H 1V3</p>
+				<p class="font-sans text-resort-dark/70">{properties.spanish.address.street}</p>
+				<p class="font-sans text-resort-dark/70">
+					{properties.spanish.address.city}, {properties.spanish.address.province}&nbsp;&nbsp;{properties
+						.spanish.address.postalCode}
+				</p>
 			</address>
 			<a
-				href="tel:2504956833"
-				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark hover:text-resort-brown transition-colors"
+				href="tel:{properties.spanish.phone.tel}"
+				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark transition-colors hover:text-resort-brown"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -99,9 +109,12 @@
 						d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
 					/>
 				</svg>
-				(250) 495-6833
+				{properties.spanish.phone.display}
 			</a>
-			<Button href="tel:2504956833" class="mt-5 w-full bg-resort-brown text-white hover:bg-resort-brown/85">
+			<Button
+				href="tel:{properties.spanish.phone.tel}"
+				class="mt-5 w-full bg-resort-brown text-white hover:bg-resort-brown/85"
+			>
 				Call Spanish Fiesta
 			</Button>
 		</div>

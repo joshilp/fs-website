@@ -9,12 +9,12 @@
 	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
 
 	const photos = [
-		{ src: gallery1, alt: 'Private sandy beach on Osoyoos Lake at Falcon Resort, Osoyoos BC' },
-		{ src: gallery2, alt: 'Heated outdoor pool at Spanish Fiesta Resort, Osoyoos BC' },
-		{ src: gallery3, alt: 'Osoyoos Lake view from the resort grounds, South Okanagan BC' },
-		{ src: gallery4, alt: 'Falcon Resort exterior on Main Street, Osoyoos BC' },
-		{ src: gallery5, alt: 'Guest motel room at Spanish Fiesta Resort, Osoyoos BC' },
-		{ src: gallery6, alt: 'Osoyoos Lake at sunset, viewed from Spanish Fiesta Resort' }
+		{ src: gallery1, alt: 'Sandy beach on Osoyoos Lake with dock and boats, viewed from Falcon Resort' },
+		{ src: gallery2, alt: 'Outdoor pool at Spanish Fiesta Resort with Osoyoos Lake and mountains in the background' },
+		{ src: gallery3, alt: 'Wide view of Osoyoos Lake beach with boats anchored near shore, South Okanagan BC' },
+		{ src: gallery4, alt: 'Spanish Fiesta Resort exterior building with Okanagan mountains behind, Osoyoos BC' },
+		{ src: gallery5, alt: 'Falcon Resort exterior walkway and room doors on a sunny summer day, Osoyoos BC' },
+		{ src: gallery6, alt: 'Panoramic outdoor pool at Falcon Resort, Osoyoos BC' }
 	];
 
 	let lightboxOpen = $state(false);
@@ -76,13 +76,6 @@
 		</p>
 	</div>
 </section>
-
-<!-- Notice -->
-<div class="border-b border-resort-sand/30 bg-resort-sand/15 px-6 py-4 text-center">
-	<p class="font-sans text-sm text-resort-dark/60">
-		Professional photos coming soon — check back shortly for a full look at both properties.
-	</p>
-</div>
 
 <!-- Gallery grid -->
 <section class="mx-auto max-w-6xl px-6 py-16">

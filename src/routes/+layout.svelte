@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { buildSchema, propertyList } from '$lib/config.js';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -20,6 +21,7 @@
 		{ href: '/rooms', label: 'Rooms' },
 		{ href: '/gallery', label: 'Gallery' },
 		{ href: '/location', label: 'Location' },
+		{ href: '/guides', label: 'Area Guide' },
 		{ href: '/contact', label: 'Contact' }
 	];
 
@@ -33,51 +35,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	{@html `<script type="application/ld+json">${JSON.stringify({
-		'@context': 'https://schema.org',
-		'@graph': [
-			{
-				'@type': 'LodgingBusiness',
-				name: 'Falcon Resort',
-				url: 'https://falcon-spanish.com',
-				telephone: '+12504957544',
-				address: {
-					'@type': 'PostalAddress',
-					streetAddress: '7106 Main Street',
-					addressLocality: 'Osoyoos',
-					addressRegion: 'BC',
-					postalCode: 'V0H 1V3',
-					addressCountry: 'CA'
-				},
-				geo: { '@type': 'GeoCoordinates', latitude: 49.0317, longitude: -119.4677 },
-				amenityFeature: [
-					{ '@type': 'LocationFeatureSpecification', name: 'Beach Access', value: true },
-					{ '@type': 'LocationFeatureSpecification', name: 'Outdoor Pool', value: true },
-					{ '@type': 'LocationFeatureSpecification', name: 'Air Conditioning', value: true }
-				]
-			},
-			{
-				'@type': 'LodgingBusiness',
-				name: 'Spanish Fiesta Resort',
-				url: 'https://falcon-spanish.com',
-				telephone: '+12504956833',
-				address: {
-					'@type': 'PostalAddress',
-					streetAddress: '7104 Main Street',
-					addressLocality: 'Osoyoos',
-					addressRegion: 'BC',
-					postalCode: 'V0H 1V3',
-					addressCountry: 'CA'
-				},
-				geo: { '@type': 'GeoCoordinates', latitude: 49.0317, longitude: -119.4677 },
-				amenityFeature: [
-					{ '@type': 'LocationFeatureSpecification', name: 'Beach Access', value: true },
-					{ '@type': 'LocationFeatureSpecification', name: 'Outdoor Pool', value: true },
-					{ '@type': 'LocationFeatureSpecification', name: 'Air Conditioning', value: true }
-				]
-			}
-		]
-	})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify(buildSchema())}</script>`}
 </svelte:head>
 
 <!-- Nav -->
@@ -258,42 +216,52 @@
 				</p>
 			</div>
 
-			<!-- Falcon Resort -->
-			<div>
-				<h3
-					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-				>
-					Falcon Resort
-				</h3>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-					7106 Main Street<br />
-					Osoyoos, BC &nbsp;V0H 1V3<br />
-					<a href="tel:2504957544" class="hover:text-resort-sand transition-colors mt-1 inline-block"
-						>(250) 495-7544</a
+			<!-- Property addresses from config -->
+			{#each propertyList as property}
+				<div>
+					<h3
+						class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
 					>
-				</address>
-			</div>
-
-			<!-- Spanish Fiesta -->
-			<div>
-				<h3
-					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-				>
-					Spanish Fiesta Resort
-				</h3>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-					7104 Main Street<br />
-					Osoyoos, BC &nbsp;V0H 1V3<br />
-					<a href="tel:2504956833" class="hover:text-resort-sand transition-colors mt-1 inline-block"
-						>(250) 495-6833</a
-					>
-				</address>
-			</div>
+						{property.name}
+					</h3>
+					<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+						{property.address.street}<br />
+						{property.address.city}, {property.address.province}&nbsp;&nbsp;{property.address
+							.postalCode}<br />
+						<a
+							href="tel:{property.phone.tel}"
+							class="mt-1 inline-block transition-colors hover:text-resort-sand"
+						>
+							{property.phone.display}
+						</a>
+					</address>
+				</div>
+			{/each}
 		</div>
 
-		<div class="mt-12 border-t border-white/8 pt-6 text-center font-sans text-xs text-white/30">
-			&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos, BC,
-			Canada
+		<!-- Quick links -->
+		<div class="mt-10 border-t border-white/8 pt-8">
+			<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+				{#each [
+					{ href: '/rooms', label: 'Rooms' },
+					{ href: '/gallery', label: 'Gallery' },
+					{ href: '/location', label: 'Location' },
+					{ href: '/guides', label: 'Area Guide' },
+					{ href: '/faq', label: 'FAQ' },
+					{ href: '/contact', label: 'Contact' }
+				] as link}
+					<a
+						href={link.href}
+						class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+					>
+						{link.label}
+					</a>
+				{/each}
+			</nav>
+			<p class="mt-6 text-center font-sans text-xs text-white/25">
+				&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
+				BC, Canada
+			</p>
 		</div>
 	</div>
 </footer>

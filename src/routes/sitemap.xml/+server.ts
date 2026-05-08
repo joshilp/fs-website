@@ -1,4 +1,5 @@
 import type { RequestHandler } from './$types';
+import { guides } from '$lib/data/guides.js';
 
 export const prerender = true;
 
@@ -10,7 +11,15 @@ export const GET: RequestHandler = () => {
 		{ path: '/rooms', priority: '0.9', changefreq: 'monthly' },
 		{ path: '/gallery', priority: '0.7', changefreq: 'monthly' },
 		{ path: '/location', priority: '0.8', changefreq: 'monthly' },
-		{ path: '/contact', priority: '0.9', changefreq: 'monthly' }
+		{ path: '/guides', priority: '0.8', changefreq: 'weekly' },
+		{ path: '/faq', priority: '0.7', changefreq: 'monthly' },
+		{ path: '/contact', priority: '0.9', changefreq: 'monthly' },
+		// Guide articles — auto-populated from guides.ts
+		...guides.map((g) => ({
+			path: `/guides/${g.slug}`,
+			priority: '0.7',
+			changefreq: 'monthly'
+		}))
 	];
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>

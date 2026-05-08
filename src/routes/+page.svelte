@@ -2,10 +2,13 @@
 	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
 	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
 	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
+	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
+	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
+	import { properties, site } from '$lib/config.js';
 
-	const teaserPhotos = [gallery1, gallery2, gallery3];
+	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
 	const amenities = [
 		{ label: 'Private Sandy Beach', sub: 'Walk 500 ft — still touch the bottom', icon: Waves },
@@ -74,13 +77,13 @@
 
 		<!-- Phone numbers -->
 		<div class="mt-8 flex flex-wrap justify-center gap-6 font-sans text-sm text-white/60">
-			<a href="tel:2504957544" class="hover:text-white transition-colors"
-				>Falcon: (250) 495-7544</a
-			>
+			<a href="tel:{properties.falcon.phone.tel}" class="transition-colors hover:text-white">
+				Falcon: {properties.falcon.phone.display}
+			</a>
 			<span class="text-white/30">·</span>
-			<a href="tel:2504956833" class="hover:text-white transition-colors"
-				>Spanish Fiesta: (250) 495-6833</a
-			>
+			<a href="tel:{properties.spanish.phone.tel}" class="transition-colors hover:text-white">
+				Spanish Fiesta: {properties.spanish.phone.display}
+			</a>
 		</div>
 	</div>
 
@@ -239,7 +242,7 @@
 		<div class="order-2 md:order-1 overflow-hidden rounded-sm border border-resort-sand/20">
 			<iframe
 				title="Osoyoos resort location map"
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.5!2d-119.4677!3d49.0317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548417b56e8d8a1b%3A0x123456789!2s7105+Main+St%2C+Osoyoos%2C+BC!5e0!3m2!1sen!2sca!4v1"
+				src={site.mapEmbedUrl}
 				class="h-72 w-full border-0 md:h-80"
 				allowfullscreen
 				loading="lazy"
@@ -257,6 +260,14 @@
 				Steps from the beach, the marina, and Main Street restaurants. Osoyoos is the gateway to the
 				South Okanagan wine region — with over 200 days of sunshine a year.
 			</p>
+			<div class="mt-5 space-y-1">
+				{#each [properties.falcon, properties.spanish] as p}
+					<p class="font-sans text-sm text-resort-dark/60">
+						<span class="font-semibold text-resort-dark">{p.name}:</span>
+						{p.address.street}, {p.address.city}, {p.address.province}
+					</p>
+				{/each}
+			</div>
 			<Button
 				href="/location"
 				variant="link"
