@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { properties } from '$lib/config.js';
+	import { properties, propertyList } from '$lib/config.js';
+	import BookingLinks from '$lib/components/BookingLinks.svelte';
+
+	const hasAnyOta = $derived(
+		propertyList.some((p) => p.booking.bookingCom || p.booking.expedia)
+	);
 </script>
 
 <svelte:head>
@@ -129,17 +134,30 @@
 		available room across both properties.
 	</div>
 
-	<!-- Online booking placeholder -->
-	<div class="mt-12 rounded-sm border border-resort-sand/40 bg-resort-sand/10 p-8 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
-			Online Booking
-		</p>
-		<h2 class="font-serif text-2xl font-bold text-resort-dark">Book online</h2>
-		<p class="mt-3 font-sans text-resort-dark/60">
-			Online booking is coming soon. For now, please call either property directly to make a
-			reservation.
-		</p>
-	</div>
+	<!-- Online booking -->
+	{#if hasAnyOta}
+		<div class="mt-12 rounded-2xl border border-resort-sand/40 bg-resort-sand/10 p-8">
+			<p class="mb-2 text-center font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+				Book Online
+			</p>
+			<h2 class="mb-6 text-center font-serif text-2xl font-bold text-resort-dark">
+				Prefer to book online?
+			</h2>
+			<div class="grid gap-6 md:grid-cols-2">
+				{#each propertyList as property}
+					{#if property.booking.bookingCom || property.booking.expedia}
+						<div>
+							<p class="mb-3 font-sans text-sm font-semibold text-resort-dark">{property.name}</p>
+							<BookingLinks {property} />
+						</div>
+					{/if}
+				{/each}
+			</div>
+			<p class="mt-6 text-center font-sans text-xs text-resort-dark/45">
+				You'll be taken to the OTA's website to complete your booking. Prices may vary by platform.
+			</p>
+		</div>
+	{/if}
 </section>
 
 <!-- Hours note -->

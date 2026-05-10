@@ -1,35 +1,18 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { properties } from '$lib/config.js';
-
-	const { falcon, spanish } = properties;
+	import { rooms, propertyList } from '$lib/config.js';
+	import BookingLinks from '$lib/components/BookingLinks.svelte';
 	import {
 		Card,
 		CardContent,
 		CardDescription,
-		CardFooter,
 		CardHeader,
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
 
-	const rooms = [
-		{
-			name: 'Standard Room',
-			desc: 'A comfortable, well-appointed room with two queen beds, air conditioning, and all the essentials for a great stay.',
-			features: ['2 Queen Beds', 'Air Conditioning', 'Private Bathroom', 'Mini Fridge', 'TV']
-		},
-		{
-			name: 'Studio Suite',
-			desc: 'A spacious room with a kitchenette area — ideal for longer stays or families who want the convenience of cooking.',
-			features: ['Queen Bed', 'Kitchenette', 'Air Conditioning', 'Sitting Area', 'TV']
-		},
-		{
-			name: 'Family Room',
-			desc: 'Extra space for the whole family, with multiple beds and easy access to the pools and beach area.',
-			features: ['Multiple Beds', 'Air Conditioning', 'Private Bathroom', 'Beach Views', 'TV']
-		}
-	];
+	const hasAnyOta = $derived(
+		propertyList.some((p) => p.booking.bookingCom || p.booking.expedia)
+	);
 
 	const amenities = [
 		{
@@ -117,7 +100,7 @@
 				</div>
 				<CardHeader class="pb-2">
 					<CardTitle class="font-serif text-xl text-resort-dark">{room.name}</CardTitle>
-					<CardDescription class="font-sans text-resort-dark/65">{room.desc}</CardDescription>
+					<CardDescription class="font-sans text-resort-dark/65">{room.description}</CardDescription>
 				</CardHeader>
 				<CardContent class="flex-1">
 					<div class="flex flex-wrap gap-1.5">
@@ -131,27 +114,12 @@
 						{/each}
 					</div>
 				</CardContent>
-				<CardFooter>
-					<Button
-						href="/contact"
-						class="w-full bg-resort-brown text-white hover:bg-resort-brown/85"
-					>
-						Book This Room
-					</Button>
-				</CardFooter>
 			</Card>
 		{/each}
 	</div>
 
 	<p class="mt-8 text-center font-sans text-sm text-resort-dark/50">
-		Room types and availability may vary. Call us for details:
-		<a href="tel:{falcon.phone.tel}" class="hover:text-resort-dark transition-colors"
-			>Falcon Resort {falcon.phone.display}</a
-		>
-		&nbsp;|&nbsp;
-		<a href="tel:{spanish.phone.tel}" class="hover:text-resort-dark transition-colors"
-			>Spanish Fiesta Resort {spanish.phone.display}</a
-		>
+		Room types and availability may vary between properties — call us and we'll find the right fit.
 	</p>
 </section>
 
@@ -181,19 +149,48 @@
 	</div>
 </section>
 
-<!-- CTA -->
-<section class="py-16 text-center">
-	<div class="mx-auto max-w-xl px-6">
-		<h2 class="font-serif text-3xl font-bold text-resort-dark">Ready to reserve?</h2>
-		<p class="mt-3 font-sans text-resort-dark/65">
-			Call or book online — we're happy to help find the right room for your group.
-		</p>
-		<Button
-			href="/contact"
-			size="lg"
-			class="mt-6 bg-resort-brown px-8 text-white hover:bg-resort-brown/85"
-		>
-			Book Now
-		</Button>
+<!-- Booking section -->
+<section class="border-t border-resort-sand/30 py-16">
+	<div class="mx-auto max-w-4xl px-6">
+		<div class="mb-10 text-center">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+				Book Your Stay
+			</p>
+			<h2 class="font-serif text-4xl font-bold text-resort-dark">Ready to reserve?</h2>
+			<p class="mx-auto mt-3 max-w-xl font-sans text-resort-dark/65">
+				Call us directly and we'll find you the best available room across both properties — or book
+				online through your preferred platform.
+			</p>
+		</div>
+
+		<div class="grid gap-6 md:grid-cols-2">
+			{#each propertyList as property}
+				<div class="rounded-2xl border border-resort-sand/40 bg-white p-6">
+					<p class="mb-1 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+						{property.name}
+					</p>
+					<a
+						href="tel:{property.phone.tel}"
+						class="font-serif text-2xl font-bold text-resort-dark transition-colors hover:text-resort-brown"
+					>
+						{property.phone.display}
+					</a>
+					<p class="mt-1 font-sans text-sm text-resort-dark/50">{property.address.full}</p>
+
+					{#if property.booking.bookingCom || property.booking.expedia}
+						<div class="mt-4 border-t border-resort-sand/30 pt-4">
+							<p class="mb-3 font-sans text-xs font-semibold text-resort-dark/50">Book online:</p>
+							<BookingLinks {property} />
+						</div>
+					{/if}
+				</div>
+			{/each}
+		</div>
+
+		{#if !hasAnyOta}
+			<p class="mt-6 text-center font-sans text-sm text-resort-dark/45">
+				Online booking via Booking.com and Expedia coming soon. Call to reserve.
+			</p>
+		{/if}
 	</div>
 </section>

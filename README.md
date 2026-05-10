@@ -63,6 +63,35 @@ When Google Business Profile is verified, update `site.mapEmbedUrl` in `config.t
 
 ---
 
+## Adding OTA Booking Links (Booking.com / Expedia)
+
+OTA links are configured in **`src/lib/config.ts`** inside the `booking` object for each property. Once you have your listing URLs, paste them in:
+
+```ts
+// In properties.falcon:
+booking: {
+  bookingCom: 'https://www.booking.com/hotel/ca/YOUR-SLUG.html',
+  expedia: 'https://www.expedia.ca/Osoyoos-Hotels-YOUR-SLUG.h12345678.Hotel-Information'
+}
+
+// In properties.spanish:
+booking: {
+  bookingCom: 'https://www.booking.com/hotel/ca/YOUR-SLUG.html',
+  expedia: 'https://www.expedia.ca/Osoyoos-Hotels-YOUR-SLUG.h12345678.Hotel-Information'
+}
+```
+
+**Where to find the URLs:**
+
+- **Booking.com** — Log into the Extranet → click your property name → click "View on Booking.com" → copy the URL from your browser.
+- **Expedia** — Log into Partner Central → Properties → find your listing → click "View listing" → copy the URL.
+
+**How it works:** Buttons for Booking.com and Expedia appear automatically on the Rooms and Contact pages as soon as a URL is set. Leave a field as an empty string `''` and that button stays hidden. Each property's buttons are shown independently, so you can add Falcon's links before Spanish Fiesta's (or vice versa).
+
+**Future room-level links:** The `Room` interface in `config.ts` has a `bookingUrl` field on each room. Leave it empty for now. When you have your own booking engine, populate it and the room cards will link directly to that room's booking page instead of the general contact/OTA path.
+
+---
+
 ## Adding a New FAQ Question
 
 Open **`src/lib/data/faq.ts`** and add an object to the `faq` array:
