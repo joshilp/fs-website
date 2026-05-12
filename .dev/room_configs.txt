@@ -1,0 +1,28 @@
+Both motels (Falcon and Spanish Fiesta) have similar types. operators use letter for their rooms types, but on OTA's they defined a few of them, such as Family Room, but it's a bit of a mess. so maybe the config can use the letters A, B, C, D as the types then it's easy to adjust from there.
+
+Falcon:
+A - 1 Queen + 2 Doubles or 2 Queen + Hide-A-Bed (basically 3 beds)
+B - 2 Double + Kitchen
+C - 1 Queen + Kitchen
+D - 1 Queen + 1 Double (bedroom door can shut to make it 1 Queen)
+
+1 Pool (Spanish Fiesta users can use this too)
+Beach
+BBQ's
+
+Booking.com - https://www.booking.com/hotel/ca/falcon-resort.html
+Expedia - https://www.expedia.ca/Osoyoos-Hotels-Falcon-Resort.h9064558.Hotel-Information
+
+Spanish Fiesta:
+A - 2 Queen + Hide-A-Bed (basically 3 beds)
+B - 2 Queen + Kitchen
+C - 1 Queen + Kitchen
+D - 2 Queen
+
+1 Pool (Falcon users can use this too.)
+1 Hot-Tub (Falcon users can use this too.)
+Beach
+BBQ's
+
+Booking.com - https://www.booking.com/hotel/ca/spanish-fiesta-resort.html
+Expedia - https://www.expedia.ca/Osoyoos-Hotels-Spanish-Fiesta-Resort.h9064480.Hotel-Information
