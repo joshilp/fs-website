@@ -51,7 +51,7 @@
 	<div
 		class="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-24 text-center text-white"
 	>
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-resort-sand">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-sand">
 			Osoyoos, British Columbia
 		</p>
 		<h1 class="font-serif text-6xl font-bold leading-[1.05] md:text-8xl">Falcon Resort</h1>
@@ -141,7 +141,7 @@
 <section class="mx-auto max-w-6xl px-6 py-24">
 	<div class="grid items-center gap-14 md:grid-cols-2">
 		<div>
-			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-stone">
+			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
 				About Falcon Resort
 			</p>
 			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
@@ -187,10 +187,10 @@
 </section>
 
 <!-- Rooms -->
-<section class="bg-resort-dark/4 py-20">
+<section class="bg-resort-sand/15 py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-12 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
 				Accommodations
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Find your room.</h2>
@@ -224,7 +224,7 @@
 		<Button
 			href="/falcon/rooms"
 			variant="link"
-			class="h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-brown"
+			class="h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-stone/70"
 		>
 			View all rooms & amenities →
 		</Button>
@@ -237,7 +237,7 @@
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-10 flex items-end justify-between">
 			<div>
-				<p class="mb-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-stone">
+				<p class="mb-2 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
 					Gallery
 				</p>
 				<h2 class="font-serif text-4xl font-bold text-resort-dark">See for yourself.</h2>
@@ -245,7 +245,7 @@
 			<Button
 				href="/gallery"
 				variant="link"
-				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-brown md:inline-flex"
+				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-stone/70 md:inline-flex"
 			>
 				View all photos →
 			</Button>
@@ -281,7 +281,7 @@
 <!-- Book CTA -->
 <section class="bg-resort-dark py-20 text-white">
 	<div class="mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
 			Reservations
 		</p>
 		<h2 class="font-serif text-5xl font-bold">Ready to book?</h2>

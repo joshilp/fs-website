@@ -57,7 +57,7 @@
 		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-resort-sand">
 			Osoyoos, British Columbia
 		</p>
-		<h1 class="font-serif text-5xl font-bold leading-[1.05] md:text-7xl">
+		<h1 class="font-serif text-5xl font-bold italic leading-[1.05] md:text-7xl">
 			Spanish Fiesta Resort
 		</h1>
 		<span class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-sans text-xs font-medium tracking-wide text-white/75 backdrop-blur-sm">
@@ -150,7 +150,7 @@
 				About Spanish Fiesta Resort
 			</p>
 			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
-				Warmth, water,<br />and Osoyoos sunshine.
+				Warmth, water,<br /><em>and Osoyoos sunshine.</em>
 			</h2>
 			<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
 				Spanish Fiesta Resort is a lakeside motel in the heart of Osoyoos, BC — right on Main
@@ -192,13 +192,13 @@
 </section>
 
 <!-- Rooms -->
-<section class="bg-resort-dark/4 py-20">
+<section class="bg-resort-base py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-12 text-center">
 			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 				Accommodations
 			</p>
-			<h2 class="font-serif text-4xl font-bold text-resort-dark">Find your room.</h2>
+			<h2 class="font-serif text-4xl font-bold text-resort-dark">Find your <em>room.</em></h2>
 			<p class="mx-auto mt-3 max-w-xl font-sans text-resort-dark/65">
 				Clean, comfortable, and air-conditioned. Every room is steps from the pool and beach.
 			</p>
@@ -229,7 +229,7 @@
 		<Button
 			href="/spanish/rooms"
 			variant="link"
-			class="h-auto p-0 font-sans text-sm font-semibold text-resort-red hover:text-resort-green"
+			class="h-auto p-0 font-sans text-sm font-semibold text-resort-red hover:text-resort-red/70"
 		>
 			View all rooms & amenities →
 		</Button>
@@ -250,7 +250,7 @@
 			<Button
 				href="/gallery"
 				variant="link"
-				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-red hover:text-resort-green md:inline-flex"
+				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-red hover:text-resort-red/70 md:inline-flex"
 			>
 				View all photos →
 			</Button>
@@ -284,19 +284,19 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-dark py-20 text-white">
+<section class="bg-resort-red py-20 text-white">
 	<div class="mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
 			Reservations
 		</p>
-		<h2 class="font-serif text-5xl font-bold">Ready to book?</h2>
-		<p class="mt-5 font-sans text-lg text-white/70">
+		<h2 class="font-serif text-5xl font-bold italic">Ready to book?</h2>
+		<p class="mt-5 font-sans text-lg text-white/80">
 			Call us — we'll confirm your dates and room in under 2 minutes.
 		</p>
 
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-red px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-white px-10 font-sans text-lg font-bold text-resort-red shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +316,7 @@
 			{p.phone.display}
 		</a>
 
-		<p class="mt-8 font-sans text-sm text-white/40">
+		<p class="mt-8 font-sans text-sm text-white/60">
 			{p.address.full}
 		</p>
 	</div>
