@@ -59,7 +59,10 @@ All property information (addresses, phone numbers, geo coordinates) lives in on
 
 Edit it there and the change flows through to the nav, footer, contact page, location page, schema markup, and anywhere else it is used. Do not update phone numbers or addresses in individual page files.
 
-When Google Business Profile is verified, update `site.mapEmbedUrl` in `config.ts` with the proper embed URL that shows both property pins.
+When Google Business Profile is verified, update the following in `config.ts`:
+- `properties.falcon.mapEmbedUrl` — embed URL from Falcon's verified GBP listing
+- `properties.spanish.mapEmbedUrl` — embed URL from Spanish Fiesta's verified GBP listing
+- `site.mapEmbedUrl` — a zoomed-out embed showing both property pins simultaneously
 
 ---
 

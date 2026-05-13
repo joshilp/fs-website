@@ -14,9 +14,10 @@ read as a family — same typefaces, same layout structure, shared accent colour
 anyone who sees both brands immediately knows they're connected.
 
 ### Falcon Resort
-Dark, sophisticated, nature-driven. The falcon is iconic and local to the Okanagan. Colour
-direction: deep navy or charcoal with warm gold. The existing red trim on the building is
-background noise — a navy/gold brand makes it irrelevant.
+Grounded, natural, earthy. The falcon is iconic and local to the Okanagan. Colour direction:
+warm earth tones — desert tans, brown-greys, sandstone. Think dry Okanagan hillsides, driftwood,
+natural timber. The existing red trim on the building is background noise — an earth-tone brand
+makes it irrelevant. Warm gold as the accent ties it to the landscape.
 
 ### Spanish Fiesta Resort
 Warm, refined, Mediterranean-feeling. Osoyoos is the closest thing Canada has to a Mediterranean
@@ -37,11 +38,16 @@ Think Sonoma winery, not carnival.
 ### Falcon Resort
 | Name | Hex | Use |
 |---|---|---|
-| Deep Navy | `#1E2D3D` | Property name text, dark backgrounds, primary |
-| Warm Gold | `#C49A3C` | Falcon icon, "RESORT" word, accent |
-| Sky Slate | `#5B8FA6` | Optional secondary — sky/lake reference |
+| Desert Stone | `#9B7A52` | Primary — property name text, accents, buttons |
+| Dark Earth | `#3D2B1F` | Dark backgrounds, footer |
+| Warm Sand | `#E8D5B7` | Light backgrounds, section tints |
+| Warm Gold | `#C49A3C` | Falcon icon accent, "RESORT" word |
 | Warm Cream | `#FAF6EE` | Light backgrounds |
 | White | `#FFFFFF` | Text on dark backgrounds |
+
+> The website currently uses `#9B7A52` (Desert Stone) as the primary Falcon accent. The logo
+> designer should work within this earth-tone direction. Gold is the secondary accent shared
+> with Spanish Fiesta.
 
 ### Spanish Fiesta Resort
 | Name | Hex | Use |
@@ -247,8 +253,9 @@ Hand this section to a designer along with this document.
 Two distinct but visually related logos. Each property has its own identity, but they should
 read as a family (same typeface, same layout structure, shared gold accent colour).
 
-**Falcon Resort:** A clean, sophisticated falcon (or bird of prey) mark. Flat silhouette,
-single colour. Deep navy primary `#1E2D3D`, warm gold accent `#C49A3C`.
+**Falcon Resort:** A clean, grounded falcon (or bird of prey) mark. Flat silhouette,
+single colour. Earth-tone primary `#9B7A52` (desert stone / warm tan), warm gold accent `#C49A3C`.
+Direction: natural, earthy, Okanagan landscape — not corporate navy.
 
 **Spanish Fiesta Resort:** A flamenco-inspired mark — rose, fan, or dancer silhouette.
 Clean, graphic, refined — not cartoonish. Deep terracotta primary `#8B3A2A`, same gold
