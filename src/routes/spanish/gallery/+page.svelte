@@ -85,6 +85,8 @@
 					<img
 						src={photo.url}
 						alt={photo.alt}
+						width="475"
+						height="350"
 						class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
 						loading="lazy"
 						decoding="async"

@@ -1,4 +1,4 @@
-<script lang="ts">
+﻿<script lang="ts">
 	// ?enhanced imports — used only in the lightbox (static direct references required)
 	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
 	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
@@ -98,6 +98,8 @@
 					<img
 						src={photo.url}
 						alt={photo.alt}
+						width="475"
+						height="350"
 						class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
 						loading="lazy"
 						decoding="async"

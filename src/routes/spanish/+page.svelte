@@ -1,9 +1,9 @@
 <script lang="ts">
-	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
-	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
-	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
-	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
-	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
+	import url1 from '$lib/assets/images/gallery-1.jpg';
+	import url2 from '$lib/assets/images/gallery-2.jpg';
+	import url3 from '$lib/assets/images/gallery-3.jpg';
+	import url4 from '$lib/assets/images/gallery-4.jpg';
+	import url5 from '$lib/assets/images/gallery-5.jpg';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
@@ -11,7 +11,7 @@
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
 
 	const p = properties.spanish;
-	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
+	const teaserPhotos = [url1, url2, url3, url4, url5];
 
 	const highlights = [
 		{ label: 'Private Sandy Beach', sub: 'Steps from your door', icon: Waves },
@@ -260,10 +260,14 @@
 						? 'col-span-2 row-span-2 md:col-span-1'
 						: ''}"
 				>
-					<enhanced:img
+					<img
 						{src}
 						alt="Spanish Fiesta Resort, Osoyoos BC"
+						width="475"
+						height="350"
 						class="h-full min-h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+						loading="lazy"
+						decoding="async"
 					/>
 					<div
 						class="absolute inset-0 bg-resort-dark/0 transition-colors duration-300 group-hover:bg-resort-dark/15"
