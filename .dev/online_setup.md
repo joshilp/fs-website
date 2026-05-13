@@ -13,6 +13,33 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 ---
 
+## PHASE 1b — Dry Run on a Test Domain (Do This First)
+
+> Run the full setup on a personal domain you already own on Porkbun before touching
+> `falcon-spanish.com`. This lets you iron out any issues with zero risk — Tera-Byte keeps
+> running untouched until you're ready.
+
+- [ ] Pick a spare domain from your Porkbun account to use as the test domain
+- [ ] Complete Phases 2–5 using the test domain instead of `falcon-spanish.com`
+- [ ] Verify everything works end-to-end:
+  - Website deploys and loads on the test domain
+  - Email sends and receives on the test domain
+  - mail-tester.com scores 9+/10
+  - SPF, DKIM, DMARC all passing
+- [ ] Once confirmed, proceed to Phase 6 to bring `falcon-spanish.com` into the same setup
+
+### Switching from test domain to falcon-spanish.com (after dry run):
+
+- [ ] Transfer `falcon-spanish.com` to Porkbun (Phase 6)
+- [ ] Add `falcon-spanish.com` to Cloudflare — copy the exact DNS records from the test domain
+- [ ] In Google Workspace Admin: Domains → Add a domain → add `falcon-spanish.com` as primary
+- [ ] `j@falcon-spanish.com` becomes your primary inbox — test domain address can be kept as alias or abandoned
+- [ ] Update Cloudflare Pages custom domain from test domain to `falcon-spanish.com`
+- [ ] Verify site loads and email works on `falcon-spanish.com`
+- [ ] Then cancel Tera-Byte (Phase 7)
+
+---
+
 ## PHASE 2 — DNS & Hosting (Do Together)
 
 ### 2a — Cloudflare
@@ -45,34 +72,53 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 ---
 
-## PHASE 3 — Email Migration (Google Workspace)
+## PHASE 3 — Email Setup (Free Stack)
 
-> **Why Google Workspace:** One Google account covers email, GBP, Search Console, Google
-> Analytics, and Google Maps management. No juggling separate logins. $7.20 CAD/user/month
-> for one user = ~$86/year.
+> **Setup:** Cloudflare Email Routing receives all `@falcon-spanish.com` email and forwards to
+> Gmail. Gmail Send As lets you reply from `j@falcon-spanish.com` inside Gmail. Total cost: $0.
 >
-> **Before signing up:** You already have `falcon.spanish.resorts@gmail.com`. Use that as the
-> Google account you sign up with — it becomes the Workspace admin account. Your actual working
-> inbox will be `j@falcon-spanish.com` inside that Workspace. One Google login for everything.
+> **Accounts:**
+> - `fsosoyoos@gmail.com` — your main working Gmail inbox. OTAs, vendors, and internal use.
+> - `j@falcon-spanish.com` — customer-facing address, forwards to Gmail via Cloudflare routing.
+>
+> **If you later hire staff and need separate inboxes per person**, upgrade to Google Workspace
+> at that point. The switch takes ~30 minutes of DNS changes and everything else stays the same.
 
-- [ ] Sign up at [workspace.google.com](https://workspace.google.com) → Business Starter plan
-- [ ] Add domain `falcon-spanish.com` during signup
-- [ ] Google gives a TXT record to verify domain ownership — add it in Cloudflare DNS
-- [ ] Complete domain verification in Google Workspace admin console
-- [ ] Delete old Tera-Byte MX records from Cloudflare DNS
-- [ ] Add Google Workspace MX records (Google provides these — 5 records with priorities)
-- [ ] Add SPF TXT record: `v=spf1 include:_spf.google.com ~all`
-- [ ] Add DKIM TXT record — in Google Admin: Apps → Gmail → Authenticate email → generate key → add in Cloudflare
+### 3a — Cloudflare Email Routing
+
+- [ ] In Cloudflare dashboard: Email → Email Routing → Enable
+- [ ] Add routing rule: `j@falcon-spanish.com` → `fsosoyoos@gmail.com`
+- [ ] Add a catch-all rule: any other `@falcon-spanish.com` address → `fsosoyoos@gmail.com`
+- [ ] Cloudflare adds the required MX records automatically — delete old Tera-Byte MX records if they weren't replaced
+- [ ] Send a test email to `j@falcon-spanish.com` — confirm it arrives in Gmail
+
+### 3b — Gmail Send As (reply from j@falcon-spanish.com)
+
+- [ ] In Gmail (`fsosoyoos@gmail.com`): Settings → See all settings → Accounts → Send mail as
+- [ ] Click "Add another email address"
+- [ ] Enter name and `j@falcon-spanish.com`
+- [ ] Gmail sends a verification email to `j@falcon-spanish.com` — it arrives in Gmail via the routing you just set up
+- [ ] Click the verification link
+- [ ] Set `j@falcon-spanish.com` as the default send address
+- [ ] Test by sending an email — recipient should see it from `j@falcon-spanish.com`
+
+### 3c — Migrate old email from Tera-Byte
+
+- [ ] In Gmail: Settings → See all settings → Accounts → Check mail from other accounts → Add a mail account
+- [ ] Enter `j@falcon-spanish.com` with Tera-Byte IMAP credentials
+- [ ] Gmail imports all old mail into your inbox
+- [ ] Verify old emails came through
+
+### 3d — SPF / DKIM / DMARC
+
+- [ ] Add SPF TXT record in Cloudflare DNS:
+  `v=spf1 include:_spf.google.com ~all`
 - [ ] Add DMARC TXT record — Host: `_dmarc`, Value: `v=DMARC1; p=none;`
-- [ ] Sign into Gmail with `j@falcon-spanish.com` — confirm email is receiving
-- [ ] Test sending — confirm it arrives and doesn't land in spam
 - [ ] Run [mail-tester.com](https://www.mail-tester.com) — aim for 9+/10
-- [ ] Migrate old email: in Gmail → Settings → See all settings → Accounts → Import mail and contacts → use Tera-Byte IMAP credentials
-- [ ] Verify all old mail came through (inbox, sent, folders)
 
 ### After email is working:
 
-- [ ] Use this same Google account for GBP, Search Console, and Analytics — one login for everything
+- [ ] Use `fsosoyoos@gmail.com` for GBP, Search Console, and Analytics — one Google login for all business tools
 
 ---
 
@@ -127,7 +173,7 @@ Do this last — everything else must be working first.
 Only after all of the following are confirmed:
 
 - [ ] Website live on Cloudflare Pages
-- [ ] Email working on Google Workspace (send, receive, spam tests passed)
+- [ ] Email working via Cloudflare Routing + Gmail Send As (send, receive, spam tests passed)
 - [ ] Old email migrated and verified in Gmail
 - [ ] Domain transferred to Porkbun
 - [ ] Local email backup confirmed in Thunderbird
@@ -159,8 +205,14 @@ Cloudflare
 Cloudflare Pages
 └── website hosting (free, auto-deploys from GitHub)
 
-Google Workspace (Business Starter)
-└── email (j@falcon-spanish.com) + GBP + Search Console + Analytics (~$7.20 CAD/mo)
+Gmail (fsosoyoos@gmail.com)
+└── working inbox + GBP + Search Console + Analytics (free)
+
+Cloudflare Email Routing
+└── receives j@falcon-spanish.com → forwards to Gmail (free)
+
+Gmail Send As
+└── reply from j@falcon-spanish.com inside Gmail (free)
 ```
 
 ---
