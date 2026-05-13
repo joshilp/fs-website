@@ -37,7 +37,7 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 - [ ] Build settings:
   - Framework preset: **SvelteKit**
   - Build command: `npm run build`
-  - Output directory: `.svelte-kit/cloudflare` *(or `build` — confirm with first deploy)*
+  - Output directory: `build`
 - [ ] Deploy and confirm the preview URL works
 - [ ] Add custom domain `falcon-spanish.com` in Cloudflare Pages settings
 - [ ] Cloudflare handles SSL automatically — no extra steps needed
@@ -45,21 +45,34 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 ---
 
-## PHASE 3 — Email Migration (Zoho)
+## PHASE 3 — Email Migration (Google Workspace)
 
-- [ ] Go to [zoho.com/mail](https://www.zoho.com/mail/) → choose **Free Forever Plan**
-- [ ] Add domain `falcon-spanish.com`
-- [ ] Add Zoho's TXT verification record in Cloudflare DNS → verify domain in Zoho
+> **Why Google Workspace:** One Google account covers email, GBP, Search Console, Google
+> Analytics, and Google Maps management. No juggling separate logins. $7.20 CAD/user/month
+> for one user = ~$86/year.
+>
+> **Before signing up:** You already have `falcon.spanish.resorts@gmail.com`. Use that as the
+> Google account you sign up with — it becomes the Workspace admin account. Your actual working
+> inbox will be `j@falcon-spanish.com` inside that Workspace. One Google login for everything.
+
+- [ ] Sign up at [workspace.google.com](https://workspace.google.com) → Business Starter plan
+- [ ] Add domain `falcon-spanish.com` during signup
+- [ ] Google gives a TXT record to verify domain ownership — add it in Cloudflare DNS
+- [ ] Complete domain verification in Google Workspace admin console
 - [ ] Delete old Tera-Byte MX records from Cloudflare DNS
-- [ ] Add Zoho MX records (`mx.zoho.com`, `mx2.zoho.com`, `mx3.zoho.com`)
-- [ ] Add SPF TXT record: `v=spf1 include:zoho.com ~all`
-- [ ] Add DKIM TXT record (Zoho provides selector + key)
+- [ ] Add Google Workspace MX records (Google provides these — 5 records with priorities)
+- [ ] Add SPF TXT record: `v=spf1 include:_spf.google.com ~all`
+- [ ] Add DKIM TXT record — in Google Admin: Apps → Gmail → Authenticate email → generate key → add in Cloudflare
 - [ ] Add DMARC TXT record — Host: `_dmarc`, Value: `v=DMARC1; p=none;`
-- [ ] Test receiving and sending email
-- [ ] Test delivery to Gmail (check it doesn't land in spam)
+- [ ] Sign into Gmail with `j@falcon-spanish.com` — confirm email is receiving
+- [ ] Test sending — confirm it arrives and doesn't land in spam
 - [ ] Run [mail-tester.com](https://www.mail-tester.com) — aim for 9+/10
-- [ ] In Zoho: Settings → Migration → IMAP Migration → import old mail from Tera-Byte
-- [ ] Verify all folders, sent mail, and attachments came through
+- [ ] Migrate old email: in Gmail → Settings → See all settings → Accounts → Import mail and contacts → use Tera-Byte IMAP credentials
+- [ ] Verify all old mail came through (inbox, sent, folders)
+
+### After email is working:
+
+- [ ] Use this same Google account for GBP, Search Console, and Analytics — one login for everything
 
 ---
 
@@ -114,8 +127,8 @@ Do this last — everything else must be working first.
 Only after all of the following are confirmed:
 
 - [ ] Website live on Cloudflare Pages
-- [ ] Email working on Zoho (send, receive, spam tests passed)
-- [ ] Old email migrated and verified in Zoho
+- [ ] Email working on Google Workspace (send, receive, spam tests passed)
+- [ ] Old email migrated and verified in Gmail
 - [ ] Domain transferred to Porkbun
 - [ ] Local email backup confirmed in Thunderbird
 
@@ -146,8 +159,8 @@ Cloudflare
 Cloudflare Pages
 └── website hosting (free, auto-deploys from GitHub)
 
-Zoho Mail
-└── email hosting (free plan: 5 users, 5GB)
+Google Workspace (Business Starter)
+└── email (j@falcon-spanish.com) + GBP + Search Console + Analytics (~$7.20 CAD/mo)
 ```
 
 ---
