@@ -55,8 +55,11 @@ Canada
 
 ### Website
 ```
-https://falcon-spanish.com
+https://falcon-spanish.com/falcon
 ```
+> Link directly to the Falcon property page — not the homepage. This ensures guests arriving from
+> Google Maps land on Falcon-specific content and CTAs, not the shared homepage where they could
+> accidentally book the other property.
 
 ### Business Hours
 Set your seasonal operating hours accurately. If you close for winter (e.g. Oct–April), use
@@ -139,8 +142,10 @@ Canada
 
 ### Website
 ```
-https://falcon-spanish.com
+https://falcon-spanish.com/spanish
 ```
+> Link directly to the Spanish Fiesta property page — not the homepage. Same reasoning as Falcon:
+> guests searching specifically for Spanish Fiesta should land on Spanish Fiesta content.
 
 ### Business Hours
 Same as Falcon Resort.
@@ -211,13 +216,15 @@ Once verified:
 
 2. **Link GBP to your website** in Search Console for extra verification signals.
 
-3. **Update the map embed URL in the website codebase:**
+3. **Update the map embed URLs in the website codebase:**
    - In Google Maps, search for the verified GBP listing for each property
    - Click **Share → Embed a map → Copy HTML**
-   - Open `src/lib/config.ts` in the project and replace the value of `site.mapEmbedUrl`
-     with the new embed URL — this will update the map on both the homepage and location page
-   - Ideally get an embed that shows both properties simultaneously (zoom out until both pins
-     are visible, then copy the embed code)
+   - Open `src/lib/config.ts` in the project and update:
+     - `properties.falcon.mapEmbedUrl` → embed URL from Falcon Resort's verified GBP listing
+     - `properties.spanish.mapEmbedUrl` → embed URL from Spanish Fiesta Resort's verified GBP listing
+     - `site.mapEmbedUrl` → a zoomed-out embed showing both pins simultaneously (zoom out in
+       Google Maps until both properties are visible, then copy the embed code)
+   - These flow automatically to each property's `/location` page and the shared homepage
 
 4. **Enable messaging** in GBP so guests can send you a message directly from Google Maps
    (requires the Google Business app on your phone).
