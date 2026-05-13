@@ -8,7 +8,17 @@ export const GET: RequestHandler = () => {
 
 	const pages = [
 		{ path: '', priority: '1.0', changefreq: 'weekly' },
-		{ path: '/rooms', priority: '0.9', changefreq: 'monthly' },
+		{ path: '/falcon', priority: '0.95', changefreq: 'monthly' },
+		{ path: '/falcon/rooms', priority: '0.9', changefreq: 'monthly' },
+		{ path: '/falcon/gallery', priority: '0.75', changefreq: 'monthly' },
+		{ path: '/falcon/location', priority: '0.8', changefreq: 'monthly' },
+		{ path: '/falcon/contact', priority: '0.9', changefreq: 'monthly' },
+		{ path: '/spanish', priority: '0.95', changefreq: 'monthly' },
+		{ path: '/spanish/rooms', priority: '0.9', changefreq: 'monthly' },
+		{ path: '/spanish/gallery', priority: '0.75', changefreq: 'monthly' },
+		{ path: '/spanish/location', priority: '0.8', changefreq: 'monthly' },
+		{ path: '/spanish/contact', priority: '0.9', changefreq: 'monthly' },
+		{ path: '/rooms', priority: '0.8', changefreq: 'monthly' },
 		{ path: '/gallery', priority: '0.7', changefreq: 'monthly' },
 		{ path: '/location', priority: '0.8', changefreq: 'monthly' },
 		{ path: '/guides', priority: '0.8', changefreq: 'weekly' },

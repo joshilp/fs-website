@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { buildSchema, propertyList } from '$lib/config.js';
+	import { buildSchema, propertyList, properties } from '$lib/config.js';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -17,20 +17,68 @@
 		return () => window.removeEventListener('scroll', onScroll);
 	});
 
-	const links = [
-		{ href: '/rooms', label: 'Rooms' },
-		{ href: '/gallery', label: 'Gallery' },
-		{ href: '/location', label: 'Location' },
-		{ href: '/guides', label: 'Area Guide' },
-		{ href: '/contact', label: 'Contact' }
-	];
+	const pathname = $derived($page.url.pathname);
 
-	const isHome = $derived($page.url.pathname === '/');
-	const transparent = $derived(isHome && !scrolled);
+	// Property route detection
+	const isFalcon = $derived(pathname.startsWith('/falcon'));
+	const isSpanish = $derived(pathname.startsWith('/spanish'));
+	const isPropertyRoute = $derived(isFalcon || isSpanish);
+
+	// Pages with a full-screen hero — nav starts transparent
+	const isHeroPage = $derived(
+		pathname === '/' || pathname === '/falcon' || pathname === '/spanish'
+	);
+	const transparent = $derived(isHeroPage && !scrolled);
+
+	// Logo links back to the property home on property sub-routes
+	const logoHref = $derived(isFalcon ? '/falcon' : isSpanish ? '/spanish' : '/');
+
+	// Property nav uses property-specific destinations for all links
+	const base = $derived(isFalcon ? '/falcon' : '/spanish');
+	const navLinks = $derived(
+		isPropertyRoute
+			? [
+					{ href: `${base}/rooms`, label: 'Rooms' },
+					{ href: `${base}/gallery`, label: 'Gallery' },
+					{ href: `${base}/location`, label: 'Location' },
+					{ href: `${base}/contact`, label: 'Contact' }
+				]
+			: [
+					{ href: '/rooms', label: 'Rooms' },
+					{ href: '/gallery', label: 'Gallery' },
+					{ href: '/location', label: 'Location' },
+					{ href: '/guides', label: 'Area Guide' },
+					{ href: '/contact', label: 'Contact' }
+				]
+	);
+
+	// "Book Now" becomes a direct tel: call on property routes
+	const bookNowHref = $derived(
+		isFalcon
+			? `tel:${properties.falcon.phone.tel}`
+			: isSpanish
+				? `tel:${properties.spanish.phone.tel}`
+				: '/contact'
+	);
+	const bookNowLabel = $derived(isPropertyRoute ? 'Call to Book' : 'Book Now');
+
+	// Current and sister property for footer
+	const currentProperty = $derived(
+		isFalcon ? properties.falcon : isSpanish ? properties.spanish : null
+	);
+	const sisterProperty = $derived(
+		isFalcon ? properties.spanish : isSpanish ? properties.falcon : null
+	);
+	const sisterHref = $derived(isFalcon ? '/spanish' : '/falcon');
 
 	function isActive(href: string) {
-		return $page.url.pathname === href;
+		return pathname === href;
 	}
+
+	// Active/accent colour per property context
+	const activeTextClass = $derived(isSpanish ? 'text-resort-brown' : 'text-resort-green');
+	const activeBorderClass = $derived(isSpanish ? 'border-resort-brown' : 'border-resort-green');
+	const mobileActiveClass = $derived(isSpanish ? 'text-resort-brown' : 'text-resort-green');
 </script>
 
 <svelte:head>
@@ -45,47 +93,98 @@
 		? 'border-white/10 bg-transparent'
 		: 'border-resort-sand/20 bg-resort-base/97 shadow-sm backdrop-blur-md'}"
 >
+	<!-- Thin strip: shared site links, only shown on property routes -->
+	{#if isPropertyRoute}
+		<div
+			class="border-b px-6 py-1.5 transition-colors
+			{transparent ? 'border-white/10 bg-black/20' : 'border-resort-sand/20 bg-resort-dark/5'}"
+		>
+			<div class="mx-auto flex max-w-6xl items-center gap-1 overflow-x-auto">
+				<a
+					href="/"
+					class="shrink-0 font-sans text-[11px] font-semibold transition-colors
+					{transparent ? 'text-white/50 hover:text-white/80' : 'text-resort-dark/40 hover:text-resort-dark/70'}"
+				>
+					← falcon-spanish.com
+				</a>
+				<span class="{transparent ? 'text-white/15' : 'text-resort-dark/15'} mx-2">|</span>
+				{#each [
+					{ href: '/guides', label: 'Area Guide' },
+					{ href: '/faq', label: 'FAQ' }
+				] as link}
+					<a
+						href={link.href}
+						class="shrink-0 font-sans text-[11px] transition-colors
+						{transparent
+							? 'text-white/40 hover:text-white/70'
+							: 'text-resort-dark/35 hover:text-resort-dark/60'} px-2"
+					>
+						{link.label}
+					</a>
+				{/each}
+			</div>
+		</div>
+	{/if}
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-		<!-- Split logo: Falcon | Spanish Fiesta -->
-		<a href="/" class="flex items-center gap-2.5 group">
-			<div class="text-right leading-tight">
-				<p class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
-					Falcon
+		<!-- Logo — single property name on property routes, split on shared routes -->
+		{#if isPropertyRoute}
+			<a href={logoHref} class="group leading-tight">
+				<p class="font-serif text-base font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
+					{isFalcon ? 'Falcon Resort' : 'Spanish Fiesta Resort'}
 				</p>
 				<p
-					class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
-						? 'text-white/65'
-						: 'text-resort-dark/50'}"
+					class="font-sans text-[9px] font-medium uppercase tracking-widest {transparent
+						? 'text-white/55'
+						: 'text-resort-dark/40'}"
 				>
-					Resort
+					Osoyoos, BC
 				</p>
-			</div>
-			<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
-			<div class="text-left leading-tight">
-				<p class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
-					Spanish Fiesta
-				</p>
-				<p
-					class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
-						? 'text-white/65'
-						: 'text-resort-dark/50'}"
-				>
-					Resort
-				</p>
-			</div>
-		</a>
+			</a>
+		{:else}
+			<a href="/" class="group flex items-center gap-2.5">
+				<div class="text-right leading-tight">
+					<p
+						class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}"
+					>
+						Falcon
+					</p>
+					<p
+						class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
+							? 'text-white/65'
+							: 'text-resort-dark/50'}"
+					>
+						Resort
+					</p>
+				</div>
+				<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
+				<div class="text-left leading-tight">
+					<p
+						class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}"
+					>
+						Spanish Fiesta
+					</p>
+					<p
+						class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
+							? 'text-white/65'
+							: 'text-resort-dark/50'}"
+					>
+						Resort
+					</p>
+				</div>
+			</a>
+		{/if}
 
 		<!-- Desktop links -->
 		<ul class="hidden items-center gap-8 md:flex">
-			{#each links as link}
+			{#each navLinks as link}
 				<li>
 					<a
 						href={link.href}
 						class="font-sans text-sm font-medium transition-colors
 						{isActive(link.href)
 							? transparent
-								? 'text-white border-b-2 border-white pb-0.5'
-								: 'text-resort-green border-b-2 border-resort-green pb-0.5'
+								? 'border-b-2 border-white pb-0.5 text-white'
+								: `border-b-2 pb-0.5 ${activeTextClass} ${activeBorderClass}`
 							: transparent
 								? 'text-white/80 hover:text-white'
 								: 'text-resort-dark/65 hover:text-resort-dark'}"
@@ -96,15 +195,17 @@
 			{/each}
 		</ul>
 
-		<!-- Book Now -->
+		<!-- Book Now / Call to Book -->
 		<div class="flex items-center gap-4">
 			<Button
-				href="/contact"
+				href={bookNowHref}
 				class="hidden md:inline-flex {transparent
 					? 'border border-white/50 bg-transparent text-white hover:bg-white/10 hover:text-white'
-					: 'bg-resort-brown text-white hover:bg-resort-brown/85'}"
+					: isSpanish
+						? 'bg-resort-brown text-white hover:bg-resort-brown/85'
+						: 'bg-resort-green text-white hover:bg-resort-green/85'}"
 			>
-				Book Now
+				{bookNowLabel}
 			</Button>
 
 			<!-- Hamburger -->
@@ -152,13 +253,13 @@
 	{#if mobileOpen}
 		<div class="border-t border-resort-sand/20 bg-resort-base px-6 pb-5 md:hidden">
 			<ul class="flex flex-col gap-4 pt-4">
-				{#each links as link}
+				{#each navLinks as link}
 					<li>
 						<a
 							href={link.href}
 							onclick={() => (mobileOpen = false)}
 							class="block font-sans text-base font-medium {isActive(link.href)
-								? 'text-resort-green'
+								? mobileActiveClass
 								: 'text-resort-dark/65 hover:text-resort-dark'}"
 						>
 							{link.label}
@@ -167,11 +268,13 @@
 				{/each}
 				<li class="pt-1">
 					<Button
-						href="/contact"
+						href={bookNowHref}
 						onclick={() => (mobileOpen = false)}
-						class="bg-resort-brown text-white hover:bg-resort-brown/85"
+						class="{isSpanish
+							? 'bg-resort-brown hover:bg-resort-brown/85'
+							: 'bg-resort-green hover:bg-resort-green/85'} text-white"
 					>
-						Book Now
+						{bookNowLabel}
 					</Button>
 				</li>
 			</ul>
@@ -179,9 +282,10 @@
 	{/if}
 </header>
 
-<!-- Spacer so content doesn't hide under fixed nav (only on non-home pages) -->
-{#if !isHome}
-	<div class="h-[73px]"></div>
+<!-- Spacer so content doesn't hide under fixed nav — not needed on full-screen hero pages -->
+{#if !isHeroPage}
+	<!-- Property routes have an extra strip above the nav (~32px) -->
+	<div class={isPropertyRoute ? 'h-[105px]' : 'h-[73px]'}></div>
 {/if}
 
 <!-- Page content -->
@@ -192,76 +296,150 @@
 <!-- Footer -->
 <footer class="bg-resort-dark text-white">
 	<div class="mx-auto max-w-6xl px-6 py-14">
-		<div class="grid gap-10 md:grid-cols-3">
-			<!-- Brand -->
-			<div>
-				<div class="flex items-center gap-2.5">
-					<div class="text-right leading-tight">
-						<p class="font-serif text-base font-bold text-white">Falcon</p>
-						<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
-							Resort
-						</p>
-					</div>
-					<div class="h-6 w-px bg-resort-sand/30"></div>
-					<div class="text-left leading-tight">
-						<p class="font-serif text-base font-bold text-white">Spanish Fiesta</p>
-						<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
-							Resort
-						</p>
-					</div>
-				</div>
-				<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
-					Two adjacent lakeside properties in the heart of Canada's warmest valley — operated as
-					one.
-				</p>
-			</div>
-
-			<!-- Property addresses from config -->
-			{#each propertyList as property}
+		{#if isPropertyRoute && currentProperty && sisterProperty}
+			<!-- Property-specific footer -->
+			<div class="grid gap-10 md:grid-cols-3">
 				<div>
-					<h3
-						class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-					>
-						{property.name}
+					<p class="font-serif text-lg font-bold text-white">{currentProperty.name}</p>
+					<p class="mt-1 font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
+						Osoyoos, BC
+					</p>
+					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
+						Lakeside motel on Main Street, Osoyoos — private beach, 2 pools, hot tub, and
+						air-conditioned rooms.
+					</p>
+				</div>
+				<div>
+					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+						{currentProperty.name}
 					</h3>
 					<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-						{property.address.street}<br />
-						{property.address.city}, {property.address.province}&nbsp;&nbsp;{property.address
-							.postalCode}<br />
+						{currentProperty.address.street}<br />
+						{currentProperty.address.city}, {currentProperty.address.province}&nbsp;&nbsp;{currentProperty.address.postalCode}<br />
 						<a
-							href="tel:{property.phone.tel}"
+							href="tel:{currentProperty.phone.tel}"
 							class="mt-1 inline-block transition-colors hover:text-resort-sand"
 						>
-							{property.phone.display}
+							{currentProperty.phone.display}
 						</a>
 					</address>
 				</div>
-			{/each}
-		</div>
-
-		<!-- Quick links -->
-		<div class="mt-10 border-t border-white/8 pt-8">
-			<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-				{#each [
-					{ href: '/rooms', label: 'Rooms' },
-					{ href: '/gallery', label: 'Gallery' },
-					{ href: '/location', label: 'Location' },
-					{ href: '/guides', label: 'Area Guide' },
-					{ href: '/faq', label: 'FAQ' },
-					{ href: '/contact', label: 'Contact' }
-				] as link}
+				<div>
+					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+						Also in Osoyoos
+					</h3>
 					<a
-						href={link.href}
+						href={sisterHref}
+						class="font-serif text-base font-semibold text-white/70 transition-colors hover:text-white"
+					>
+						{sisterProperty.name} →
+					</a>
+					<p class="mt-2 font-sans text-sm text-white/40">
+						Our connected property on the same grounds.
+					</p>
+					<a
+						href="tel:{sisterProperty.phone.tel}"
+						class="mt-2 block font-sans text-sm text-white/40 transition-colors hover:text-white/70"
+					>
+						{sisterProperty.phone.display}
+					</a>
+				</div>
+			</div>
+			<div class="mt-10 border-t border-white/8 pt-8">
+				<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+					{#each [
+						{ href: `${base}/rooms`, label: 'Rooms' },
+						{ href: `${base}/gallery`, label: 'Gallery' },
+						{ href: `${base}/location`, label: 'Location' },
+						{ href: `${base}/contact`, label: 'Contact' }
+					] as link}
+						<a
+							href={link.href}
+							class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+						>
+							{link.label}
+						</a>
+					{/each}
+					<a
+						href={bookNowHref}
 						class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
 					>
-						{link.label}
+						Call to Book
 					</a>
+				</nav>
+				<p class="mt-6 text-center font-sans text-xs text-white/25">
+					&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
+					BC, Canada
+				</p>
+			</div>
+		{:else}
+			<!-- Shared footer -->
+			<div class="grid gap-10 md:grid-cols-3">
+				<div>
+					<div class="flex items-center gap-2.5">
+						<div class="text-right leading-tight">
+							<p class="font-serif text-base font-bold text-white">Falcon</p>
+							<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
+								Resort
+							</p>
+						</div>
+						<div class="h-6 w-px bg-resort-sand/30"></div>
+						<div class="text-left leading-tight">
+							<p class="font-serif text-base font-bold text-white">Spanish Fiesta</p>
+							<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
+								Resort
+							</p>
+						</div>
+					</div>
+					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
+						Two connected lakeside properties in the heart of Canada's warmest valley — operated as
+						one.
+					</p>
+				</div>
+				{#each propertyList as property}
+					<div>
+						<h3
+							class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
+						>
+							{property.name}
+						</h3>
+						<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+							{property.address.street}<br />
+							{property.address.city}, {property.address.province}&nbsp;&nbsp;{property.address
+								.postalCode}<br />
+							<a
+								href="tel:{property.phone.tel}"
+								class="mt-1 inline-block transition-colors hover:text-resort-sand"
+							>
+								{property.phone.display}
+							</a>
+						</address>
+					</div>
 				{/each}
-			</nav>
-			<p class="mt-6 text-center font-sans text-xs text-white/25">
-				&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
-				BC, Canada
-			</p>
-		</div>
+			</div>
+			<div class="mt-10 border-t border-white/8 pt-8">
+				<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+					{#each [
+						{ href: '/rooms', label: 'Rooms' },
+						{ href: '/gallery', label: 'Gallery' },
+						{ href: '/location', label: 'Location' },
+						{ href: '/guides', label: 'Area Guide' },
+						{ href: '/faq', label: 'FAQ' },
+						{ href: '/contact', label: 'Contact' }
+					] as link}
+						<a
+							href={link.href}
+							class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+						>
+							{link.label}
+						</a>
+					{/each}
+				</nav>
+				<p class="mt-6 text-center font-sans text-xs text-white/25">
+					&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
+					BC, Canada
+				</p>
+			</div>
+		{/if}
 	</div>
 </footer>

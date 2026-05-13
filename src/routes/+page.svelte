@@ -59,32 +59,56 @@
 			Two adjacent lakeside motels on Osoyoos Lake. One private sandy beach. Right on Main Street in
 			Canada's warmest valley.
 		</p>
-		<div class="mt-10 flex flex-wrap justify-center gap-4">
-			<Button
-				href="/contact"
-				class="h-12 bg-resort-brown px-10 text-base font-semibold text-white hover:bg-resort-brown/85"
+		<!-- Property portal cards -->
+		<div class="mt-10 grid w-full max-w-2xl gap-4 sm:grid-cols-2">
+			<a
+				href="/falcon"
+				class="group rounded-xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				Book Your Stay
-			</Button>
-			<Button
-				href="/rooms"
-				variant="outline"
-				class="h-12 border-white/50 bg-transparent px-10 text-base font-semibold text-white hover:border-white hover:bg-white/10 hover:text-white"
+				<p
+					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
+				>
+					Falcon Resort
+				</p>
+				<p class="font-serif text-xl font-bold text-white">
+					7106 Main Street
+				</p>
+				<p class="mt-1 font-sans text-sm text-white/55">
+					{properties.falcon.phone.display}
+				</p>
+				<p
+					class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
+				>
+					View Falcon Resort →
+				</p>
+			</a>
+
+			<a
+				href="/spanish"
+				class="group rounded-xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				View Rooms
-			</Button>
+				<p
+					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
+				>
+					Spanish Fiesta Resort
+				</p>
+				<p class="font-serif text-xl font-bold text-white">
+					7104 Main Street
+				</p>
+				<p class="mt-1 font-sans text-sm text-white/55">
+					{properties.spanish.phone.display}
+				</p>
+				<p
+					class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
+				>
+					View Spanish Fiesta Resort →
+				</p>
+			</a>
 		</div>
 
-		<!-- Phone numbers -->
-		<div class="mt-8 flex flex-wrap justify-center gap-6 font-sans text-sm text-white/60">
-			<a href="tel:{properties.falcon.phone.tel}" class="transition-colors hover:text-white">
-				Falcon: {properties.falcon.phone.display}
-			</a>
-			<span class="text-white/30">·</span>
-			<a href="tel:{properties.spanish.phone.tel}" class="transition-colors hover:text-white">
-				Spanish Fiesta: {properties.spanish.phone.display}
-			</a>
-		</div>
+		<p class="mt-5 font-sans text-xs text-white/35">
+			Not sure which property? Call either number — we manage both.
+		</p>
 	</div>
 
 	<!-- Scroll indicator -->
@@ -180,6 +204,112 @@
 			>
 				<p class="font-sans text-xs text-white/50 uppercase tracking-wider">Osoyoos Lake</p>
 				<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Our Properties -->
+<section class="border-t border-resort-sand/20 bg-resort-dark/3 py-20">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="mb-12 text-center">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
+				Our Properties
+			</p>
+			<h2 class="font-serif text-4xl font-bold text-resort-dark">Two resorts to choose from.</h2>
+			<p class="mx-auto mt-3 max-w-xl font-sans text-resort-dark/65">
+				Each property has its own rooms, character, and entry point. Browse either one — or call us
+				and we'll find the best available room across both.
+			</p>
+		</div>
+
+		<div class="grid gap-8 md:grid-cols-2">
+			<!-- Falcon Resort -->
+			<div
+				class="group relative overflow-hidden rounded-2xl border border-resort-sand/30 bg-white p-8 transition-shadow hover:shadow-lg"
+			>
+				<div
+					class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
+				>
+					Falcon Resort
+				</div>
+				<address class="not-italic">
+					<p class="font-sans text-sm text-resort-dark/60">{properties.falcon.address.street}</p>
+					<p class="font-sans text-sm text-resort-dark/60">
+						{properties.falcon.address.city}, {properties.falcon.address.province}
+					</p>
+				</address>
+				<a
+					href="tel:{properties.falcon.phone.tel}"
+					class="mt-2 block font-sans text-sm text-resort-dark/60 transition-colors hover:text-resort-dark"
+				>
+					{properties.falcon.phone.display}
+				</a>
+				<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/65">
+					{properties.falcon.rooms.length} room types — family rooms, kitchen rooms, and queen rooms.
+					Outdoor pool and direct beach access.
+				</p>
+				<a
+					href="/falcon"
+					class="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-resort-green transition-colors hover:text-resort-brown"
+				>
+					View Falcon Resort
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-4 w-4"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg
+					>
+				</a>
+			</div>
+
+			<!-- Spanish Fiesta Resort -->
+			<div
+				class="group relative overflow-hidden rounded-2xl border border-resort-sand/30 bg-white p-8 transition-shadow hover:shadow-lg"
+			>
+				<div
+					class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-brown/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown"
+				>
+					Spanish Fiesta Resort
+				</div>
+				<address class="not-italic">
+					<p class="font-sans text-sm text-resort-dark/60">{properties.spanish.address.street}</p>
+					<p class="font-sans text-sm text-resort-dark/60">
+						{properties.spanish.address.city}, {properties.spanish.address.province}
+					</p>
+				</address>
+				<a
+					href="tel:{properties.spanish.phone.tel}"
+					class="mt-2 block font-sans text-sm text-resort-dark/60 transition-colors hover:text-resort-dark"
+				>
+					{properties.spanish.phone.display}
+				</a>
+				<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/65">
+					{properties.spanish.rooms.length} room types — family rooms, kitchen rooms, and queen rooms.
+					Outdoor pool, hot tub, and direct beach access.
+				</p>
+				<a
+					href="/spanish"
+					class="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-resort-brown transition-colors hover:text-resort-green"
+				>
+					View Spanish Fiesta Resort
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-4 w-4"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg
+					>
+				</a>
 			</div>
 		</div>
 	</div>
