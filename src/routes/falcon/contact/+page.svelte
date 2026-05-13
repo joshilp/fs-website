@@ -1,4 +1,4 @@
-<script lang="ts">
+﻿<script lang="ts">
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
 
@@ -39,7 +39,7 @@
 	<!-- Phone -->
 	<a
 		href="tel:{p.phone.tel}"
-		class="inline-flex h-16 items-center gap-3 rounded-xl bg-resort-green px-12 font-sans text-xl font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+		class="inline-flex h-16 items-center gap-3 rounded-xl bg-resort-stone px-12 font-sans text-xl font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@
 	</address>
 
 	<div
-		class="mt-4 rounded-lg border border-resort-green/20 bg-resort-green/5 px-5 py-3 font-sans text-sm text-resort-dark/70"
+		class="mt-4 rounded-lg border border-resort-stone/20 bg-resort-stone/5 px-5 py-3 font-sans text-sm text-resort-dark/70"
 	>
 		If we miss your call, leave a message and we'll call back promptly.
 	</div>
@@ -89,7 +89,7 @@
 		<p class="font-sans text-sm text-resort-dark/50">Looking for our connected property?</p>
 		<a
 			href="/spanish"
-			class="mt-2 inline-block font-sans text-sm font-semibold text-resort-brown transition-colors hover:text-resort-green"
+			class="mt-2 inline-block font-sans text-sm font-semibold text-resort-brown transition-colors hover:text-resort-stone"
 		>
 			View Spanish Fiesta Resort →
 		</a>

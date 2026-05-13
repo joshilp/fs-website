@@ -9,6 +9,10 @@
 	--color-resort-sand: #c9a86c;
 	--color-resort-dark: #0f0e0c;
 	--color-resort-brown: #8b5e3c;
+	/* Falcon Resort — warm stone/earthy desert tone */
+	--color-resort-stone: #7a6e5e;
+	/* Spanish Fiesta Resort — deep wine red, matches the building's red trim */
+	--color-resort-red: #7d2532;
 	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 	--font-serif: 'Playfair Display', Georgia, serif;
 }

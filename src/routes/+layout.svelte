@@ -76,9 +76,15 @@
 	}
 
 	// Active/accent colour per property context
-	const activeTextClass = $derived(isSpanish ? 'text-resort-brown' : 'text-resort-green');
-	const activeBorderClass = $derived(isSpanish ? 'border-resort-brown' : 'border-resort-green');
-	const mobileActiveClass = $derived(isSpanish ? 'text-resort-brown' : 'text-resort-green');
+	const activeTextClass = $derived(
+		isSpanish ? 'text-resort-red' : isFalcon ? 'text-resort-stone' : 'text-resort-green'
+	);
+	const activeBorderClass = $derived(
+		isSpanish ? 'border-resort-red' : isFalcon ? 'border-resort-stone' : 'border-resort-green'
+	);
+	const mobileActiveClass = $derived(
+		isSpanish ? 'text-resort-red' : isFalcon ? 'text-resort-stone' : 'text-resort-green'
+	);
 </script>
 
 <svelte:head>
@@ -202,8 +208,10 @@
 				class="hidden md:inline-flex {transparent
 					? 'border border-white/50 bg-transparent text-white hover:bg-white/10 hover:text-white'
 					: isSpanish
-						? 'bg-resort-brown text-white hover:bg-resort-brown/85'
-						: 'bg-resort-green text-white hover:bg-resort-green/85'}"
+						? 'bg-resort-red text-white hover:bg-resort-red/85'
+						: isFalcon
+							? 'bg-resort-stone text-white hover:bg-resort-stone/85'
+							: 'bg-resort-green text-white hover:bg-resort-green/85'}"
 			>
 				{bookNowLabel}
 			</Button>
@@ -271,8 +279,10 @@
 						href={bookNowHref}
 						onclick={() => (mobileOpen = false)}
 						class="{isSpanish
-							? 'bg-resort-brown hover:bg-resort-brown/85'
-							: 'bg-resort-green hover:bg-resort-green/85'} text-white"
+							? 'bg-resort-red hover:bg-resort-red/85'
+							: isFalcon
+								? 'bg-resort-stone hover:bg-resort-stone/85'
+								: 'bg-resort-green hover:bg-resort-green/85'} text-white"
 					>
 						{bookNowLabel}
 					</Button>

@@ -1,4 +1,4 @@
-<script lang="ts">
+﻿<script lang="ts">
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
 
@@ -39,7 +39,7 @@
 	<!-- Phone -->
 	<a
 		href="tel:{p.phone.tel}"
-		class="inline-flex h-16 items-center gap-3 rounded-xl bg-resort-brown px-12 font-sans text-xl font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+		class="inline-flex h-16 items-center gap-3 rounded-xl bg-resort-red px-12 font-sans text-xl font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@
 	</address>
 
 	<div
-		class="mt-4 rounded-lg border border-resort-brown/20 bg-resort-brown/5 px-5 py-3 font-sans text-sm text-resort-dark/70"
+		class="mt-4 rounded-lg border border-resort-red/20 bg-resort-red/5 px-5 py-3 font-sans text-sm text-resort-dark/70"
 	>
 		If we miss your call, leave a message and we'll call back promptly.
 	</div>
@@ -89,7 +89,7 @@
 		<p class="font-sans text-sm text-resort-dark/50">Looking for our connected property?</p>
 		<a
 			href="/falcon"
-			class="mt-2 inline-block font-sans text-sm font-semibold text-resort-green transition-colors hover:text-resort-brown"
+			class="mt-2 inline-block font-sans text-sm font-semibold text-resort-green transition-colors hover:text-resort-red"
 		>
 			View Falcon Resort →
 		</a>

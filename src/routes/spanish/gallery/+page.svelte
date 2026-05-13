@@ -1,22 +1,30 @@
 <script lang="ts">
+	// ?enhanced imports — used only in the lightbox (static direct references required)
 	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
 	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
 	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
 	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
 	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
 	import gallery6 from '$lib/assets/images/gallery-6.jpg?enhanced';
+	// Plain URL imports — used in the grid <img> tags (dynamic src in {#each})
+	import url1 from '$lib/assets/images/gallery-1.jpg';
+	import url2 from '$lib/assets/images/gallery-2.jpg';
+	import url3 from '$lib/assets/images/gallery-3.jpg';
+	import url4 from '$lib/assets/images/gallery-4.jpg';
+	import url5 from '$lib/assets/images/gallery-5.jpg';
+	import url6 from '$lib/assets/images/gallery-6.jpg';
 	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
 	import { properties } from '$lib/config.js';
 
 	const p = properties.spanish;
 
 	const photos = [
-		{ src: gallery1, alt: 'Sandy beach on Osoyoos Lake with dock and boats, viewed from Spanish Fiesta Resort' },
-		{ src: gallery4, alt: 'Spanish Fiesta Resort exterior building with Okanagan mountains behind, Osoyoos BC' },
-		{ src: gallery2, alt: 'Outdoor pool at Spanish Fiesta Resort with Osoyoos Lake and mountains in the background' },
-		{ src: gallery3, alt: 'Wide view of Osoyoos Lake beach with boats anchored near shore, South Okanagan BC' },
-		{ src: gallery5, alt: 'Resort exterior walkway on a sunny summer day, Osoyoos BC' },
-		{ src: gallery6, alt: 'Outdoor pool with blue skies, Osoyoos BC' }
+		{ url: url1, alt: 'Sandy beach on Osoyoos Lake with dock and boats, viewed from Spanish Fiesta Resort' },
+		{ url: url4, alt: 'Spanish Fiesta Resort exterior building with Okanagan mountains behind, Osoyoos BC' },
+		{ url: url2, alt: 'Outdoor pool at Spanish Fiesta Resort with Osoyoos Lake and mountains in the background' },
+		{ url: url3, alt: 'Wide view of Osoyoos Lake beach with boats anchored near shore, South Okanagan BC' },
+		{ url: url5, alt: 'Resort exterior walkway on a sunny summer day, Osoyoos BC' },
+		{ url: url6, alt: 'Outdoor pool with blue skies, Osoyoos BC' }
 	];
 
 	let lightboxOpen = $state(false);
@@ -69,15 +77,17 @@
 	<div class="columns-1 gap-3 sm:columns-2 lg:columns-3">
 		{#each photos as photo, i}
 			<button
-				class="group mb-3 block w-full cursor-zoom-in overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-resort-brown focus-visible:ring-offset-2"
+				class="group mb-3 block w-full cursor-zoom-in overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-resort-red focus-visible:ring-offset-2"
 				onclick={() => openPhoto(i)}
 				aria-label="View photo: {photo.alt}"
 			>
 				<div class="relative overflow-hidden">
-					<enhanced:img
-						src={photo.src}
+					<img
+						src={photo.url}
 						alt={photo.alt}
 						class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+						loading="lazy"
+						decoding="async"
 					/>
 					<div class="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,14 +104,14 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-brown py-14 text-center text-white">
+<section class="bg-resort-red py-14 text-center text-white">
 	<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
 	<p class="mt-3 font-sans text-white/80">
 		Call us and we'll confirm your room in under 2 minutes.
 	</p>
 	<a
 		href="tel:{p.phone.tel}"
-		class="mt-6 inline-flex h-12 items-center gap-2 rounded-lg bg-white px-8 font-sans font-semibold text-resort-brown transition-opacity hover:opacity-90"
+		class="mt-6 inline-flex h-12 items-center gap-2 rounded-lg bg-white px-8 font-sans font-semibold text-resort-red transition-opacity hover:opacity-90"
 	>
 		{p.phone.display}
 	</a>

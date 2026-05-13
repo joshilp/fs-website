@@ -3,6 +3,7 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
+	import roomPlaceholder from '$lib/assets/images/room-placeholder.jpg?enhanced';
 
 	const p = properties.spanish;
 
@@ -50,11 +51,13 @@
 
 <!-- Page header -->
 <section class="relative overflow-hidden bg-resort-dark py-24 text-white">
-	<enhanced:img
-		src="$lib/assets/images/room-placeholder.jpg"
-		alt="Motel room at Spanish Fiesta Resort, Osoyoos BC"
-		class="absolute inset-0 h-full w-full object-cover opacity-20"
-	/>
+	<div class="absolute inset-0">
+		<enhanced:img
+			src={roomPlaceholder}
+			alt="Motel room at Spanish Fiesta Resort, Osoyoos BC"
+			class="h-full w-full object-cover opacity-20"
+		/>
+	</div>
 	<div class="relative mx-auto max-w-4xl px-6 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Spanish Fiesta Resort
@@ -65,7 +68,7 @@
 		</p>
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-12 items-center gap-2 rounded-lg bg-resort-brown px-8 font-sans font-bold text-white transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-12 items-center gap-2 rounded-lg bg-resort-red px-8 font-sans font-bold text-white transition-opacity hover:opacity-90"
 		>
 			Call to Book — {p.phone.display}
 		</a>
@@ -75,7 +78,7 @@
 <!-- Room cards -->
 <section class="mx-auto max-w-6xl px-6 py-20">
 	<div class="mb-12 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 			Accommodations
 		</p>
 		<h2 class="font-serif text-4xl font-bold text-resort-dark">Choose your room.</h2>
@@ -89,12 +92,12 @@
 			<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
 				<div class="relative overflow-hidden">
 					<enhanced:img
-						src="$lib/assets/images/room-placeholder.jpg"
+						src={roomPlaceholder}
 						alt="{room.name} at Spanish Fiesta Resort, Osoyoos BC"
 						class="h-56 w-full object-cover"
 					/>
 					<div
-						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-brown font-sans text-sm font-bold text-white shadow"
+						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-red font-sans text-sm font-bold text-white shadow"
 					>
 						{room.letter}
 					</div>
@@ -108,7 +111,7 @@
 						{#each room.features as f}
 							<Badge
 								variant="outline"
-								class="border-resort-brown/30 font-sans text-xs text-resort-brown"
+								class="border-resort-red/30 font-sans text-xs text-resort-red"
 							>
 								{f}
 							</Badge>
@@ -125,10 +128,10 @@
 </section>
 
 <!-- Amenities -->
-<section class="bg-resort-brown/5 py-16">
+<section class="bg-resort-red/5 py-16">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mb-10 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 				Included
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Everything you need.</h2>
@@ -147,7 +150,7 @@
 <!-- Book CTA -->
 <section class="border-t border-resort-sand/30 py-16">
 	<div class="mx-auto max-w-2xl px-6 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 			Reservations
 		</p>
 		<h2 class="font-serif text-4xl font-bold text-resort-dark">Ready to book?</h2>
@@ -156,7 +159,7 @@
 		</p>
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-brown px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-red px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +192,7 @@
 			<Button
 				href="/spanish"
 				variant="link"
-				class="h-auto p-0 font-sans text-sm font-semibold text-resort-brown hover:text-resort-green"
+				class="h-auto p-0 font-sans text-sm font-semibold text-resort-red hover:text-resort-green"
 			>
 				← Back to Spanish Fiesta Resort
 			</Button>

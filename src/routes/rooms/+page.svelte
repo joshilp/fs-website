@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { propertyList } from '$lib/config.js';
+	import roomPlaceholder from '$lib/assets/images/room-placeholder.jpg?enhanced';
 </script>
 
 <svelte:head>
@@ -21,11 +22,13 @@
 
 <!-- Page header -->
 <section class="relative overflow-hidden bg-resort-dark py-24 text-white">
-	<enhanced:img
-		src="$lib/assets/images/room-placeholder.jpg"
-		alt="Motel rooms at Falcon Resort and Spanish Fiesta Resort, Osoyoos BC"
-		class="absolute inset-0 h-full w-full object-cover opacity-20"
-	/>
+	<div class="absolute inset-0">
+		<enhanced:img
+			src={roomPlaceholder}
+			alt="Motel rooms at Falcon Resort and Spanish Fiesta Resort, Osoyoos BC"
+			class="h-full w-full object-cover opacity-20"
+		/>
+	</div>
 	<div class="relative mx-auto max-w-4xl px-6 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Accommodations

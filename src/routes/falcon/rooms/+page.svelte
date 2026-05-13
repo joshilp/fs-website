@@ -3,6 +3,7 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
+	import roomPlaceholder from '$lib/assets/images/room-placeholder.jpg?enhanced';
 
 	const p = properties.falcon;
 
@@ -51,11 +52,13 @@
 
 <!-- Page header -->
 <section class="relative overflow-hidden bg-resort-dark py-24 text-white">
-	<enhanced:img
-		src="$lib/assets/images/room-placeholder.jpg"
-		alt="Motel room at Falcon Resort, Osoyoos BC"
-		class="absolute inset-0 h-full w-full object-cover opacity-20"
-	/>
+	<div class="absolute inset-0">
+		<enhanced:img
+			src={roomPlaceholder}
+			alt="Motel room at Falcon Resort, Osoyoos BC"
+			class="h-full w-full object-cover opacity-20"
+		/>
+	</div>
 	<div class="relative mx-auto max-w-4xl px-6 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
 			Falcon Resort
@@ -66,7 +69,7 @@
 		</p>
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-12 items-center gap-2 rounded-lg bg-resort-green px-8 font-sans font-bold text-white transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-12 items-center gap-2 rounded-lg bg-resort-stone px-8 font-sans font-bold text-white transition-opacity hover:opacity-90"
 		>
 			Call to Book — {p.phone.display}
 		</a>
@@ -76,7 +79,7 @@
 <!-- Room cards -->
 <section class="mx-auto max-w-6xl px-6 py-20">
 	<div class="mb-12 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Accommodations
 		</p>
 		<h2 class="font-serif text-4xl font-bold text-resort-dark">Choose your room.</h2>
@@ -90,12 +93,12 @@
 			<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
 				<div class="relative overflow-hidden">
 					<enhanced:img
-						src="$lib/assets/images/room-placeholder.jpg"
+						src={roomPlaceholder}
 						alt="{room.name} at Falcon Resort, Osoyoos BC"
 						class="h-56 w-full object-cover"
 					/>
 					<div
-						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-green font-sans text-sm font-bold text-white shadow"
+						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-stone font-sans text-sm font-bold text-white shadow"
 					>
 						{room.letter}
 					</div>
@@ -109,7 +112,7 @@
 						{#each room.features as f}
 							<Badge
 								variant="outline"
-								class="border-resort-green/30 font-sans text-xs text-resort-green"
+								class="border-resort-stone/30 font-sans text-xs text-resort-stone"
 							>
 								{f}
 							</Badge>
@@ -126,10 +129,10 @@
 </section>
 
 <!-- Amenities -->
-<section class="bg-resort-green/8 py-16">
+<section class="bg-resort-stone/8 py-16">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mb-10 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 				Included
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Everything you need.</h2>
@@ -148,7 +151,7 @@
 <!-- Book CTA -->
 <section class="border-t border-resort-sand/30 py-16">
 	<div class="mx-auto max-w-2xl px-6 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Reservations
 		</p>
 		<h2 class="font-serif text-4xl font-bold text-resort-dark">Ready to book?</h2>
@@ -157,7 +160,7 @@
 		</p>
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-green px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-stone px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +193,7 @@
 			<Button
 				href="/falcon"
 				variant="link"
-				class="h-auto p-0 font-sans text-sm font-semibold text-resort-green hover:text-resort-brown"
+				class="h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-brown"
 			>
 				← Back to Falcon Resort
 			</Button>

@@ -54,6 +54,9 @@
 			Osoyoos, British Columbia
 		</p>
 		<h1 class="font-serif text-6xl font-bold leading-[1.05] md:text-8xl">Falcon Resort</h1>
+		<span class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-sans text-xs font-medium tracking-wide text-white/75 backdrop-blur-sm">
+			Under new ownership — we're just getting started
+		</span>
 		<p class="mt-6 max-w-lg font-sans text-lg leading-relaxed text-white/75">
 			A lakeside motel on Osoyoos Lake — private sandy beach, outdoor pool, and the warmest water in
 			Canada right at your door.
@@ -62,7 +65,7 @@
 		<!-- Primary phone CTA -->
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-10 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-green px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-10 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-stone px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -116,11 +119,11 @@
 </section>
 
 <!-- Amenity strip -->
-<section class="bg-resort-green py-14 text-white">
+<section class="bg-resort-stone py-14 text-white">
 	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
 		{#each highlights as feature}
 			{@const Icon = feature.icon}
-			<div class="flex flex-col items-center gap-4 bg-resort-green px-6 py-10 text-center">
+			<div class="flex flex-col items-center gap-4 bg-resort-stone px-6 py-10 text-center">
 				<div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
 					<Icon class="h-6 w-6" />
 				</div>
@@ -137,7 +140,7 @@
 <section class="mx-auto max-w-6xl px-6 py-24">
 	<div class="grid items-center gap-14 md:grid-cols-2">
 		<div>
-			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
+			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-stone">
 				About Falcon Resort
 			</p>
 			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
@@ -182,7 +185,7 @@
 <section class="bg-resort-dark/4 py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-12 text-center">
-			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 				Accommodations
 			</p>
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Find your room.</h2>
@@ -194,7 +197,7 @@
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 		{#each p.rooms as room}
 			<div class="rounded-xl border border-resort-sand/30 bg-white p-5">
-				<div class="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-resort-green font-sans text-sm font-bold text-white">
+				<div class="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-resort-stone font-sans text-sm font-bold text-white">
 					{room.letter}
 				</div>
 				<h3 class="font-serif text-base font-bold text-resort-dark">{room.name}</h3>
@@ -202,7 +205,7 @@
 					{#each room.features as f}
 						<Badge
 							variant="outline"
-							class="border-resort-green/30 font-sans text-xs text-resort-green"
+							class="border-resort-stone/30 font-sans text-xs text-resort-stone"
 						>
 							{f}
 						</Badge>
@@ -216,7 +219,7 @@
 		<Button
 			href="/falcon/rooms"
 			variant="link"
-			class="h-auto p-0 font-sans text-sm font-semibold text-resort-green hover:text-resort-brown"
+			class="h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-brown"
 		>
 			View all rooms & amenities →
 		</Button>
@@ -229,7 +232,7 @@
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-10 flex items-end justify-between">
 			<div>
-				<p class="mb-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
+				<p class="mb-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-stone">
 					Gallery
 				</p>
 				<h2 class="font-serif text-4xl font-bold text-resort-dark">See for yourself.</h2>
@@ -237,7 +240,7 @@
 			<Button
 				href="/gallery"
 				variant="link"
-				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-green hover:text-resort-brown md:inline-flex"
+				class="hidden h-auto p-0 font-sans text-sm font-semibold text-resort-stone hover:text-resort-brown md:inline-flex"
 			>
 				View all photos →
 			</Button>
@@ -279,7 +282,7 @@
 
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-green px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-stone px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

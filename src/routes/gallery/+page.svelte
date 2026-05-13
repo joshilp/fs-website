@@ -1,20 +1,28 @@
 <script lang="ts">
+	// ?enhanced imports — used only in the lightbox (static direct references required)
 	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
 	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
 	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
 	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
 	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
 	import gallery6 from '$lib/assets/images/gallery-6.jpg?enhanced';
+	// Plain URL imports — used in the grid <img> tags (dynamic src in {#each})
+	import url1 from '$lib/assets/images/gallery-1.jpg';
+	import url2 from '$lib/assets/images/gallery-2.jpg';
+	import url3 from '$lib/assets/images/gallery-3.jpg';
+	import url4 from '$lib/assets/images/gallery-4.jpg';
+	import url5 from '$lib/assets/images/gallery-5.jpg';
+	import url6 from '$lib/assets/images/gallery-6.jpg';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
 
 	const photos = [
-		{ src: gallery1, alt: 'Sandy beach on Osoyoos Lake with dock and boats, viewed from Falcon Resort' },
-		{ src: gallery2, alt: 'Outdoor pool at Spanish Fiesta Resort with Osoyoos Lake and mountains in the background' },
-		{ src: gallery3, alt: 'Wide view of Osoyoos Lake beach with boats anchored near shore, South Okanagan BC' },
-		{ src: gallery4, alt: 'Spanish Fiesta Resort exterior building with Okanagan mountains behind, Osoyoos BC' },
-		{ src: gallery5, alt: 'Falcon Resort exterior walkway and room doors on a sunny summer day, Osoyoos BC' },
-		{ src: gallery6, alt: 'Panoramic outdoor pool at Falcon Resort, Osoyoos BC' }
+		{ url: url1, alt: 'Sandy beach on Osoyoos Lake with dock and boats, viewed from Falcon Resort' },
+		{ url: url2, alt: 'Outdoor pool at Spanish Fiesta Resort with Osoyoos Lake and mountains in the background' },
+		{ url: url3, alt: 'Wide view of Osoyoos Lake beach with boats anchored near shore, South Okanagan BC' },
+		{ url: url4, alt: 'Spanish Fiesta Resort exterior building with Okanagan mountains behind, Osoyoos BC' },
+		{ url: url5, alt: 'Falcon Resort exterior walkway and room doors on a sunny summer day, Osoyoos BC' },
+		{ url: url6, alt: 'Panoramic outdoor pool at Falcon Resort, Osoyoos BC' }
 	];
 
 	let lightboxOpen = $state(false);
@@ -87,10 +95,12 @@
 				aria-label="View photo: {photo.alt}"
 			>
 				<div class="relative overflow-hidden">
-					<enhanced:img
-						src={photo.src}
+					<img
+						src={photo.url}
 						alt={photo.alt}
 						class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+						loading="lazy"
+						decoding="async"
 					/>
 					<!-- Hover overlay -->
 					<div
