@@ -299,7 +299,7 @@
 {/if}
 
 <!-- Page content -->
-<main>
+<main class="min-h-screen">
 	{@render children()}
 </main>
 

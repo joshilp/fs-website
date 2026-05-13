@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Frequently Asked Questions | Falcon &amp; Spanish Fiesta Resorts, Osoyoos BC</title>
+	<title>Frequently Asked Questions | Falcon Resort &amp; Spanish Fiesta Resort, Osoyoos BC</title>
 	<meta
 		name="description"
 		content="Answers to common questions about staying at Falcon Resort and Spanish Fiesta Resort in Osoyoos, BC — check-in times, beach access, pools, pets, cancellation, and more."

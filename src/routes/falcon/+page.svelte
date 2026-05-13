@@ -1,4 +1,5 @@
 <script lang="ts">
+	import heroUrl from '$lib/assets/images/hero.jpg';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
 	import url3 from '$lib/assets/images/gallery-3.jpg';
@@ -165,10 +166,14 @@
 		</div>
 		<div class="relative">
 			<div class="overflow-hidden rounded-sm">
-				<enhanced:img
-					src="$lib/assets/images/hero.jpg"
+				<img
+					src={heroUrl}
 					alt="Osoyoos Lake waterfront at Falcon Resort"
+					width="1920"
+					height="1080"
 					class="h-96 w-full object-cover"
+					loading="lazy"
+					decoding="async"
 				/>
 			</div>
 			<div

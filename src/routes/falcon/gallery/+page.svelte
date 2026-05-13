@@ -1,12 +1,5 @@
 <script lang="ts">
-	// ?enhanced imports — used only in the lightbox (static direct references required)
-	import gallery1 from '$lib/assets/images/gallery-1.jpg?enhanced';
-	import gallery2 from '$lib/assets/images/gallery-2.jpg?enhanced';
-	import gallery3 from '$lib/assets/images/gallery-3.jpg?enhanced';
-	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
-	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
-	import gallery6 from '$lib/assets/images/gallery-6.jpg?enhanced';
-	// Plain URL imports — used in the grid <img> tags (dynamic src in {#each})
+	// Plain URL imports for both grid and lightbox
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
 	import url3 from '$lib/assets/images/gallery-3.jpg';
@@ -129,13 +122,12 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div class="relative flex w-full max-w-5xl flex-col items-center px-16 py-10 md:px-20" onclick={(e) => e.stopPropagation()}>
 			<div class="w-full">
-				{#if activeIdx === 0}<enhanced:img src={gallery1} alt={photos[0].alt} class="max-h-[78vh] w-full object-contain" />
-				{:else if activeIdx === 1}<enhanced:img src={gallery5} alt={photos[1].alt} class="max-h-[78vh] w-full object-contain" />
-				{:else if activeIdx === 2}<enhanced:img src={gallery6} alt={photos[2].alt} class="max-h-[78vh] w-full object-contain" />
-				{:else if activeIdx === 3}<enhanced:img src={gallery3} alt={photos[3].alt} class="max-h-[78vh] w-full object-contain" />
-				{:else if activeIdx === 4}<enhanced:img src={gallery2} alt={photos[4].alt} class="max-h-[78vh] w-full object-contain" />
-				{:else}<enhanced:img src={gallery4} alt={photos[5].alt} class="max-h-[78vh] w-full object-contain" />
-				{/if}
+				<img
+					src={photos[activeIdx].url}
+					alt={photos[activeIdx].alt}
+					class="max-h-[78vh] w-full object-contain"
+					decoding="async"
+				/>
 			</div>
 			<div class="mt-4 text-center">
 				<p class="font-sans text-sm text-white/55">{photos[activeIdx].alt}</p>

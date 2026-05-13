@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Guide } from '$lib/data/guides.js';
-	import { site } from '$lib/config.js';
-	import { Button } from '$lib/components/ui/button/index.js';
+	import { site, properties } from '$lib/config.js';
 
 	let { guide, children }: { guide: Guide; children: import('svelte').Snippet } = $props();
 
@@ -28,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>{guide.title} | Falcon &amp; Spanish Fiesta Resorts</title>
+	<title>{guide.title} | Falcon Resort &amp; Spanish Fiesta Resort, Osoyoos BC</title>
 	<meta name="description" content={guide.description} />
 	<meta property="og:title" content={guide.title} />
 	<meta property="og:description" content={guide.description} />
@@ -88,25 +87,32 @@
 
 <!-- Bottom CTA -->
 <section class="border-t border-resort-sand/30 bg-resort-sand/15 py-14">
-	<div class="mx-auto max-w-3xl px-6">
-		<div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-			<div>
-				<p class="font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
-					Staying in Osoyoos?
-				</p>
-				<h2 class="mt-1 font-serif text-2xl font-bold text-resort-dark">
-					Book your stay on Main Street.
-				</h2>
-				<p class="mt-2 font-sans text-sm text-resort-dark/65">
-					Falcon Resort &amp; Spanish Fiesta Resort — right on the lake.
-				</p>
-			</div>
-			<Button
-				href="/contact"
-				class="shrink-0 bg-resort-brown px-8 text-white hover:bg-resort-brown/85"
+	<div class="mx-auto max-w-3xl px-6 text-center">
+		<p class="font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
+			Staying in Osoyoos?
+		</p>
+		<h2 class="mt-2 font-serif text-2xl font-bold text-resort-dark">
+			Call us — we'll confirm your room in under 2 minutes.
+		</h2>
+		<p class="mt-2 font-sans text-sm text-resort-dark/60">
+			Two lakeside motels on Main Street, steps from the lake.
+		</p>
+		<div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+			<a
+				href="tel:{properties.falcon.phone.tel}"
+				class="inline-flex h-11 items-center gap-2 rounded-lg bg-resort-green px-6 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
 			>
-				Book Now
-			</Button>
+				Falcon Resort — {properties.falcon.phone.display}
+			</a>
+			<a
+				href="tel:{properties.spanish.phone.tel}"
+				class="inline-flex h-11 items-center gap-2 rounded-lg bg-resort-dark px-6 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
+			>
+				Spanish Fiesta — {properties.spanish.phone.display}
+			</a>
 		</div>
+		<p class="mt-5 font-sans text-xs text-resort-dark/40">
+			Or <a href="/rooms" class="underline underline-offset-2 hover:text-resort-dark/70">browse rooms</a> to see what's available at each property.
+		</p>
 	</div>
 </section>

@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Osoyoos Area Guide | Falcon &amp; Spanish Fiesta Resorts</title>
+	<title>Osoyoos Area Guide | Falcon Resort &amp; Spanish Fiesta Resort, Osoyoos BC</title>
 	<meta
 		name="description"
 		content="Local guides to Osoyoos, BC — things to do, beaches, wineries, family activities, and the best of the South Okanagan from people who live here."
