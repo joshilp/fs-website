@@ -46,10 +46,10 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 
 | File | Size | Background | Used For |
 |---|---|---|---|
-| `falcon-logo-dark.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page |
-| `falcon-logo-light.png` ⭐ | 1200 × 400 | Transparent | Footer (white version) |
-| `spanish-logo-dark.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page |
-| `spanish-logo-light.png` ⭐ | 1200 × 400 | Transparent | Footer (white version) |
+| `falcon-logo-color.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page (on light backgrounds) |
+| `falcon-logo-white.png` ⭐ | 1200 × 400 | Transparent | Footer (on dark backgrounds) |
+| `spanish-logo-color.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page (on light backgrounds) |
+| `spanish-logo-white.png` ⭐ | 1200 × 400 | Transparent | Footer (on dark backgrounds) |
 | `falcon-icon.png` | 400 × 400 | Transparent | Badges, small use |
 | `spanish-icon.png` | 400 × 400 | Transparent | Badges, small use |
 | `favicon.svg` ⭐ | 512 × 512 | Dark fill | Browser tab (from realfavicongenerator) |
@@ -57,7 +57,7 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 
 ⭐ = minimum needed before launch
 
-> **Light versions** = white text/elements for use on dark backgrounds (footer, dark hero). Create by duplicating the logo in Affinity and changing all elements to white.
+> **White versions** = all elements changed to white, for use on dark backgrounds (footer, dark hero). Create by duplicating the logo in Affinity and changing all elements to white.
 
 > **Small-size icons:** The full illustrated eagle/dancer are unreadable below ~80px. For `falcon-icon` and `spanish-icon`, simplify to a flat single-colour silhouette of the overall shape.
 
@@ -67,8 +67,8 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 
 | File | Size | Background |
 |---|---|---|
-| `falcon-gbp-logo.jpg` | 720 × 720 | White (GBP rejects transparent) |
-| `spanish-gbp-logo.jpg` | 720 × 720 | White |
+| `falcon-logo-gbp.jpg` | 720 × 720 | White (GBP rejects transparent) |
+| `spanish-logo-gbp.jpg` | 720 × 720 | White |
 
 ---
 
@@ -103,10 +103,10 @@ Once web files are ready, drop them into:
 
 ```
 src/lib/assets/
-  falcon-logo-dark.png
-  falcon-logo-light.png
-  spanish-logo-dark.png
-  spanish-logo-light.png
+  falcon-logo-color.png
+  falcon-logo-white.png
+  spanish-logo-color.png
+  spanish-logo-white.png
   falcon-icon.png
   spanish-icon.png
 
