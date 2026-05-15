@@ -8,7 +8,7 @@
 </svelte:head>
 
 <section class="flex min-h-[70vh] flex-col items-center justify-center p-8 text-center">
-	<p class="font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+	<p class="font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 		{$page.status}
 	</p>
 	<h1 class="mt-3 font-serif text-5xl font-bold text-resort-dark">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import heroUrl from '$lib/assets/images/hero.jpg';
+	import heroUrl from '$lib/assets/images/spanish/hero.jpg';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';

@@ -3,9 +3,19 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
-	import roomPlaceholder from '$lib/assets/images/room-placeholder.jpg?enhanced';
+	import imgRoomA from '$lib/assets/images/spanish/rooms/room-a-family.jpg';
+	import imgRoomB from '$lib/assets/images/spanish/rooms/room-b-queen-kitchen.jpg';
+	import imgRoomC from '$lib/assets/images/spanish/rooms/room-c-studio-queen.jpg';
+	import imgRoomD from '$lib/assets/images/spanish/rooms/room-d-double-queen.jpg';
 
 	const p = properties.spanish;
+
+	const roomImages: Record<string, string> = {
+		'spanish-a': imgRoomA,
+		'spanish-b': imgRoomB,
+		'spanish-c': imgRoomC,
+		'spanish-d': imgRoomD
+	};
 
 	const amenities = [
 		{
@@ -84,11 +94,15 @@
 		{#each p.rooms as room}
 			<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
 				<div class="relative overflow-hidden">
-					<enhanced:img
-						src={roomPlaceholder}
-						alt="{room.name} at Spanish Fiesta Resort, Osoyoos BC"
-						class="h-56 w-full object-cover"
-					/>
+				<img
+					src={roomImages[room.id]}
+					alt="{room.name} at Spanish Fiesta Resort, Osoyoos BC"
+					width="600"
+					height="400"
+					class="h-56 w-full object-cover"
+					loading="lazy"
+					decoding="async"
+				/>
 					<div
 						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-red font-sans text-sm font-bold text-white shadow"
 					>
@@ -116,7 +130,6 @@
 	</div>
 
 	<p class="mt-8 text-center font-sans text-sm text-resort-dark/50">
-		Room photos coming soon. Call us and we're happy to describe any room in detail before you book.
 	</p>
 </section>
 

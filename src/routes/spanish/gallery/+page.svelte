@@ -1,11 +1,12 @@
 <script lang="ts">
 	// Plain URL imports for both grid and lightbox
-	import url1 from '$lib/assets/images/gallery-1.jpg';
-	import url2 from '$lib/assets/images/gallery-2.jpg';
-	import url3 from '$lib/assets/images/gallery-3.jpg';
-	import url4 from '$lib/assets/images/gallery-4.jpg';
-	import url5 from '$lib/assets/images/gallery-5.jpg';
-	import url6 from '$lib/assets/images/gallery-6.jpg';
+	// Replace src/lib/assets/images/spanish/gallery/gallery-1.jpg through gallery-6.jpg with real photos
+	import url1 from '$lib/assets/images/spanish/gallery/gallery-1.jpg';
+	import url2 from '$lib/assets/images/spanish/gallery/gallery-2.jpg';
+	import url3 from '$lib/assets/images/spanish/gallery/gallery-3.jpg';
+	import url4 from '$lib/assets/images/spanish/gallery/gallery-4.jpg';
+	import url5 from '$lib/assets/images/spanish/gallery/gallery-5.jpg';
+	import url6 from '$lib/assets/images/spanish/gallery/gallery-6.jpg';
 	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
 	import { properties } from '$lib/config.js';
 

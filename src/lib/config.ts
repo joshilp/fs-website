@@ -28,6 +28,12 @@ export interface Room {
 	description: string;
 	features: string[];
 	/**
+	 * Room photo path relative to src/lib/assets/images/.
+	 * Replace the placeholder file at this path with the real photo when ready.
+	 * Example: 'falcon/rooms/room-a-large-family.jpg'
+	 */
+	image: string;
+	/**
 	 * Direct booking URL for this specific room.
 	 * Leave empty until your own booking engine is live.
 	 * Example: 'https://falcon-spanish.com/book?room=falcon-a'
@@ -132,7 +138,8 @@ export const properties = {
 				name: 'Large Family Room',
 				description:
 					'Our most flexible room — configured as one queen with two doubles, or two queens with a hide-a-bed. Ideal for families or groups of up to six.',
-				features: ['Sleeps up to 6', '3 Beds', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['Sleeps up to 6', '3 Beds', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'falcon/rooms/room-a-large-family.jpg'
 			},
 			{
 				id: 'falcon-b',
@@ -140,7 +147,8 @@ export const properties = {
 				name: 'Double Kitchen Room',
 				description:
 					'Two double beds with a full kitchen. Perfect for longer stays or anyone who wants the convenience of cooking in — more flexibility, less eating out.',
-				features: ['2 Double Beds', 'Full Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['2 Double Beds', 'Full Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'falcon/rooms/room-b-double-kitchen.jpg'
 			},
 			{
 				id: 'falcon-c',
@@ -148,7 +156,8 @@ export const properties = {
 				name: 'Queen Kitchen Room',
 				description:
 					'A comfortable queen bed paired with a kitchen. Great for couples or solo travellers on an extended stay — cook your own meals and save for the wineries.',
-				features: ['1 Queen Bed', 'Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['1 Queen Bed', 'Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'falcon/rooms/room-c-queen-kitchen.jpg'
 			},
 			{
 				id: 'falcon-d',
@@ -162,7 +171,8 @@ export const properties = {
 					'Air Conditioning',
 					'Private Bathroom',
 					'TV'
-				]
+				],
+				image: 'falcon/rooms/room-d-queen.jpg'
 			}
 		],
 		booking: {
@@ -209,7 +219,8 @@ export const properties = {
 				name: 'Family Room',
 				description:
 					'Two queen beds plus a hide-a-bed — our go-to room for families. Sleeps up to six comfortably, with easy access to the pool, hot tub, and beach.',
-				features: ['Sleeps up to 6', '2 Queens + Hide-A-Bed', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['Sleeps up to 6', '2 Queens + Hide-A-Bed', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'spanish/rooms/room-a-family.jpg'
 			},
 			{
 				id: 'spanish-b',
@@ -217,7 +228,8 @@ export const properties = {
 				name: 'Queen Kitchen Room',
 				description:
 					'Two queen beds with a full kitchen — great for families or groups who want space and the convenience of cooking in. Comfortable and well-equipped.',
-				features: ['2 Queen Beds', 'Full Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['2 Queen Beds', 'Full Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'spanish/rooms/room-b-queen-kitchen.jpg'
 			},
 			{
 				id: 'spanish-c',
@@ -225,7 +237,8 @@ export const properties = {
 				name: 'Studio Queen',
 				description:
 					'One queen bed with a kitchen — a cozy, practical room for couples or solo guests on longer stays. Simple, clean, and steps from the pool and hot tub.',
-				features: ['1 Queen Bed', 'Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['1 Queen Bed', 'Kitchen', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'spanish/rooms/room-c-studio-queen.jpg'
 			},
 			{
 				id: 'spanish-d',
@@ -233,7 +246,8 @@ export const properties = {
 				name: 'Double Queen Room',
 				description:
 					'Two queen beds — clean, comfortable, and ready for a great Osoyoos stay. Steps from the outdoor pool, hot tub, and the beach.',
-				features: ['2 Queen Beds', 'Air Conditioning', 'Private Bathroom', 'TV']
+				features: ['2 Queen Beds', 'Air Conditioning', 'Private Bathroom', 'TV'],
+				image: 'spanish/rooms/room-d-double-queen.jpg'
 			}
 		],
 		booking: {
