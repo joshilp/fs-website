@@ -7,6 +7,10 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
 	import { properties, site } from '$lib/config.js';
+	import falconLogoWhite from '$lib/assets/falcon-logo-white-tight.png';
+	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight.png';
+	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 
 	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
@@ -63,44 +67,24 @@
 		<div class="mt-10 grid w-full max-w-2xl gap-4 sm:grid-cols-2">
 			<a
 				href="/falcon"
-				class="group rounded-xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors hover:bg-white/15"
+				class="group flex flex-col items-center rounded-xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				<p
-					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-				>
-					Falcon Resort
-				</p>
-				<p class="font-serif text-xl font-bold text-white">
-					7106 Main Street
-				</p>
-				<p class="mt-1 font-sans text-sm text-white/55">
-					{properties.falcon.phone.display}
-				</p>
-				<p
-					class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
-				>
+				<img src={falconLogoColor} alt="Falcon Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-lg" />
+				<p class="font-serif text-lg font-bold text-white">7106 Main Street</p>
+				<p class="mt-1 font-sans text-sm text-white/55">{properties.falcon.phone.display}</p>
+				<p class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
 					View Falcon Resort →
 				</p>
 			</a>
 
 			<a
 				href="/spanish"
-				class="group rounded-xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors hover:bg-white/15"
+				class="group flex flex-col items-center rounded-xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				<p
-					class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-				>
-					Spanish Fiesta Resort
-				</p>
-				<p class="font-serif text-xl font-bold text-white">
-					7104 Main Street
-				</p>
-				<p class="mt-1 font-sans text-sm text-white/55">
-					{properties.spanish.phone.display}
-				</p>
-				<p
-					class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
-				>
+				<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-lg" />
+				<p class="font-serif text-lg font-bold text-white">7104 Main Street</p>
+				<p class="mt-1 font-sans text-sm text-white/55">{properties.spanish.phone.display}</p>
+				<p class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
 					View Spanish Fiesta Resort →
 				</p>
 			</a>
@@ -228,11 +212,7 @@
 			<div
 				class="group relative overflow-hidden rounded-2xl border border-resort-sand/30 bg-white p-8 transition-shadow hover:shadow-lg"
 			>
-				<div
-					class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
-				>
-					Falcon Resort
-				</div>
+				<img src={falconLogoColor} alt="Falcon Resort" height="40" width="120" class="mb-5 h-10 w-auto object-contain" />
 				<address class="not-italic">
 					<p class="font-sans text-sm text-resort-dark/60">{properties.falcon.address.street}</p>
 					<p class="font-sans text-sm text-resort-dark/60">
@@ -272,11 +252,7 @@
 			<div
 				class="group relative overflow-hidden rounded-2xl border border-resort-sand/30 bg-white p-8 transition-shadow hover:shadow-lg"
 			>
-				<div
-					class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-brown/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown"
-				>
-					Spanish Fiesta Resort
-				</div>
+				<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="40" width="120" class="mb-5 h-10 w-auto object-contain" />
 				<address class="not-italic">
 					<p class="font-sans text-sm text-resort-dark/60">{properties.spanish.address.street}</p>
 					<p class="font-sans text-sm text-resort-dark/60">

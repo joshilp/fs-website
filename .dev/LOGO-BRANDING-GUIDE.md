@@ -46,20 +46,33 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 
 | File | Size | Background | Used For |
 |---|---|---|---|
-| `falcon-logo-color.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page (on light backgrounds) |
-| `falcon-logo-white.png` ⭐ | 1200 × 400 | Transparent | Footer (on dark backgrounds) |
-| `spanish-logo-color.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page (on light backgrounds) |
-| `spanish-logo-white.png` ⭐ | 1200 × 400 | Transparent | Footer (on dark backgrounds) |
-| `falcon-icon.png` | 400 × 400 | Transparent | Badges, small use |
-| `spanish-icon.png` | 400 × 400 | Transparent | Badges, small use |
+| `falcon-logo-color.png` ⭐ | tight crop* | Transparent | Homepage cards, property cards, hero |
+| `falcon-logo-white.png` ⭐ | tight crop* | Transparent | Nav (transparent state), footer |
+| `spanish-logo-color.png` ⭐ | tight crop* | Transparent | Homepage cards, property cards, hero |
+| `spanish-logo-white.png` ⭐ | tight crop* | Transparent | Nav (transparent state), footer |
+| `falcon-icon.png` | tight crop* | Transparent | Shared nav, shared footer |
+| `spanish-icon.png` | tight crop* | Transparent | Shared nav, shared footer |
 | `favicon.svg` ⭐ | 512 × 512 | Dark fill | Browser tab (from realfavicongenerator) |
 | `favicon-512.png` ⭐ | 512 × 512 | Dark fill | PWA / Apple touch icon |
 
 ⭐ = minimum needed before launch
 
-> **White versions** = all elements changed to white, for use on dark backgrounds (footer, dark hero). Create by duplicating the logo in Affinity and changing all elements to white.
+**\*Tight crop** — artboard must hug the logo content closely (10–15px padding max on each side). Do NOT use a fixed canvas with lots of empty space. The CSS scales by height (`h-14`, `h-20`, etc.) — wasted canvas means the visible logo appears tiny even at large heights.
 
-> **Small-size icons:** The full illustrated eagle/dancer are unreadable below ~80px. For `falcon-icon` and `spanish-icon`, simplify to a flat single-colour silhouette of the overall shape.
+---
+
+### Affinity Export Checklist (run before every export)
+
+- [ ] **Artboard fill is None** — select artboard with Artboard tool → Colour panel → Fill should show "None". If it shows any colour, remove it. A filled artboard exports a coloured background even if "transparent" is checked.
+- [ ] **Transparent background in Export dialog** — each artboard row in the Export panel should have no background colour set
+- [ ] **Verify after export** — drag the PNG onto a browser tab. Transparent PNGs show the browser background through them. A solid rectangle means the export still has a background.
+- [ ] **Export to temp folder first** (`Desktop\logo-test\`) — verify before copying into `src/lib/assets/` in the project
+
+---
+
+> **White versions** = all elements changed to white, for use on dark backgrounds (nav transparent state, footer). Duplicate the artboard in Affinity, select all elements, change fills and strokes to white.
+
+> **Small-size icons:** The full illustrated eagle/dancer are unreadable below ~80px. For `falcon-icon` and `spanish-icon`, the tight crop is especially important — these display at `h-9` (36px) in the nav.
 
 ---
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import heroUrl from '$lib/assets/images/hero.jpg';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
 	import url3 from '$lib/assets/images/gallery-3.jpg';
@@ -54,12 +55,11 @@
 	<div
 		class="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-24 text-center text-white"
 	>
+		<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="144" width="432" class="mb-6 h-36 w-auto object-contain drop-shadow-lg md:h-44" />
 		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-resort-sand">
 			Osoyoos, British Columbia
 		</p>
-		<h1 class="font-serif text-5xl font-bold italic leading-[1.05] md:text-7xl">
-			Spanish Fiesta Resort
-		</h1>
+		<h1 class="sr-only">Spanish Fiesta Resort</h1>
 		<span class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-sans text-xs font-medium tracking-wide text-white/75 backdrop-blur-sm">
 			Under new ownership — we're just getting started
 		</span>

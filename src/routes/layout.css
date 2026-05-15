@@ -4,7 +4,7 @@
 
 /* ─── Resort custom theme ─────────────────────────────── */
 @theme {
-	--color-resort-base: #f7f3ec;
+	--color-resort-base: #ffffff;
 	--color-resort-green: #4a7c59;
 	--color-resort-sand: #c9a86c;
 	--color-resort-dark: #0f0e0c;
@@ -93,7 +93,7 @@
 
 /* ─── Base ────────────────────────────────────────────── */
 html {
-	background-color: #faf7f2;
+	background-color: #ffffff;
 	color: #1e2b2f;
 	scroll-behavior: smooth;
 }

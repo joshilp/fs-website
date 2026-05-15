@@ -3,10 +3,12 @@
 	import { page } from '$app/stores';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { buildSchema, propertyList, properties } from '$lib/config.js';
-	import falconLogoColor from '$lib/assets/falcon-logo-color.png';
-	import falconLogoWhite from '$lib/assets/falcon-logo-white.png';
-	import spanishLogoColor from '$lib/assets/spanish-logo-color.png';
-	import spanishLogoWhite from '$lib/assets/spanish-logo-white.png';
+	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
+	import falconLogoWhite from '$lib/assets/falcon-logo-white-tight.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
+	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight.png';
+	import falconIcon from '$lib/assets/falcon-icon.png';
+	import spanishIcon from '$lib/assets/spanish-icon.png';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -156,36 +158,10 @@
 				{/if}
 			</a>
 		{:else}
-			<a href="/" class="group flex items-center gap-2.5">
-				<div class="text-right leading-tight">
-					<p
-						class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}"
-					>
-						Falcon
-					</p>
-					<p
-						class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
-							? 'text-white/65'
-							: 'text-resort-dark/50'}"
-					>
-						Resort
-					</p>
-				</div>
+			<a href="/" class="group flex items-center gap-3">
+				<img src={falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain" />
 				<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
-				<div class="text-left leading-tight">
-					<p
-						class="font-serif text-sm font-bold {transparent ? 'text-white' : 'text-resort-dark'}"
-					>
-						Spanish Fiesta
-					</p>
-					<p
-						class="font-sans text-[10px] font-medium uppercase tracking-wider {transparent
-							? 'text-white/65'
-							: 'text-resort-dark/50'}"
-					>
-						Resort
-					</p>
-				</div>
+				<img src={spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain" />
 			</a>
 		{/if}
 
@@ -398,20 +374,10 @@
 			<!-- Shared footer -->
 			<div class="grid gap-10 md:grid-cols-3">
 				<div>
-					<div class="flex items-center gap-2.5">
-						<div class="text-right leading-tight">
-							<p class="font-serif text-base font-bold text-white">Falcon</p>
-							<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
-								Resort
-							</p>
-						</div>
-						<div class="h-6 w-px bg-resort-sand/30"></div>
-						<div class="text-left leading-tight">
-							<p class="font-serif text-base font-bold text-white">Spanish Fiesta</p>
-							<p class="font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
-								Resort
-							</p>
-						</div>
+					<div class="flex items-center gap-3">
+						<img src={falconIcon} alt="Falcon Resort" height="40" width="40" class="h-10 w-auto object-contain" />
+						<div class="h-8 w-px bg-resort-sand/30"></div>
+						<img src={spanishIcon} alt="Spanish Fiesta Resort" height="40" width="40" class="h-10 w-auto object-contain" />
 					</div>
 					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
 						Two connected lakeside properties in the heart of Canada's warmest valley — operated as
