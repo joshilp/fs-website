@@ -192,7 +192,7 @@
 </section>
 
 <!-- Rooms -->
-<section class="bg-resort-base py-20">
+<section class="bg-resort-sand/15 py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-12 text-center">
 			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">

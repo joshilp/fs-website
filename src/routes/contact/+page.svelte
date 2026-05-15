@@ -1,11 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { properties, propertyList } from '$lib/config.js';
+	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
-
-	const hasAnyOta = $derived(
-		propertyList.some((p) => p.booking.bookingCom || p.booking.expedia)
-	);
 </script>
 
 <svelte:head>
@@ -26,7 +22,7 @@
 <!-- Page header -->
 <section class="border-b border-resort-sand/15 py-24 text-center">
 	<div class="mx-auto max-w-2xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Reservations
 		</p>
 		<h1 class="font-serif text-5xl font-bold text-resort-dark">Book Your Osoyoos Stay</h1>
@@ -43,7 +39,7 @@
 		<!-- Falcon Resort -->
 		<div class="rounded-sm border border-resort-sand/30 bg-white p-8">
 			<div
-				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
+				class="mb-5 inline-flex items-center rounded-full bg-resort-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green"
 			>
 				{properties.falcon.name}
 			</div>
@@ -60,7 +56,7 @@
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 text-resort-green"
+					class="h-6 w-6 shrink-0 text-resort-green"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -80,12 +76,18 @@
 			>
 				Call Falcon Resort
 			</Button>
+			{#if properties.falcon.booking.bookingCom || properties.falcon.booking.expedia}
+				<div class="mt-5 border-t border-resort-sand/20 pt-5">
+					<p class="mb-3 font-sans text-xs text-resort-dark/45">Also available online:</p>
+					<BookingLinks property={properties.falcon} />
+				</div>
+			{/if}
 		</div>
 
 		<!-- Spanish Fiesta Resort -->
 		<div class="rounded-sm border border-resort-sand/30 bg-white p-8">
 			<div
-				class="mb-5 inline-flex items-center gap-2 rounded-full bg-resort-brown/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-brown"
+				class="mb-5 inline-flex items-center rounded-full bg-resort-red/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red"
 			>
 				{properties.spanish.name}
 			</div>
@@ -98,11 +100,11 @@
 			</address>
 			<a
 				href="tel:{properties.spanish.phone.tel}"
-				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark transition-colors hover:text-resort-brown"
+				class="mt-5 flex items-center gap-3 font-serif text-3xl font-semibold text-resort-dark transition-colors hover:text-resort-red"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 text-resort-brown"
+					class="h-6 w-6 shrink-0 text-resort-red"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -118,46 +120,23 @@
 			</a>
 			<Button
 				href="tel:{properties.spanish.phone.tel}"
-				class="mt-5 w-full bg-resort-brown text-white hover:bg-resort-brown/85"
+				class="mt-5 w-full bg-resort-red text-white hover:bg-resort-red/85"
 			>
-				Call Spanish Fiesta
+				Call Spanish Fiesta Resort
 			</Button>
+			{#if properties.spanish.booking.bookingCom || properties.spanish.booking.expedia}
+				<div class="mt-5 border-t border-resort-sand/20 pt-5">
+					<p class="mb-3 font-sans text-xs text-resort-dark/45">Also available online:</p>
+					<BookingLinks property={properties.spanish} />
+				</div>
+			{/if}
 		</div>
 	</div>
 
-	<!-- Info note -->
-	<div
-		class="mt-8 rounded-sm border border-resort-green/20 bg-resort-green/5 p-6 text-center font-sans text-sm text-resort-dark/70"
-	>
-		<strong class="text-resort-dark">Not sure which property to book into?</strong> No problem —
-		both resorts are managed from the same office. Call either number and we'll find you the best
-		available room across both properties.
-	</div>
-
-	<!-- Online booking -->
-	{#if hasAnyOta}
-		<div class="mt-12 rounded-2xl border border-resort-sand/40 bg-resort-sand/10 p-8">
-			<p class="mb-2 text-center font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
-				Book Online
-			</p>
-			<h2 class="mb-6 text-center font-serif text-2xl font-bold text-resort-dark">
-				Prefer to book online?
-			</h2>
-			<div class="grid gap-6 md:grid-cols-2">
-				{#each propertyList as property}
-					{#if property.booking.bookingCom || property.booking.expedia}
-						<div>
-							<p class="mb-3 font-sans text-sm font-semibold text-resort-dark">{property.name}</p>
-							<BookingLinks {property} />
-						</div>
-					{/if}
-				{/each}
-			</div>
-			<p class="mt-6 text-center font-sans text-xs text-resort-dark/45">
-				You'll be taken to the OTA's website to complete your booking. Prices may vary by platform.
-			</p>
-		</div>
-	{/if}
+	<p class="mt-6 text-center font-sans text-sm text-resort-dark/50">
+		<strong class="text-resort-dark">Not sure which property?</strong> Call either — we manage both from
+		the same office.
+	</p>
 </section>
 
 <!-- Hours note -->

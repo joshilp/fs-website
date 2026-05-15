@@ -106,7 +106,7 @@
 			</a>
 			<a
 				href="tel:{properties.spanish.phone.tel}"
-				class="inline-flex h-11 items-center gap-2 rounded-lg bg-resort-dark px-6 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
+				class="inline-flex h-11 items-center gap-2 rounded-lg bg-resort-red px-6 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
 			>
 				Spanish Fiesta — {properties.spanish.phone.display}
 			</a>

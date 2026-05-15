@@ -29,7 +29,7 @@
 <!-- Page header -->
 <section class="border-b border-resort-sand/15 py-24 text-center">
 	<div class="mx-auto max-w-2xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Help
 		</p>
 		<h1 class="font-serif text-5xl font-bold text-resort-dark">Frequently Asked Questions</h1>
@@ -97,7 +97,7 @@
 			</a>
 			<a
 				href="tel:{properties.spanish.phone.tel}"
-				class="inline-flex h-11 items-center rounded-sm border border-resort-green/30 bg-white px-6 font-sans text-sm font-semibold text-resort-dark transition-colors hover:border-resort-green hover:text-resort-green"
+				class="inline-flex h-11 items-center rounded-sm border border-resort-red/30 bg-white px-6 font-sans text-sm font-semibold text-resort-dark transition-colors hover:border-resort-red hover:text-resort-red"
 			>
 				Spanish Fiesta: {properties.spanish.phone.display}
 			</a>

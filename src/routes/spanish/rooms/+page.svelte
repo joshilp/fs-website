@@ -52,7 +52,7 @@
 <!-- Page header -->
 <section class="border-b border-resort-sand/15 py-24 text-center">
 	<div class="mx-auto max-w-4xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 			Spanish Fiesta Resort
 		</p>
 		<h1 class="font-serif text-5xl font-bold text-resort-dark">Rooms &amp; Accommodations</h1>

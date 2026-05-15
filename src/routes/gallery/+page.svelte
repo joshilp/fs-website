@@ -68,7 +68,7 @@
 <!-- Page header -->
 <section class="border-b border-resort-sand/15 py-24 text-center">
 	<div class="mx-auto max-w-2xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Gallery
 		</p>
 		<h1 class="font-serif text-5xl font-bold text-resort-dark">Osoyoos Lake & Resort Photos</h1>
@@ -83,7 +83,7 @@
 	<div class="columns-1 gap-3 sm:columns-2 lg:columns-3">
 		{#each photos as photo, i}
 			<button
-				class="group mb-3 block w-full cursor-zoom-in overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-resort-brown focus-visible:ring-offset-2"
+				class="group mb-3 block w-full cursor-zoom-in overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-resort-green focus-visible:ring-offset-2"
 				onclick={() => openPhoto(i)}
 				aria-label="View photo: {photo.alt}"
 			>
