@@ -159,9 +159,9 @@
 			</a>
 		{:else}
 			<a href="/" class="group flex items-center gap-3">
-				<img src={falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain" />
+				<img src={falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300 {transparent ? 'brightness-0 invert' : ''}" />
 				<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
-				<img src={spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain" />
+				<img src={spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300 {transparent ? 'brightness-0 invert' : ''}" />
 			</a>
 		{/if}
 
