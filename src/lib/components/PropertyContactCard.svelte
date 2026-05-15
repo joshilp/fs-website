@@ -24,9 +24,9 @@
 		<img
 			src={logo}
 			alt={property.name}
-			height="56"
-			width="200"
-			class="h-14 w-auto object-contain"
+			height="72"
+			width="240"
+			class="h-18 w-auto object-contain"
 		/>
 	</div>
 

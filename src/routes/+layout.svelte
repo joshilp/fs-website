@@ -307,11 +307,11 @@
 						air-conditioned rooms.
 					</p>
 				</div>
-				<div>
-					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
-						{currentProperty.name}
-					</h3>
-					<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+			<div>
+				<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+					Find Us
+				</h3>
+				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
 						{currentProperty.address.street}<br />
 						{currentProperty.address.city}, {currentProperty.address.province}&nbsp;&nbsp;{currentProperty.address.postalCode}<br />
 						<a
@@ -384,26 +384,44 @@
 						one.
 					</p>
 				</div>
-				{#each propertyList as property}
-					<div>
-						<h3
-							class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand"
-						>
-							{property.name}
-						</h3>
-						<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-							{property.address.street}<br />
-							{property.address.city}, {property.address.province}&nbsp;&nbsp;{property.address
-								.postalCode}<br />
-							<a
-								href="tel:{property.phone.tel}"
-								class="mt-1 inline-block transition-colors hover:text-resort-sand"
-							>
-								{property.phone.display}
-							</a>
-						</address>
-					</div>
-				{/each}
+			<div>
+				<img
+					src={falconLogoWhite}
+					alt="Falcon Resort"
+					height="40"
+					width="144"
+					class="mb-4 h-10 w-auto object-contain"
+				/>
+				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+					{properties.falcon.address.street}<br />
+					{properties.falcon.address.city}, {properties.falcon.address.province}&nbsp;&nbsp;{properties.falcon.address.postalCode}<br />
+					<a
+						href="tel:{properties.falcon.phone.tel}"
+						class="mt-1 inline-block transition-colors hover:text-resort-sand"
+					>
+						{properties.falcon.phone.display}
+					</a>
+				</address>
+			</div>
+			<div>
+				<img
+					src={spanishLogoWhite}
+					alt="Spanish Fiesta Resort"
+					height="40"
+					width="144"
+					class="mb-4 h-10 w-auto object-contain"
+				/>
+				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+					{properties.spanish.address.street}<br />
+					{properties.spanish.address.city}, {properties.spanish.address.province}&nbsp;&nbsp;{properties.spanish.address.postalCode}<br />
+					<a
+						href="tel:{properties.spanish.phone.tel}"
+						class="mt-1 inline-block transition-colors hover:text-resort-sand"
+					>
+						{properties.spanish.phone.display}
+					</a>
+				</address>
+			</div>
 			</div>
 			<div class="mt-10 border-t border-white/8 pt-8">
 				<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">

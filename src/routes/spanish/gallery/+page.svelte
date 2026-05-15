@@ -54,7 +54,7 @@
 </svelte:head>
 
 <!-- Header -->
-<section class="border-b border-resort-sand/15 py-24 text-center">
+<section class="pt-16 pb-10 text-center">
 	<div class="mx-auto max-w-2xl px-6">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
 			Spanish Fiesta Resort
