@@ -111,8 +111,12 @@
 				Spanish Fiesta — {properties.spanish.phone.display}
 			</a>
 		</div>
-		<p class="mt-5 font-sans text-xs text-resort-dark/40">
-			Or <a href="/rooms" class="underline underline-offset-2 hover:text-resort-dark/70">browse rooms</a> to see what's available at each property.
-		</p>
+		<div class="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-1">
+			<a href="/rooms" class="font-sans text-xs text-resort-dark/40 underline underline-offset-2 hover:text-resort-dark/70">Browse rooms</a>
+			<span class="font-sans text-xs text-resort-dark/25">·</span>
+			<a href="/contact" class="font-sans text-xs text-resort-dark/40 underline underline-offset-2 hover:text-resort-dark/70">Book online</a>
+			<span class="font-sans text-xs text-resort-dark/25">·</span>
+			<a href="/location" class="font-sans text-xs text-resort-dark/40 underline underline-offset-2 hover:text-resort-dark/70">Getting here</a>
+		</div>
 	</div>
 </section>

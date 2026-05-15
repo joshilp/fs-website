@@ -2,7 +2,13 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { propertyList } from '$lib/config.js';
-	import roomPlaceholder from '$lib/assets/images/room-placeholder.jpg?enhanced';
+	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
+
+	const logoMap: Record<string, string> = {
+		falcon: falconLogoColor,
+		spanish: spanishLogoColor
+	};
 </script>
 
 <svelte:head>
@@ -39,30 +45,42 @@
 	<section class="border-b border-resort-sand/20 py-20">
 		<div class="mx-auto max-w-6xl px-6">
 			<!-- Property heading -->
-			<div class="mb-10 flex flex-wrap items-end justify-between gap-4">
-				<div>
-					<p
-						class="mb-2 font-sans text-xs font-semibold uppercase tracking-widest
-						{p.id === 'falcon' ? 'text-resort-green' : 'text-resort-brown'}"
+			<div class="mb-10">
+				<!-- Logo as section identity -->
+				<a href="/{p.id}" class="mb-5 inline-block transition-opacity hover:opacity-80">
+					<img
+						src={logoMap[p.id]}
+						alt={p.name}
+						height="52"
+						width="200"
+						class="h-13 w-auto object-contain"
+					/>
+				</a>
+				<!-- Address + phone / CTA row -->
+				<div class="flex flex-wrap items-center justify-between gap-4">
+					<div>
+						<p
+							class="mb-0.5 font-sans text-xs font-semibold uppercase tracking-widest
+							{p.id === 'falcon' ? 'text-resort-green' : 'text-resort-brown'}"
+						>
+							{p.address.street}
+						</p>
+						<a
+							href="tel:{p.phone.tel}"
+							class="font-sans text-sm text-resort-dark/60 transition-colors hover:text-resort-dark"
+						>
+							{p.phone.display}
+						</a>
+					</div>
+					<Button
+						href="/{p.id}/rooms"
+						class="{p.id === 'falcon'
+							? 'bg-resort-green hover:bg-resort-green/85'
+							: 'bg-resort-brown hover:bg-resort-brown/85'} text-white"
 					>
-						{p.address.street}
-					</p>
-					<h2 class="font-serif text-3xl font-bold text-resort-dark">{p.name}</h2>
-					<a
-						href="tel:{p.phone.tel}"
-						class="mt-1 font-sans text-sm text-resort-dark/60 transition-colors hover:text-resort-dark"
-					>
-						{p.phone.display}
-					</a>
+						View Rooms →
+					</Button>
 				</div>
-				<Button
-					href="/{p.id}/rooms"
-					class="{p.id === 'falcon'
-						? 'bg-resort-green hover:bg-resort-green/85'
-						: 'bg-resort-brown hover:bg-resort-brown/85'} text-white"
-				>
-					View {p.name} Rooms →
-				</Button>
 			</div>
 
 			<!-- Room grid -->

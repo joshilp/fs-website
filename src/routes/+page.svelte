@@ -9,6 +9,8 @@
 	import { properties, site } from '$lib/config.js';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
+	// CTA background — replace src/lib/assets/images/cta-bg.jpg with a real resort photo
+	import ctaBg from '$lib/assets/images/cta-bg.jpg';
 
 	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
@@ -384,8 +386,17 @@
 </section>
 
 <!-- Book CTA banner -->
-<section class="bg-resort-brown py-20 text-white">
-	<div class="mx-auto max-w-3xl px-6 text-center">
+<section class="relative overflow-hidden py-20 text-white">
+	<!-- Background: replace src/lib/assets/images/cta-bg.jpg to change this photo -->
+	<img
+		src={ctaBg}
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-resort-dark/68"></div>
+	<div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
 		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
 			Reservations
 		</p>
@@ -411,7 +422,7 @@
 		</div>
 		<Button
 			href="/contact"
-			class="mt-6 h-12 bg-white px-10 text-base font-semibold text-resort-brown hover:bg-white/92"
+			class="mt-6 h-12 bg-white px-10 text-base font-semibold text-resort-dark hover:bg-white/92"
 		>
 			View All Contact Info
 		</Button>

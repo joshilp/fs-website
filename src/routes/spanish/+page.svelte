@@ -1,5 +1,7 @@
 <script lang="ts">
 	import heroUrl from '$lib/assets/images/spanish/hero.jpg';
+	// CTA background — replace src/lib/assets/images/spanish/cta-bg.jpg to change this photo
+	import ctaBg from '$lib/assets/images/spanish/cta-bg.jpg';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
@@ -284,9 +286,18 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-red py-20 text-white">
-	<div class="mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+<!-- Background: replace src/lib/assets/images/spanish/cta-bg.jpg to change this photo -->
+<section class="relative overflow-hidden py-20 text-white">
+	<img
+		src={ctaBg}
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-resort-dark/68"></div>
+	<div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
 			Reservations
 		</p>
 		<h2 class="font-serif text-5xl font-bold italic">Ready to book?</h2>
@@ -316,7 +327,7 @@
 			{p.phone.display}
 		</a>
 
-		<p class="mt-8 font-sans text-sm text-white/60">
+		<p class="mt-8 font-sans text-sm text-white/45">
 			{p.address.full}
 		</p>
 	</div>

@@ -1,4 +1,8 @@
 <script lang="ts">
+	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
+	// CTA background — replace src/lib/assets/images/cta-bg.jpg with a real resort photo
+	import ctaBg from '$lib/assets/images/cta-bg.jpg';
 	// Plain URL imports for both grid and lightbox
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
@@ -125,15 +129,53 @@
 	</p>
 </section>
 
-<!-- Book CTA -->
-<section class="bg-resort-green py-14 text-center text-white">
-	<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
-	<p class="mt-3 font-sans text-white/80">
-		Book your stay at our Osoyoos lakeside resort and experience it in person.
+<!-- Browse by property -->
+<section class="mx-auto max-w-4xl px-6 pb-12">
+	<p class="mb-4 text-center font-sans text-xs font-semibold uppercase tracking-widest text-resort-dark/40">
+		Browse by property
 	</p>
-	<Button href="/contact" size="lg" class="mt-6 bg-white px-8 text-resort-green hover:bg-white/90">
-		Book Now
-	</Button>
+	<div class="grid gap-4 sm:grid-cols-2">
+		<a
+			href="/falcon/gallery"
+			class="group flex flex-col items-center gap-3 rounded-sm border border-resort-sand/30 bg-white px-6 py-5 text-center transition-colors hover:border-resort-stone/50"
+		>
+			<img src={falconLogoColor} alt="Falcon Resort" height="40" width="160" class="h-10 w-auto object-contain" />
+			<span class="font-sans text-sm font-medium text-resort-dark/60 transition-colors group-hover:text-resort-stone">
+				Falcon Resort Gallery →
+			</span>
+		</a>
+		<a
+			href="/spanish/gallery"
+			class="group flex flex-col items-center gap-3 rounded-sm border border-resort-sand/30 bg-white px-6 py-5 text-center transition-colors hover:border-resort-red/50"
+		>
+			<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="40" width="160" class="h-10 w-auto object-contain" />
+			<span class="font-sans text-sm font-medium text-resort-dark/60 transition-colors group-hover:text-resort-red">
+				Spanish Fiesta Gallery →
+			</span>
+		</a>
+	</div>
+</section>
+
+<!-- Book CTA -->
+<section class="relative overflow-hidden py-16 text-center text-white">
+	<!-- Background: replace src/lib/assets/images/cta-bg.jpg to change this photo -->
+	<img
+		src={ctaBg}
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-resort-dark/65"></div>
+	<div class="relative z-10 px-6">
+		<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
+		<p class="mt-3 font-sans text-white/80">
+			Book your stay at our Osoyoos lakeside resort and experience it in person.
+		</p>
+		<Button href="/contact" size="lg" class="mt-6 bg-white px-8 text-resort-dark hover:bg-white/90">
+			Book Now
+		</Button>
+	</div>
 </section>
 
 <!-- Lightbox -->

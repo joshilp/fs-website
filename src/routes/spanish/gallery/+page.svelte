@@ -9,6 +9,8 @@
 	import url6 from '$lib/assets/images/spanish/gallery/gallery-6.jpg';
 	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
 	import { properties } from '$lib/config.js';
+	// CTA background — replace src/lib/assets/images/spanish/hero.jpg to change this photo
+	import ctaBg from '$lib/assets/images/spanish/hero.jpg';
 
 	const p = properties.spanish;
 
@@ -100,17 +102,28 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-red py-14 text-center text-white">
-	<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
-	<p class="mt-3 font-sans text-white/80">
-		Call us and we'll confirm your room in under 2 minutes.
-	</p>
-	<a
-		href="tel:{p.phone.tel}"
-		class="mt-6 inline-flex h-12 items-center gap-2 rounded-lg bg-white px-8 font-sans font-semibold text-resort-red transition-opacity hover:opacity-90"
-	>
-		{p.phone.display}
-	</a>
+<section class="relative overflow-hidden py-16 text-center text-white">
+	<!-- Background: replace src/lib/assets/images/spanish/hero.jpg to change this photo -->
+	<img
+		src={ctaBg}
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-resort-dark/65"></div>
+	<div class="relative z-10 px-6">
+		<h2 class="font-serif text-3xl font-bold">Like what you see?</h2>
+		<p class="mt-3 font-sans text-white/80">
+			Call us and we'll confirm your room in under 2 minutes.
+		</p>
+		<a
+			href="tel:{p.phone.tel}"
+			class="mt-6 inline-flex h-12 items-center gap-2 rounded-lg bg-white px-8 font-sans font-semibold text-resort-dark transition-opacity hover:opacity-90"
+		>
+			{p.phone.display}
+		</a>
+	</div>
 </section>
 
 <!-- Lightbox -->

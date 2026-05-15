@@ -1,5 +1,7 @@
 <script lang="ts">
 	import heroUrl from '$lib/assets/images/falcon/hero.jpg';
+	// CTA background — replace src/lib/assets/images/falcon/cta-bg.jpg to change this photo
+	import ctaBg from '$lib/assets/images/falcon/cta-bg.jpg';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
@@ -281,19 +283,28 @@
 </section>
 
 <!-- Book CTA -->
-<section class="border-t border-resort-sand/20 bg-resort-stone/10 py-20">
-	<div class="mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone/70">
+<!-- Background: replace src/lib/assets/images/falcon/cta-bg.jpg to change this photo -->
+<section class="relative overflow-hidden py-20 text-white">
+	<img
+		src={ctaBg}
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-resort-dark/68"></div>
+	<div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
 			Reservations
 		</p>
-		<h2 class="font-serif text-5xl font-bold text-resort-dark">Ready to book?</h2>
-		<p class="mt-5 font-sans text-lg text-resort-dark/65">
+		<h2 class="font-serif text-5xl font-bold">Ready to book?</h2>
+		<p class="mt-5 font-sans text-lg text-white/80">
 			Call us — we'll confirm your dates and room in under 2 minutes.
 		</p>
 
 		<a
 			href="tel:{p.phone.tel}"
-			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-resort-stone px-10 font-sans text-lg font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+			class="mt-8 inline-flex h-14 items-center gap-3 rounded-lg bg-white px-10 font-sans text-lg font-bold text-resort-stone shadow-lg transition-opacity hover:opacity-90"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +324,7 @@
 			{p.phone.display}
 		</a>
 
-		<p class="mt-8 font-sans text-sm text-resort-dark/40">
+		<p class="mt-8 font-sans text-sm text-white/45">
 			{p.address.full}
 		</p>
 	</div>

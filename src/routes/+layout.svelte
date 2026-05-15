@@ -289,61 +289,63 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-resort-dark text-white">
+<footer class="border-t border-resort-sand/30 bg-resort-sand/10">
 	<div class="mx-auto max-w-6xl px-6 py-14">
 		{#if isPropertyRoute && currentProperty && sisterProperty}
 			<!-- Property-specific footer -->
 			<div class="grid gap-10 md:grid-cols-3">
 				<div>
-					<img
-						src={isFalcon ? falconLogoWhite : spanishLogoWhite}
-						alt={currentProperty.name}
-						height="48"
-						width="144"
-						class="h-12 w-auto object-contain"
-					/>
-					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
+					<a href="/{isFalcon ? 'falcon' : 'spanish'}" class="inline-block transition-opacity hover:opacity-80">
+						<img
+							src={isFalcon ? falconLogoColor : spanishLogoColor}
+							alt={currentProperty.name}
+							height="48"
+							width="144"
+							class="h-12 w-auto object-contain"
+						/>
+					</a>
+					<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/55">
 						Lakeside motel on Main Street, Osoyoos — private beach, 2 pools, hot tub, and
 						air-conditioned rooms.
 					</p>
 				</div>
-			<div>
-				<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
-					Find Us
-				</h3>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
+				<div>
+					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-dark/40">
+						Find Us
+					</h3>
+					<address class="not-italic font-sans text-sm leading-relaxed text-resort-dark/65">
 						{currentProperty.address.street}<br />
 						{currentProperty.address.city}, {currentProperty.address.province}&nbsp;&nbsp;{currentProperty.address.postalCode}<br />
 						<a
 							href="tel:{currentProperty.phone.tel}"
-							class="mt-1 inline-block transition-colors hover:text-resort-sand"
+							class="mt-1 inline-block transition-colors hover:text-resort-dark"
 						>
 							{currentProperty.phone.display}
 						</a>
 					</address>
 				</div>
 				<div>
-					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+					<h3 class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-dark/40">
 						Also in Osoyoos
 					</h3>
 					<a
 						href={sisterHref}
-						class="font-serif text-base font-semibold text-white/70 transition-colors hover:text-white"
+						class="font-serif text-base font-semibold text-resort-dark/65 transition-colors hover:text-resort-dark"
 					>
 						{sisterProperty.name} →
 					</a>
-					<p class="mt-2 font-sans text-sm text-white/40">
+					<p class="mt-2 font-sans text-sm text-resort-dark/45">
 						Our connected property on the same grounds.
 					</p>
 					<a
 						href="tel:{sisterProperty.phone.tel}"
-						class="mt-2 block font-sans text-sm text-white/40 transition-colors hover:text-white/70"
+						class="mt-2 block font-sans text-sm text-resort-dark/45 transition-colors hover:text-resort-dark/70"
 					>
 						{sisterProperty.phone.display}
 					</a>
 				</div>
 			</div>
-			<div class="mt-10 border-t border-white/8 pt-8">
+			<div class="mt-10 border-t border-resort-sand/30 pt-8">
 				<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
 					{#each [
 						{ href: `${base}/rooms`, label: 'Rooms' },
@@ -353,19 +355,19 @@
 					] as link}
 						<a
 							href={link.href}
-							class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+							class="font-sans text-xs text-resort-dark/40 transition-colors hover:text-resort-dark/70"
 						>
 							{link.label}
 						</a>
 					{/each}
 					<a
 						href={bookNowHref}
-						class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+						class="font-sans text-xs text-resort-dark/40 transition-colors hover:text-resort-dark/70"
 					>
 						Call to Book
 					</a>
 				</nav>
-				<p class="mt-6 text-center font-sans text-xs text-white/25">
+				<p class="mt-6 text-center font-sans text-xs text-resort-dark/30">
 					&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
 					BC, Canada
 				</p>
@@ -374,56 +376,60 @@
 			<!-- Shared footer -->
 			<div class="grid gap-10 md:grid-cols-3">
 				<div>
-					<div class="flex items-center gap-3">
+					<a href="/" class="flex w-fit items-center gap-3 transition-opacity hover:opacity-80">
 						<img src={falconIcon} alt="Falcon Resort" height="40" width="40" class="h-10 w-auto object-contain" />
-						<div class="h-8 w-px bg-resort-sand/30"></div>
+						<div class="h-8 w-px bg-resort-sand/50"></div>
 						<img src={spanishIcon} alt="Spanish Fiesta Resort" height="40" width="40" class="h-10 w-auto object-contain" />
-					</div>
-					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
+					</a>
+					<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/55">
 						Two connected lakeside properties in the heart of Canada's warmest valley — operated as
 						one.
 					</p>
 				</div>
-			<div>
-				<img
-					src={falconLogoWhite}
-					alt="Falcon Resort"
-					height="40"
-					width="144"
-					class="mb-4 h-10 w-auto object-contain"
-				/>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-					{properties.falcon.address.street}<br />
-					{properties.falcon.address.city}, {properties.falcon.address.province}&nbsp;&nbsp;{properties.falcon.address.postalCode}<br />
-					<a
-						href="tel:{properties.falcon.phone.tel}"
-						class="mt-1 inline-block transition-colors hover:text-resort-sand"
-					>
-						{properties.falcon.phone.display}
+				<div>
+					<a href="/falcon" class="inline-block transition-opacity hover:opacity-80">
+						<img
+							src={falconLogoColor}
+							alt="Falcon Resort"
+							height="40"
+							width="144"
+							class="mb-4 h-10 w-auto object-contain"
+						/>
 					</a>
-				</address>
-			</div>
-			<div>
-				<img
-					src={spanishLogoWhite}
-					alt="Spanish Fiesta Resort"
-					height="40"
-					width="144"
-					class="mb-4 h-10 w-auto object-contain"
-				/>
-				<address class="not-italic font-sans text-sm leading-relaxed text-white/60">
-					{properties.spanish.address.street}<br />
-					{properties.spanish.address.city}, {properties.spanish.address.province}&nbsp;&nbsp;{properties.spanish.address.postalCode}<br />
-					<a
-						href="tel:{properties.spanish.phone.tel}"
-						class="mt-1 inline-block transition-colors hover:text-resort-sand"
-					>
-						{properties.spanish.phone.display}
+					<address class="not-italic font-sans text-sm leading-relaxed text-resort-dark/65">
+						{properties.falcon.address.street}<br />
+						{properties.falcon.address.city}, {properties.falcon.address.province}&nbsp;&nbsp;{properties.falcon.address.postalCode}<br />
+						<a
+							href="tel:{properties.falcon.phone.tel}"
+							class="mt-1 inline-block transition-colors hover:text-resort-dark"
+						>
+							{properties.falcon.phone.display}
+						</a>
+					</address>
+				</div>
+				<div>
+					<a href="/spanish" class="inline-block transition-opacity hover:opacity-80">
+						<img
+							src={spanishLogoColor}
+							alt="Spanish Fiesta Resort"
+							height="40"
+							width="144"
+							class="mb-4 h-10 w-auto object-contain"
+						/>
 					</a>
-				</address>
+					<address class="not-italic font-sans text-sm leading-relaxed text-resort-dark/65">
+						{properties.spanish.address.street}<br />
+						{properties.spanish.address.city}, {properties.spanish.address.province}&nbsp;&nbsp;{properties.spanish.address.postalCode}<br />
+						<a
+							href="tel:{properties.spanish.phone.tel}"
+							class="mt-1 inline-block transition-colors hover:text-resort-dark"
+						>
+							{properties.spanish.phone.display}
+						</a>
+					</address>
+				</div>
 			</div>
-			</div>
-			<div class="mt-10 border-t border-white/8 pt-8">
+			<div class="mt-10 border-t border-resort-sand/30 pt-8">
 				<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
 					{#each [
 						{ href: '/rooms', label: 'Rooms' },
@@ -435,13 +441,13 @@
 					] as link}
 						<a
 							href={link.href}
-							class="font-sans text-xs text-white/35 transition-colors hover:text-white/70"
+							class="font-sans text-xs text-resort-dark/40 transition-colors hover:text-resort-dark/70"
 						>
 							{link.label}
 						</a>
 					{/each}
 				</nav>
-				<p class="mt-6 text-center font-sans text-xs text-white/25">
+				<p class="mt-6 text-center font-sans text-xs text-resort-dark/30">
 					&copy; {new Date().getFullYear()} Falcon Resort &amp; Spanish Fiesta Resort &mdash; Osoyoos,
 					BC, Canada
 				</p>

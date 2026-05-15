@@ -19,15 +19,17 @@
 </script>
 
 <div class="rounded-sm border border-resort-sand/30 bg-white p-8">
-	<!-- Logo -->
+	<!-- Logo (links to property homepage) -->
 	<div class="mb-6 flex justify-center">
-		<img
-			src={logo}
-			alt={property.name}
-			height="72"
-			width="240"
-			class="h-18 w-auto object-contain"
-		/>
+		<a href="/{property.id}">
+			<img
+				src={logo}
+				alt={property.name}
+				height="72"
+				width="240"
+				class="h-18 w-auto object-contain transition-opacity hover:opacity-80"
+			/>
+		</a>
 	</div>
 
 	<!-- Address -->

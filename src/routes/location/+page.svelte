@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { properties, site } from '$lib/config.js';
+	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 </script>
 
 <svelte:head>
@@ -124,14 +126,21 @@
 			Find Us
 		</p>
 		<h2 class="font-serif text-3xl font-bold text-resort-dark">Right on Main Street.</h2>
-		<div class="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-1">
-			{#each [properties.spanish, properties.falcon] as p}
-				<p class="font-sans text-sm text-resort-dark/60">
-					<span class="font-medium text-resort-dark">{p.name}:</span>
+	<div class="mt-4 grid gap-4 sm:grid-cols-2 max-w-xl mx-auto">
+		{#each [properties.falcon, properties.spanish] as p}
+			{@const logo = p.id === 'falcon' ? falconLogoColor : spanishLogoColor}
+			<a
+				href="/{p.id}"
+				class="group flex flex-col items-center gap-2 rounded-sm border border-resort-sand/30 bg-white px-5 py-4 text-center transition-colors
+				{p.id === 'falcon' ? 'hover:border-resort-stone/50' : 'hover:border-resort-red/50'}"
+			>
+				<img src={logo} alt={p.name} height="36" width="140" class="h-9 w-auto object-contain" />
+				<p class="font-sans text-xs text-resort-dark/60">
 					{p.address.street}, {p.address.city}, {p.address.province}
 				</p>
-			{/each}
-		</div>
+			</a>
+		{/each}
+	</div>
 	</div>
 	<div class="overflow-hidden rounded-sm border border-resort-sand/30">
 		<iframe
