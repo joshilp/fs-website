@@ -373,20 +373,10 @@
 				</p>
 			</div>
 		{:else}
-			<!-- Shared footer -->
+			<!-- Shared footer: Falcon | Brand | Spanish -->
 			<div class="grid gap-10 md:grid-cols-3">
-				<div>
-					<a href="/" class="flex w-fit items-center gap-3 transition-opacity hover:opacity-80">
-						<img src={falconIcon} alt="Falcon Resort" height="40" width="40" class="h-10 w-auto object-contain" />
-						<div class="h-8 w-px bg-resort-sand/50"></div>
-						<img src={spanishIcon} alt="Spanish Fiesta Resort" height="40" width="40" class="h-10 w-auto object-contain" />
-					</a>
-					<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/55">
-						Two connected lakeside properties in the heart of Canada's warmest valley — operated as
-						one.
-					</p>
-				</div>
-				<div>
+				<!-- Falcon -->
+				<div class="text-center">
 					<a href="/falcon" class="inline-block transition-opacity hover:opacity-80">
 						<img
 							src={falconLogoColor}
@@ -407,7 +397,21 @@
 						</a>
 					</address>
 				</div>
-				<div>
+
+				<!-- Brand identity (centre) -->
+				<div class="flex flex-col items-center text-center">
+					<a href="/" class="flex items-center gap-3 transition-opacity hover:opacity-80">
+						<img src={falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain" />
+						<div class="h-7 w-px bg-resort-sand/60"></div>
+						<img src={spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain" />
+					</a>
+					<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/50">
+						Two connected lakeside properties in the heart of Canada's warmest valley — operated as one.
+					</p>
+				</div>
+
+				<!-- Spanish -->
+				<div class="text-center">
 					<a href="/spanish" class="inline-block transition-opacity hover:opacity-80">
 						<img
 							src={spanishLogoColor}
