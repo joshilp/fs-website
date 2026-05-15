@@ -9,8 +9,7 @@
 |---|---|---|
 | Falcon accent | `#9B7A52` | Website — Falcon pages |
 | Spanish accent | `#7D2532` | Website — Spanish pages |
-| Shared gold | `#C49A3C` | Favicon, accents, signs |
-| Dark earth | `#3D2B1F` | Dark backgrounds |
+| Dark earth | `#3D2B1F` | Dark backgrounds, favicon background |
 | Warm cream | `#FAF6EE` | Light backgrounds |
 
 > The Falcon logo uses blue script — this is legacy (physical sign only). The website uses earth tones independently.
@@ -19,7 +18,7 @@
 
 ## Favicon
 
-**What:** "FS" monogram, Playfair Display Bold, gold `#C49A3C` on dark `#3D2B1F` background.
+**What:** "FS" monogram, Playfair Display Bold, white `#FFFFFF` on dark `#3D2B1F` background.
 
 **Create in Affinity:** 512 × 512 px artboard → export PNG with background.
 
@@ -36,9 +35,9 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 ### Source exports (save to `C:\dev\FalconSpanish\brand\source\`)
 
 - [ ] `falcon-logo.svg` — full logo, transparent bg
-- [ ] `spanishfiesta-logo.svg` — full logo, transparent bg
+- [ ] `spanish-logo.svg` — full logo, transparent bg
 - [ ] `falcon-icon.svg` — eagle only, no text, transparent bg
-- [ ] `spanishfiesta-icon.svg` — dancer only, no text, transparent bg
+- [ ] `spanish-icon.svg` — dancer only, no text, transparent bg
 - [ ] `combined-logo.svg` — both properties in one lockup
 
 ---
@@ -49,10 +48,10 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 |---|---|---|---|
 | `falcon-logo-dark.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page |
 | `falcon-logo-light.png` ⭐ | 1200 × 400 | Transparent | Footer (white version) |
-| `spanishfiesta-logo-dark.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page |
-| `spanishfiesta-logo-light.png` ⭐ | 1200 × 400 | Transparent | Footer (white version) |
+| `spanish-logo-dark.png` ⭐ | 1200 × 400 | Transparent | Nav, contact page |
+| `spanish-logo-light.png` ⭐ | 1200 × 400 | Transparent | Footer (white version) |
 | `falcon-icon.png` | 400 × 400 | Transparent | Badges, small use |
-| `spanishfiesta-icon.png` | 400 × 400 | Transparent | Badges, small use |
+| `spanish-icon.png` | 400 × 400 | Transparent | Badges, small use |
 | `favicon.svg` ⭐ | 512 × 512 | Dark fill | Browser tab (from realfavicongenerator) |
 | `favicon-512.png` ⭐ | 512 × 512 | Dark fill | PWA / Apple touch icon |
 
@@ -60,7 +59,7 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 
 > **Light versions** = white text/elements for use on dark backgrounds (footer, dark hero). Create by duplicating the logo in Affinity and changing all elements to white.
 
-> **Small-size icons:** The full illustrated eagle/dancer are unreadable below ~80px. For `falcon-icon` and `spanishfiesta-icon`, simplify to a flat single-colour silhouette of the overall shape.
+> **Small-size icons:** The full illustrated eagle/dancer are unreadable below ~80px. For `falcon-icon` and `spanish-icon`, simplify to a flat single-colour silhouette of the overall shape.
 
 ---
 
@@ -69,7 +68,7 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 | File | Size | Background |
 |---|---|---|
 | `falcon-gbp-logo.jpg` | 720 × 720 | White (GBP rejects transparent) |
-| `spanishfiesta-gbp-logo.jpg` | 720 × 720 | White |
+| `spanish-gbp-logo.jpg` | 720 × 720 | White |
 
 ---
 
@@ -81,8 +80,8 @@ Add the generated HTML snippet to `src/app.html` in the `<head>`.
 |---|---|
 | `falcon-businesscard-front.pdf` | Logo, 7106 Main St, (250) 495-7544, falcon-spanish.com |
 | `falcon-businesscard-back.pdf` | Optional: tagline, QR code, or blank |
-| `spanishfiesta-businesscard-front.pdf` | Logo, 7104 Main St, (250) 495-6833, falcon-spanish.com |
-| `spanishfiesta-businesscard-back.pdf` | Optional |
+| `spanish-businesscard-front.pdf` | Logo, 7104 Main St, (250) 495-6833, falcon-spanish.com |
+| `spanish-businesscard-back.pdf` | Optional |
 | `combined-businesscard-front.pdf` | For staff working both properties |
 
 ---
@@ -106,10 +105,10 @@ Once web files are ready, drop them into:
 src/lib/assets/
   falcon-logo-dark.png
   falcon-logo-light.png
-  spanishfiesta-logo-dark.png
-  spanishfiesta-logo-light.png
+  spanish-logo-dark.png
+  spanish-logo-light.png
   falcon-icon.png
-  spanishfiesta-icon.png
+  spanish-icon.png
 
 static/
   favicon.svg
