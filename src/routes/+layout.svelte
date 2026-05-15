@@ -289,7 +289,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-resort-sand/30 bg-resort-sand/10">
+<footer class="border-t border-resort-sand/20 bg-gray-50">
 	<div class="mx-auto max-w-6xl px-6 py-14">
 		{#if isPropertyRoute && currentProperty && sisterProperty}
 			<!-- Property-specific footer -->

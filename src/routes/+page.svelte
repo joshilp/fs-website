@@ -277,7 +277,7 @@
 </section>
 
 <!-- Gallery teaser -->
-<section class="bg-resort-dark/4 py-20">
+<section class="py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="mb-10 flex items-end justify-between">
 			<div>
@@ -328,8 +328,8 @@
 </section>
 
 <!-- Location teaser -->
-<section class="mx-auto max-w-6xl px-6 py-24">
-	<div class="grid items-center gap-14 md:grid-cols-2">
+<section class="border-y border-resort-sand/20 bg-gray-50 py-24">
+	<div class="mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2">
 		<div class="order-2 md:order-1 overflow-hidden rounded-sm border border-resort-sand/20">
 			<iframe
 				title="Osoyoos resort location map"
