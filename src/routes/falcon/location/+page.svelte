@@ -1,4 +1,4 @@
-﻿<script lang="ts">
+<script lang="ts">
 	import { properties } from '$lib/config.js';
 
 	const p = properties.falcon;
@@ -18,13 +18,13 @@
 </svelte:head>
 
 <!-- Header -->
-<section class="bg-resort-dark py-20 text-center text-white">
+<section class="border-b border-resort-sand/15 py-20 text-center">
 	<div class="mx-auto max-w-2xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Falcon Resort
 		</p>
-		<h1 class="font-serif text-4xl font-bold">Location &amp; Directions</h1>
-		<p class="mt-4 font-sans text-lg text-white/70">
+		<h1 class="font-serif text-4xl font-bold text-resort-dark">Location &amp; Directions</h1>
+		<p class="mt-4 font-sans text-lg text-resort-dark/65">
 			{p.address.street}, {p.address.city}, {p.address.province}
 		</p>
 		<a

@@ -21,20 +21,13 @@
 </svelte:head>
 
 <!-- Page header -->
-<section class="relative overflow-hidden bg-resort-dark py-24 text-white">
-	<div class="absolute inset-0">
-		<enhanced:img
-			src={roomPlaceholder}
-			alt="Motel rooms at Falcon Resort and Spanish Fiesta Resort, Osoyoos BC"
-			class="h-full w-full object-cover opacity-20"
-		/>
-	</div>
-	<div class="relative mx-auto max-w-4xl px-6 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+<section class="border-b border-resort-sand/15 py-24 text-center">
+	<div class="mx-auto max-w-4xl px-6">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Accommodations
 		</p>
-		<h1 class="font-serif text-5xl font-bold">Osoyoos Motel Rooms</h1>
-		<p class="mt-4 font-sans text-lg text-white/75">
+		<h1 class="font-serif text-5xl font-bold text-resort-dark">Osoyoos Motel Rooms</h1>
+		<p class="mt-4 font-sans text-lg text-resort-dark/65">
 			Two adjacent properties, each with their own rooms and character. Call us to find the best
 			fit.
 		</p>

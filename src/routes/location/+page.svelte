@@ -22,18 +22,13 @@
 </svelte:head>
 
 <!-- Page header -->
-<section class="relative overflow-hidden bg-resort-dark py-24 text-white">
-	<enhanced:img
-		src="$lib/assets/images/hero.jpg"
-		alt="Osoyoos Lake and South Okanagan desert landscape, BC"
-		class="absolute inset-0 h-full w-full object-cover opacity-20"
-	/>
-	<div class="relative mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+<section class="border-b border-resort-sand/15 py-24 text-center">
+	<div class="mx-auto max-w-3xl px-6">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Osoyoos, BC
 		</p>
-		<h1 class="font-serif text-5xl font-bold">Osoyoos, BC — the destination itself.</h1>
-		<p class="mt-4 font-sans text-lg text-white/75">
+		<h1 class="font-serif text-5xl font-bold text-resort-dark">Osoyoos, BC — the destination itself.</h1>
+		<p class="mt-4 font-sans text-lg text-resort-dark/65">
 			Osoyoos isn't just where our motels are — it's why people come.
 		</p>
 	</div>

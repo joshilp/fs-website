@@ -50,12 +50,12 @@
 		alt="Osoyoos Lake waterfront at Spanish Fiesta Resort, Osoyoos BC"
 		class="absolute inset-0 h-full w-full object-cover"
 	/>
-	<div class="absolute inset-0 bg-linear-to-b from-black/45 via-black/20 to-black/80"></div>
+	<div class="absolute inset-0 bg-linear-to-b from-black/25 via-black/15 to-black/80"></div>
 
 	<div
 		class="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-24 text-center text-white"
 	>
-		<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="144" width="432" class="mb-6 h-36 w-auto object-contain drop-shadow-lg md:h-44" />
+		<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="144" width="432" class="mb-6 h-36 w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.45)] md:h-44" />
 		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-resort-sand">
 			Osoyoos, British Columbia
 		</p>

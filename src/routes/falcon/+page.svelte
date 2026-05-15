@@ -47,12 +47,12 @@
 		alt="Osoyoos Lake waterfront at Falcon Resort, Osoyoos BC"
 		class="absolute inset-0 h-full w-full object-cover"
 	/>
-	<div class="absolute inset-0 bg-linear-to-b from-black/45 via-black/20 to-black/80"></div>
+	<div class="absolute inset-0 bg-linear-to-b from-black/25 via-black/15 to-black/80"></div>
 
 	<div
 		class="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-24 text-center text-white"
 	>
-		<img src={falconLogoColor} alt="Falcon Resort" height="144" width="432" class="mb-6 h-36 w-auto object-contain drop-shadow-lg md:h-44" />
+		<img src={falconLogoColor} alt="Falcon Resort" height="144" width="432" class="mb-6 h-36 w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.45)] md:h-44" />
 		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-sand">
 			Osoyoos, British Columbia
 		</p>
@@ -281,13 +281,13 @@
 </section>
 
 <!-- Book CTA -->
-<section class="bg-resort-dark py-20 text-white">
+<section class="border-t border-resort-sand/20 bg-resort-stone/10 py-20">
 	<div class="mx-auto max-w-3xl px-6 text-center">
-		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+		<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone/70">
 			Reservations
 		</p>
-		<h2 class="font-serif text-5xl font-bold">Ready to book?</h2>
-		<p class="mt-5 font-sans text-lg text-white/70">
+		<h2 class="font-serif text-5xl font-bold text-resort-dark">Ready to book?</h2>
+		<p class="mt-5 font-sans text-lg text-resort-dark/65">
 			Call us — we'll confirm your dates and room in under 2 minutes.
 		</p>
 
@@ -313,7 +313,7 @@
 			{p.phone.display}
 		</a>
 
-		<p class="mt-8 font-sans text-sm text-white/40">
+		<p class="mt-8 font-sans text-sm text-resort-dark/40">
 			{p.address.full}
 		</p>
 	</div>

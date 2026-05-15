@@ -4,9 +4,9 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { buildSchema, propertyList, properties } from '$lib/config.js';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
-	import falconLogoWhite from '$lib/assets/falcon-logo-white-tight.png';
+	import falconLogoWhite from '$lib/assets/falcon-logo-white-tight-bg_white_text.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
-	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight.png';
+	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight-bg_white_text.png';
 	import falconIcon from '$lib/assets/falcon-icon.png';
 	import spanishIcon from '$lib/assets/spanish-icon.png';
 

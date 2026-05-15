@@ -1,4 +1,4 @@
-﻿<script lang="ts">
+<script lang="ts">
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
 
@@ -22,13 +22,13 @@
 </svelte:head>
 
 <!-- Header -->
-<section class="bg-resort-dark py-24 text-center text-white">
+<section class="border-b border-resort-sand/15 py-24 text-center">
 	<div class="mx-auto max-w-2xl px-6">
-		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-sand">
+		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
 			Falcon Resort
 		</p>
-		<h1 class="font-serif text-5xl font-bold">Book Your Stay</h1>
-		<p class="mt-4 font-sans text-lg text-white/70">
+		<h1 class="font-serif text-5xl font-bold text-resort-dark">Book Your Stay</h1>
+		<p class="mt-4 font-sans text-lg text-resort-dark/65">
 			Call us — we'll confirm your dates and room in under 2 minutes.
 		</p>
 	</div>

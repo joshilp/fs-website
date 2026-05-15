@@ -7,8 +7,6 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
 	import { properties, site } from '$lib/config.js';
-	import falconLogoWhite from '$lib/assets/falcon-logo-white-tight.png';
-	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight.png';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 
@@ -48,7 +46,7 @@
 			class="absolute inset-0 h-full w-full object-cover"
 		/>
 	<!-- Layered overlay: dark at bottom for text legibility, lighter at top for nav transparency -->
-	<div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-black/75"></div>
+	<div class="absolute inset-0 bg-linear-to-b from-black/30 via-black/15 to-black/75"></div>
 
 	<div
 		class="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-24 text-center text-white"
@@ -69,7 +67,7 @@
 				href="/falcon"
 				class="group flex flex-col items-center rounded-xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				<img src={falconLogoColor} alt="Falcon Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-lg" />
+				<img src={falconLogoColor} alt="Falcon Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-[0_0_16px_rgba(255,255,255,0.4)]" />
 				<p class="font-serif text-lg font-bold text-white">7106 Main Street</p>
 				<p class="mt-1 font-sans text-sm text-white/55">{properties.falcon.phone.display}</p>
 				<p class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
@@ -81,7 +79,7 @@
 				href="/spanish"
 				class="group flex flex-col items-center rounded-xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition-colors hover:bg-white/15"
 			>
-				<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-lg" />
+				<img src={spanishLogoColor} alt="Spanish Fiesta Resort" height="96" width="288" class="mb-5 h-24 w-auto object-contain drop-shadow-[0_0_16px_rgba(255,255,255,0.4)]" />
 				<p class="font-serif text-lg font-bold text-white">7104 Main Street</p>
 				<p class="mt-1 font-sans text-sm text-white/55">{properties.spanish.phone.display}</p>
 				<p class="mt-4 font-sans text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
