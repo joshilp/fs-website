@@ -1,6 +1,6 @@
 {
-  "name": "Falcon-Spanish.com",
-  "short_name": "Falcon-Spanish",
+  "name": "Falcon & Spanish Fiesta Resorts",
+  "short_name": "FS Resorts",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#3D2B1F",
+  "background_color": "#3D2B1F",
   "display": "standalone"
 }

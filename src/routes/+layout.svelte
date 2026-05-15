@@ -1,9 +1,12 @@
 <script lang="ts">
 	import './layout.css';
 	import { page } from '$app/stores';
-	import favicon from '$lib/assets/favicon.svg';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { buildSchema, propertyList, properties } from '$lib/config.js';
+	import falconLogoColor from '$lib/assets/falcon-logo-color.png';
+	import falconLogoWhite from '$lib/assets/falcon-logo-white.png';
+	import spanishLogoColor from '$lib/assets/spanish-logo-color.png';
+	import spanishLogoWhite from '$lib/assets/spanish-logo-white.png';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -88,7 +91,6 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
 	{@html `<script type="application/ld+json">${JSON.stringify(buildSchema())}</script>`}
 </svelte:head>
 
@@ -134,17 +136,24 @@
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 		<!-- Logo — single property name on property routes, split on shared routes -->
 		{#if isPropertyRoute}
-			<a href={logoHref} class="group leading-tight">
-				<p class="font-serif text-base font-bold {transparent ? 'text-white' : 'text-resort-dark'}">
-					{isFalcon ? 'Falcon Resort' : 'Spanish Fiesta Resort'}
-				</p>
-				<p
-					class="font-sans text-[9px] font-medium uppercase tracking-widest {transparent
-						? 'text-white/55'
-						: 'text-resort-dark/40'}"
-				>
-					Osoyoos, BC
-				</p>
+			<a href={logoHref} class="group">
+				{#if isFalcon}
+					<img
+						src={transparent ? falconLogoWhite : falconLogoColor}
+						alt="Falcon Resort"
+						height="40"
+						width="120"
+						class="h-10 w-auto object-contain"
+					/>
+				{:else}
+					<img
+						src={transparent ? spanishLogoWhite : spanishLogoColor}
+						alt="Spanish Fiesta Resort"
+						height="40"
+						width="120"
+						class="h-10 w-auto object-contain"
+					/>
+				{/if}
 			</a>
 		{:else}
 			<a href="/" class="group flex items-center gap-2.5">
@@ -310,10 +319,13 @@
 			<!-- Property-specific footer -->
 			<div class="grid gap-10 md:grid-cols-3">
 				<div>
-					<p class="font-serif text-lg font-bold text-white">{currentProperty.name}</p>
-					<p class="mt-1 font-sans text-[10px] font-medium uppercase tracking-wider text-white/40">
-						Osoyoos, BC
-					</p>
+					<img
+						src={isFalcon ? falconLogoWhite : spanishLogoWhite}
+						alt={currentProperty.name}
+						height="48"
+						width="144"
+						class="h-12 w-auto object-contain"
+					/>
 					<p class="mt-4 font-sans text-sm leading-relaxed text-white/50">
 						Lakeside motel on Main Street, Osoyoos — private beach, 2 pools, hot tub, and
 						air-conditioned rooms.
