@@ -5,7 +5,7 @@
 	import gallery4 from '$lib/assets/images/gallery-4.jpg?enhanced';
 	import gallery5 from '$lib/assets/images/gallery-5.jpg?enhanced';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
+	import { Waves, Droplets, AirVent, Flame, Sun, Thermometer, Building2, MapPin } from 'lucide-svelte';
 	import { properties, site } from '$lib/config.js';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
@@ -14,11 +14,15 @@
 
 	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
-	const amenities = [
-		{ label: 'Private Sandy Beach', sub: 'Walk 500 ft — still touch the bottom', icon: Waves },
-		{ label: '2 Pools & Hot Tub', sub: 'Heated outdoor pools', icon: Droplets },
-		{ label: 'Air Conditioned', sub: 'Every room, always', icon: AirVent },
-		{ label: 'BBQ & Picnic Areas', sub: 'Both properties', icon: Flame }
+	const highlights = [
+		{ icon: Sun,       label: 'Sunshine',             sub: '200+ days per year — most in Canada' },
+		{ icon: Waves,     label: 'Private Sandy Beach',   sub: 'Walk 500 ft and still touch the bottom' },
+		{ icon: Thermometer, label: 'Warmest Lake',        sub: '#1 warmest freshwater lake in Canada' },
+		{ icon: Droplets,  label: '2 Pools & Hot Tub',    sub: 'Heated outdoor pools on both properties' },
+		{ icon: AirVent,   label: 'Air Conditioned',       sub: 'Every room, always' },
+		{ icon: Flame,     label: 'BBQ & Picnic Areas',    sub: 'On the grounds at both properties' },
+		{ icon: Building2, label: '2 Adjacent Properties', sub: 'Operated as one from a shared office' },
+		{ icon: MapPin,    label: 'Right on Main Street',  sub: 'Beach, dining, and shops steps away' }
 	];
 </script>
 
@@ -109,37 +113,18 @@
 	</div>
 </section>
 
-<!-- Stats strip -->
-<section class="bg-resort-dark text-white">
-	<div
-		class="mx-auto grid max-w-5xl grid-cols-2 divide-x divide-white/10 md:grid-cols-4"
-	>
-		{#each [
-			{ stat: '200+', label: 'Sunshine days / year' },
-			{ stat: '#1', label: 'Warmest lake in Canada' },
-			{ stat: '2', label: 'Adjacent properties' },
-			{ stat: '500ft', label: 'Sandy shallow beach' }
-		] as item}
-			<div class="flex flex-col items-center py-8 text-center px-4">
-				<span class="font-serif text-3xl font-bold text-resort-sand">{item.stat}</span>
-				<span class="mt-1 font-sans text-xs text-white/50 uppercase tracking-wide">{item.label}</span>
-			</div>
-		{/each}
-	</div>
-</section>
-
-<!-- Amenity highlights -->
-<section class="bg-resort-green py-14 text-white">
-	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
-		{#each amenities as feature}
+<!-- Highlights grid — 2×4 merged stats + amenities -->
+<section class="border-y border-resort-sand/20">
+	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-resort-sand/20 md:grid-cols-4">
+		{#each highlights as feature}
 			{@const Icon = feature.icon}
-			<div class="flex flex-col items-center gap-4 bg-resort-green px-6 py-10 text-center">
-				<div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
-					<Icon class="h-6 w-6" />
+			<div class="flex flex-col items-center gap-4 bg-white px-6 py-10 text-center">
+				<div class="flex h-14 w-14 items-center justify-center rounded-full bg-resort-green/12">
+					<Icon class="h-6 w-6 text-resort-green" />
 				</div>
 				<div>
-					<p class="font-sans font-semibold">{feature.label}</p>
-					<p class="mt-1 font-sans text-sm text-white/65">{feature.sub}</p>
+					<p class="font-sans font-semibold text-resort-dark">{feature.label}</p>
+					<p class="mt-1 font-sans text-sm text-resort-dark/55">{feature.sub}</p>
 				</div>
 			</div>
 		{/each}

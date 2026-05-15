@@ -124,17 +124,17 @@
 </section>
 
 <!-- Amenity strip -->
-<section class="bg-resort-stone py-14 text-white">
-	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+<section class="border-y border-resort-sand/20">
+	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-resort-sand/20 md:grid-cols-4">
 		{#each highlights as feature}
 			{@const Icon = feature.icon}
-			<div class="flex flex-col items-center gap-4 bg-resort-stone px-6 py-10 text-center">
-				<div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
-					<Icon class="h-6 w-6" />
+			<div class="flex flex-col items-center gap-4 bg-white px-6 py-10 text-center">
+				<div class="flex h-14 w-14 items-center justify-center rounded-full bg-resort-stone/12">
+					<Icon class="h-6 w-6 text-resort-stone" />
 				</div>
 				<div>
-					<p class="font-sans font-semibold">{feature.label}</p>
-					<p class="mt-1 font-sans text-sm text-white/65">{feature.sub}</p>
+					<p class="font-sans font-semibold text-resort-dark">{feature.label}</p>
+					<p class="mt-1 font-sans text-sm text-resort-dark/55">{feature.sub}</p>
 				</div>
 			</div>
 		{/each}
