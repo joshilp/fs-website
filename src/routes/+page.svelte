@@ -113,8 +113,57 @@
 	</div>
 </section>
 
+<!-- About -->
+<section class="bg-resort-dark/3 py-24">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="grid items-center gap-14 md:grid-cols-2">
+			<div>
+				<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
+					About the Resorts
+				</p>
+				<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
+					Two properties,<br />one great stay.
+				</h2>
+				<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
+					The Falcon Resort and Spanish Fiesta Resort are adjacent lakeside motels on Main Street in
+					Osoyoos, BC — operated as one from a shared office between them. Whether you book into one
+					or the other, you get the same friendly service, the same private beach on Osoyoos Lake, and
+					the same incredible Okanagan sunshine.
+				</p>
+				<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
+					Osoyoos is Canada's only pocket desert — but Osoyoos Lake is the warmest freshwater lake in
+					Canada, right at your doorstep. Walk out 500 feet and still touch the sandy bottom.
+				</p>
+				<Button
+					href="/rooms"
+					variant="link"
+					class="mt-6 h-auto p-0 font-sans text-sm font-semibold text-resort-green hover:text-resort-brown"
+				>
+					Explore our rooms →
+				</Button>
+			</div>
+			<div class="relative">
+				<div class="overflow-hidden rounded-sm">
+					<enhanced:img
+						src="$lib/assets/images/hero.jpg"
+						alt="Osoyoos Lake shoreline viewed from the resort grounds"
+						class="h-96 w-full object-cover"
+					/>
+				</div>
+				<!-- Offset caption card -->
+				<div
+					class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
+				>
+					<p class="font-sans text-xs text-white/50 uppercase tracking-wider">Osoyoos Lake</p>
+					<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Highlights grid — 2×4 merged stats + amenities -->
-<section class="border-y border-resort-sand/20">
+<section class="border-y border-resort-sand/20 p-12">
 	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-resort-sand/20 md:grid-cols-4">
 		{#each highlights as feature}
 			{@const Icon = feature.icon}
@@ -128,53 +177,6 @@
 				</div>
 			</div>
 		{/each}
-	</div>
-</section>
-
-<!-- About -->
-<section class="mx-auto max-w-6xl px-6 py-24">
-	<div class="grid items-center gap-14 md:grid-cols-2">
-		<div>
-			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
-				About the Resorts
-			</p>
-			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
-				Two properties,<br />one great stay.
-			</h2>
-			<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
-				The Falcon Resort and Spanish Fiesta Resort are adjacent lakeside motels on Main Street in
-				Osoyoos, BC — operated as one from a shared office between them. Whether you book into one
-				or the other, you get the same friendly service, the same private beach on Osoyoos Lake, and
-				the same incredible Okanagan sunshine.
-			</p>
-			<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
-				Osoyoos is Canada's only pocket desert — but Osoyoos Lake is the warmest freshwater lake in
-				Canada, right at your doorstep. Walk out 500 feet and still touch the sandy bottom.
-			</p>
-			<Button
-				href="/rooms"
-				variant="link"
-				class="mt-6 h-auto p-0 font-sans text-sm font-semibold text-resort-green hover:text-resort-brown"
-			>
-				Explore our rooms →
-			</Button>
-		</div>
-		<div class="relative">
-			<div class="overflow-hidden rounded-sm">
-		<enhanced:img
-			src="$lib/assets/images/hero.jpg"
-			alt="Osoyoos Lake shoreline viewed from the resort grounds"
-			class="h-96 w-full object-cover"
-		/>
-			</div>
-			<!-- Offset caption card -->
-			<div
-				class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
-			>
-				<p class="font-sans text-xs text-white/50 uppercase tracking-wider">Osoyoos Lake</p>
-				<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
-			</div>
-		</div>
 	</div>
 </section>
 

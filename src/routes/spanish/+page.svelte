@@ -126,8 +126,59 @@
 	</div>
 </section>
 
+<!-- About -->
+<section class="bg-resort-dark/3 py-24">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="grid items-center gap-14 md:grid-cols-2">
+			<div>
+				<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-red">
+					About Spanish Fiesta Resort
+				</p>
+				<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
+					Warmth, water,<br /><em>and Osoyoos sunshine.</em>
+				</h2>
+				<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
+					Spanish Fiesta Resort is a lakeside motel in the heart of Osoyoos, BC — right on Main
+					Street with direct access to a private sandy beach on Osoyoos Lake. The warmest freshwater
+					lake in Canada is steps away, and the Okanagan sunshine averages over 200 days a year.
+				</p>
+				<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
+					Spanish Fiesta and Falcon share connected grounds — guests enjoy 2 outdoor pools, a hot tub,
+					BBQ areas, and a private beach all within the same property. Whether you're here for the wine
+					country, the water sports, or just a quiet getaway — this is your home base.
+				</p>
+				<address class="mt-6 not-italic">
+					<p class="font-sans text-sm text-resort-dark/60">
+						<span class="font-semibold text-resort-dark">{p.address.street}</span><br />
+						{p.address.city}, {p.address.province}&nbsp;&nbsp;{p.address.postalCode}
+					</p>
+				</address>
+			</div>
+			<div class="relative">
+				<div class="overflow-hidden rounded-sm">
+					<img
+						src={heroUrl}
+						alt="Osoyoos Lake waterfront at Spanish Fiesta Resort"
+						width="1920"
+						height="1080"
+						class="h-96 w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<div
+					class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
+				>
+					<p class="font-sans text-xs uppercase tracking-wider text-white/50">Osoyoos Lake</p>
+					<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Amenity strip -->
-<section class="border-y border-resort-sand/20">
+<section class="border-y border-resort-sand/20 p-12">
 	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-resort-sand/20 md:grid-cols-4">
 		{#each highlights as feature}
 			{@const Icon = feature.icon}
@@ -141,55 +192,6 @@
 				</div>
 			</div>
 		{/each}
-	</div>
-</section>
-
-<!-- About -->
-<section class="mx-auto max-w-6xl px-6 py-24">
-	<div class="grid items-center gap-14 md:grid-cols-2">
-		<div>
-			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-red">
-				About Spanish Fiesta Resort
-			</p>
-			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
-				Warmth, water,<br /><em>and Osoyoos sunshine.</em>
-			</h2>
-			<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
-				Spanish Fiesta Resort is a lakeside motel in the heart of Osoyoos, BC — right on Main
-				Street with direct access to a private sandy beach on Osoyoos Lake. The warmest freshwater
-				lake in Canada is steps away, and the Okanagan sunshine averages over 200 days a year.
-			</p>
-			<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
-				Spanish Fiesta and Falcon share connected grounds — guests enjoy 2 outdoor pools, a hot tub,
-				BBQ areas, and a private beach all within the same property. Whether you're here for the wine
-				country, the water sports, or just a quiet getaway — this is your home base.
-			</p>
-			<address class="mt-6 not-italic">
-				<p class="font-sans text-sm text-resort-dark/60">
-					<span class="font-semibold text-resort-dark">{p.address.street}</span><br />
-					{p.address.city}, {p.address.province}&nbsp;&nbsp;{p.address.postalCode}
-				</p>
-			</address>
-		</div>
-		<div class="relative">
-			<div class="overflow-hidden rounded-sm">
-				<img
-					src={heroUrl}
-					alt="Osoyoos Lake waterfront at Spanish Fiesta Resort"
-					width="1920"
-					height="1080"
-					class="h-96 w-full object-cover"
-					loading="lazy"
-					decoding="async"
-				/>
-			</div>
-			<div
-				class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
-			>
-				<p class="font-sans text-xs uppercase tracking-wider text-white/50">Osoyoos Lake</p>
-				<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
-			</div>
-		</div>
 	</div>
 </section>
 

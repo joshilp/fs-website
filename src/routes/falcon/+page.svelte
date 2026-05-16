@@ -123,8 +123,59 @@
 	</div>
 </section>
 
+<!-- About -->
+<section class="bg-resort-dark/3 py-24">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="grid items-center gap-14 md:grid-cols-2">
+			<div>
+				<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
+					About Falcon Resort
+				</p>
+				<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
+					Lakeside comfort<br />in Osoyoos.
+				</h2>
+				<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
+					Falcon Resort sits right on Main Street in Osoyoos, BC — steps from a private sandy beach on
+					Osoyoos Lake. The warmest freshwater lake in Canada is practically at your door. Walk out
+					500 feet and still touch the sandy bottom.
+				</p>
+				<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
+					Falcon and Spanish Fiesta share connected grounds — guests enjoy 2 outdoor pools, a hot tub,
+					BBQ areas, and a private beach all within the same property. Clean, air-conditioned rooms and
+					friendly service — everything you need for a great Osoyoos stay.
+				</p>
+				<address class="mt-6 not-italic">
+					<p class="font-sans text-sm text-resort-dark/60">
+						<span class="font-semibold text-resort-dark">{p.address.street}</span><br />
+						{p.address.city}, {p.address.province}&nbsp;&nbsp;{p.address.postalCode}
+					</p>
+				</address>
+			</div>
+			<div class="relative">
+				<div class="overflow-hidden rounded-sm">
+					<img
+						src={heroUrl}
+						alt="Osoyoos Lake waterfront at Falcon Resort"
+						width="1920"
+						height="1080"
+						class="h-96 w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<div
+					class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
+				>
+					<p class="font-sans text-xs uppercase tracking-wider text-white/50">Osoyoos Lake</p>
+					<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Amenity strip -->
-<section class="border-y border-resort-sand/20">
+<section class="border-y border-resort-sand/20 p-12">
 	<div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-resort-sand/20 md:grid-cols-4">
 		{#each highlights as feature}
 			{@const Icon = feature.icon}
@@ -138,55 +189,6 @@
 				</div>
 			</div>
 		{/each}
-	</div>
-</section>
-
-<!-- About -->
-<section class="mx-auto max-w-6xl px-6 py-24">
-	<div class="grid items-center gap-14 md:grid-cols-2">
-		<div>
-			<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
-				About Falcon Resort
-			</p>
-			<h2 class="font-serif text-5xl font-bold leading-tight text-resort-dark">
-				Lakeside comfort<br />in Osoyoos.
-			</h2>
-			<p class="mt-6 font-sans text-base leading-relaxed text-resort-dark/65">
-				Falcon Resort sits right on Main Street in Osoyoos, BC — steps from a private sandy beach on
-				Osoyoos Lake. The warmest freshwater lake in Canada is practically at your door. Walk out
-				500 feet and still touch the sandy bottom.
-			</p>
-			<p class="mt-4 font-sans text-base leading-relaxed text-resort-dark/65">
-				Falcon and Spanish Fiesta share connected grounds — guests enjoy 2 outdoor pools, a hot tub,
-				BBQ areas, and a private beach all within the same property. Clean, air-conditioned rooms and
-				friendly service — everything you need for a great Osoyoos stay.
-			</p>
-			<address class="mt-6 not-italic">
-				<p class="font-sans text-sm text-resort-dark/60">
-					<span class="font-semibold text-resort-dark">{p.address.street}</span><br />
-					{p.address.city}, {p.address.province}&nbsp;&nbsp;{p.address.postalCode}
-				</p>
-			</address>
-		</div>
-		<div class="relative">
-			<div class="overflow-hidden rounded-sm">
-				<img
-					src={heroUrl}
-					alt="Osoyoos Lake waterfront at Falcon Resort"
-					width="1920"
-					height="1080"
-					class="h-96 w-full object-cover"
-					loading="lazy"
-					decoding="async"
-				/>
-			</div>
-			<div
-				class="absolute -bottom-5 -left-5 hidden rounded-sm bg-resort-dark px-6 py-4 shadow-xl md:block"
-			>
-				<p class="font-sans text-xs uppercase tracking-wider text-white/50">Osoyoos Lake</p>
-				<p class="mt-0.5 font-serif text-sm font-semibold text-white">Steps from your door</p>
-			</div>
-		</div>
 	</div>
 </section>
 
