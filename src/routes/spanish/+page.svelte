@@ -13,6 +13,8 @@
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
 	import { properties } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
+	import FaqSection from '$lib/components/FaqSection.svelte';
+	import { propertyFaq } from '$lib/data/faq.js';
 
 	const p = properties.spanish;
 	const teaserPhotos = [url1, url2, url3, url4, url5];
@@ -286,6 +288,8 @@
 		</div>
 	</div>
 </section>
+
+<FaqSection accent="resort-red" eyebrow="Questions" heading="Before you book." limit={4} extraItems={propertyFaq.spanish} viewAllHref="/spanish/faq" />
 
 <!-- Book CTA -->
 <!-- Background: replace src/lib/assets/images/spanish/cta-bg.jpg to change this photo -->

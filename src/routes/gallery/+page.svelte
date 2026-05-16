@@ -70,7 +70,7 @@
 </svelte:head>
 
 <!-- Page header -->
-<section class="pt-16 pb-10 text-center">
+<section class="pt-10 pb-6 text-center">
 	<div class="mx-auto max-w-2xl px-6">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Gallery

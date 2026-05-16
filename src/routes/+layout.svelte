@@ -48,6 +48,7 @@
 					{ href: `${base}/rooms`, label: 'Rooms' },
 					{ href: `${base}/gallery`, label: 'Gallery' },
 					{ href: `${base}/location`, label: 'Location' },
+					{ href: `${base}/faq`, label: 'FAQ' },
 					{ href: `${base}/contact`, label: 'Contact' }
 				]
 			: [
@@ -55,6 +56,7 @@
 					{ href: '/gallery', label: 'Gallery' },
 					{ href: '/location', label: 'Location' },
 					{ href: '/guides', label: 'Area Guide' },
+					{ href: '/faq', label: 'FAQ' },
 					{ href: '/contact', label: 'Contact' }
 				]
 	);

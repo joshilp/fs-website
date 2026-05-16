@@ -13,6 +13,8 @@
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
 	import { properties, site } from '$lib/config.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
+	import FaqSection from '$lib/components/FaqSection.svelte';
+	import { propertyFaq } from '$lib/data/faq.js';
 
 	const p = properties.falcon;
 	const teaserPhotos = [url1, url2, url3, url4, url5];
@@ -283,6 +285,8 @@
 		</div>
 	</div>
 </section>
+
+<FaqSection accent="resort-stone" eyebrow="Questions" heading="Before you book." limit={4} extraItems={propertyFaq.falcon} viewAllHref="/falcon/faq" />
 
 <!-- Book CTA -->
 <!-- Background: replace src/lib/assets/images/falcon/cta-bg.jpg to change this photo -->

@@ -1,14 +1,10 @@
 <script lang="ts">
+	import { Accordion } from 'bits-ui';
+	import { ChevronDown } from 'lucide-svelte';
 	import { faq, buildFaqSchema } from '$lib/data/faq.js';
 	import { properties } from '$lib/config.js';
 
 	const schema = buildFaqSchema();
-
-	let openIdx = $state<number | null>(null);
-
-	function toggle(i: number) {
-		openIdx = openIdx === i ? null : i;
-	}
 </script>
 
 <svelte:head>
@@ -27,7 +23,7 @@
 </svelte:head>
 
 <!-- Page header -->
-<section class="pt-16 pb-10 text-center">
+<section class="pt-10 pb-6 text-center">
 	<div class="mx-auto max-w-2xl px-6">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-green">
 			Help
@@ -41,44 +37,30 @@
 
 <!-- FAQ accordion -->
 <section class="mx-auto max-w-3xl px-6 py-20">
-	<div class="divide-y divide-resort-sand/30">
+	<Accordion.Root type="single" collapsible class="divide-y divide-resort-sand/30">
 		{#each faq as item, i}
-			<div class="py-1">
-				<button
-					class="flex w-full items-start justify-between gap-6 py-5 text-left"
-					onclick={() => toggle(i)}
-					aria-expanded={openIdx === i}
-				>
-					<span class="font-sans text-base font-semibold text-resort-dark">{item.question}</span>
-					<span
-						class="mt-0.5 shrink-0 text-resort-green transition-transform duration-200 {openIdx === i
-							? 'rotate-45'
-							: ''}"
+			<Accordion.Item value="faq-{i}" class="py-1">
+				<Accordion.Header>
+					<Accordion.Trigger
+						class="flex w-full items-start justify-between gap-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-resort-green/50 focus-visible:ring-offset-2"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								d="M12 4v16m8-8H4"
-							/>
-						</svg>
-					</span>
-				</button>
-				{#if openIdx === i}
+						<span class="font-sans text-base font-semibold text-resort-dark">{item.question}</span>
+						<ChevronDown
+							class="mt-0.5 h-5 w-5 shrink-0 text-resort-green transition-transform duration-200 group-data-[state=open]:rotate-180"
+							aria-hidden="true"
+						/>
+					</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Content
+					class="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+				>
 					<p class="pb-5 font-sans text-base leading-relaxed text-resort-dark/65">
 						{item.answer}
 					</p>
-				{/if}
-			</div>
+				</Accordion.Content>
+			</Accordion.Item>
 		{/each}
-	</div>
+	</Accordion.Root>
 </section>
 
 <!-- Still have questions -->
