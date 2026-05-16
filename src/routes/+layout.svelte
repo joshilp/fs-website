@@ -8,7 +8,9 @@
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	import spanishLogoWhite from '$lib/assets/spanish-logo-white-tight-bg_white_text.png';
 	import falconIcon from '$lib/assets/falcon-icon.png';
+	import falconIconWhite from '$lib/assets/falcon-icon-white.png';
 	import spanishIcon from '$lib/assets/spanish-icon.png';
+	import spanishIconWhite from '$lib/assets/spanish-icon-white.png';
 
 	let { children } = $props();
 	let mobileOpen = $state(false);
@@ -159,9 +161,9 @@
 			</a>
 		{:else}
 			<a href="/" class="group flex items-center gap-3">
-				<img src={falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300 {transparent ? 'brightness-0 invert' : ''}" />
+				<img src={transparent ? falconIconWhite : falconIcon} alt="Falcon Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300" />
 				<div class="h-7 w-px {transparent ? 'bg-white/30' : 'bg-resort-sand/60'}"></div>
-				<img src={spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300 {transparent ? 'brightness-0 invert' : ''}" />
+				<img src={transparent ? spanishIconWhite : spanishIcon} alt="Spanish Fiesta Resort" height="36" width="36" class="h-9 w-auto object-contain transition-all duration-300" />
 			</a>
 		{/if}
 
