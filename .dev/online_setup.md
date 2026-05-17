@@ -114,7 +114,9 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 > Accounts:
 >
-> * `fsosoyoos@gmail.com` — your main working Gmail inbox. OTAs, vendors, and internal use.
+> * **Your Gmail inbox** — replace `fsosoyoos@gmail.com` throughout this guide with whatever
+>   Gmail address you're actually using (personal or a dedicated business one). Keep it consistent
+>   — GBP, Search Console, and Analytics should all be under the same Google login.
 > * `j@falcon-spanish.com` — customer-facing address, forwards to Gmail via Cloudflare routing.
 
 > If you later hire staff and need separate inboxes per person, upgrade to Google Workspace.
@@ -124,8 +126,8 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 ### 3a — Cloudflare Email Routing
 
 * [ ] In Cloudflare dashboard: Email → Email Routing → Enable
-* [ ] Add routing rule: `j@falcon-spanish.com` → `fsosoyoos@gmail.com`
-* [ ] Add a catch-all rule: any other `@falcon-spanish.com` address → `fsosoyoos@gmail.com`
+* [ ] Add routing rule: `j@falcon-spanish.com` → *(your Gmail address)*
+* [ ] Add a catch-all rule: any other `@falcon-spanish.com` address → *(your Gmail address)*
 * [ ] Cloudflare adds the required MX records automatically
 * [ ] Delete old Tera-Byte MX records if they were not automatically replaced
 * [ ] Send a test email to `j@falcon-spanish.com`
@@ -133,7 +135,7 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 ### 3b — Gmail Send As (reply from [j@falcon-spanish.com](mailto:j@falcon-spanish.com))
 
-* [ ] In Gmail (`fsosoyoos@gmail.com`): Settings → See all settings → Accounts → Send mail as
+* [ ] In Gmail *(your Gmail address)*: Settings → See all settings → Accounts → Send mail as
 * [ ] Click "Add another email address"
 * [ ] Enter name and `j@falcon-spanish.com`
 * [ ] Gmail sends a verification email to `j@falcon-spanish.com`
@@ -196,7 +198,7 @@ Complete in order. Do not cancel Tera-Byte or submit to Google until all items a
 
 ### After email is working:
 
-* [ ] Use `fsosoyoos@gmail.com` for GBP, Search Console, and Analytics
+* [ ] Use your Gmail address for GBP, Search Console, and Analytics
 * [ ] Keep everything under one Google login
 
 ---
@@ -295,7 +297,7 @@ Cloudflare
 Cloudflare Pages
 └── website hosting (free, auto-deploys from GitHub)
 
-Gmail (fsosoyoos@gmail.com)
+Gmail (your Gmail address)
 └── working inbox + GBP + Search Console + Analytics (free)
 
 Cloudflare Email Routing
@@ -314,9 +316,18 @@ Thunderbird
 
 These are placeholders or temporary values currently in the codebase:
 
-| Item                             | File                     | Status                                          |
-| -------------------------------- | ------------------------ | ----------------------------------------------- |
-| `properties.spanish.mapEmbedUrl` | `src/lib/config.ts`      | Using Falcon's embed temporarily                |
-| `site.mapEmbedUrl`               | `src/lib/config.ts`      | Needs dual-property embed after GBP verified    |
-| All gallery images               | `src/lib/assets/images/` | Placeholder — replace with real property photos |
-| Logo / favicon                   | `static/favicon.png`     | Placeholder — replace when logo is ready        |
+| Item                             | File                     | Status                                                   |
+| -------------------------------- | ------------------------ | -------------------------------------------------------- |
+| `properties.falcon.mapEmbedUrl`  | `src/lib/config.ts`      | Placeholder — update after Falcon GBP is verified        |
+| `properties.spanish.mapEmbedUrl` | `src/lib/config.ts`      | Using Falcon's embed temporarily — update after verified |
+| `site.mapEmbedUrl`               | `src/lib/config.ts`      | Needs dual-property embed after both GBPs verified       |
+| Hero / gallery images            | `src/lib/assets/images/` | Placeholder — replace with real property photos          |
+| CTA background images            | `src/lib/assets/images/` | Placeholder — replace `cta-bg.jpg` per property folder   |
+| Logo / favicon                   | `static/`                | ✅ Ready — icon and logo files created                    |
+
+### How to update map embeds (after GBP is verified):
+1. Search Google Maps for the verified listing
+2. Click **Share → Embed a map → Copy HTML**
+3. Extract just the `src="..."` URL from the iframe tag
+4. Paste it into the matching field in `src/lib/config.ts`
+5. Push to GitHub — Cloudflare Pages auto-deploys

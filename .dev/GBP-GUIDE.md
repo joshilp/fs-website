@@ -9,11 +9,26 @@ will show as two distinct pins on Google Maps. Both profiles point to the same w
 
 ## Part 1 — Create / Claim Each Profile
 
-### Step 1 — Go to Google Business Profile Manager
+### Step 1 — Check for an existing listing first
+
+Before creating anything, search Google Maps for **"Falcon Resort Osoyoos"** and
+**"Spanish Fiesta Resort Osoyoos"**. Google often auto-generates listings for existing businesses.
+
+- If a listing appears with a **"Claim this business"** button — click that instead of creating
+  from scratch. Claiming is faster and preserves any existing reviews or photos.
+- If no listing exists, proceed to create a new one below.
+- If a listing exists but shows **"Own this business?"** in the Knowledge Panel on Google Search,
+  click that link — same claiming flow.
+
+> Creating a duplicate listing when one already exists will cause both to appear on Maps, split
+> your reviews, and may trigger a suspension. Always claim first.
+
+### Step 2 — Go to Google Business Profile Manager
 
 1. Open [business.google.com](https://business.google.com) and sign in with a Google account
    you'll use permanently (create a dedicated business Gmail if you don't have one).
-2. Click **"Add your business to Google"** or **"Add a new business"**.
+2. Click **"Add your business to Google"** or **"Add a new business"** — or if claiming, follow
+   the claim flow from Step 1 above.
 
 ---
 
@@ -180,9 +195,12 @@ recent, high-quality photos. Upload in this order:
 - **Minimum:** 720 × 540 px. **Ideal:** 1200 × 900 px or larger
 
 ### Logo
-- If you have a logo, upload it here
-- Square format (1:1 ratio)
-- If no logo yet, skip for now — don't upload a placeholder
+- Use the **icon file** — not the full logo with text
+- Full logo (eagle + "FALCON RESORT" text) collapses to an illegible smear at the small sizes
+  Google displays it (profile thumbnail, Maps sidebar, review responses)
+- The icon reads clearly at any size — this is exactly what it was designed for
+- **File to upload:** `src/lib/assets/falcon-icon.png` (Falcon) / `src/lib/assets/spanish-icon.png` (Spanish)
+- Already square — no cropping needed
 
 ### Required categories to fill (upload at least 3 per category):
 | Category | What to photograph |
