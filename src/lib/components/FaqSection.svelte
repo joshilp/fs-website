@@ -21,6 +21,11 @@
 		heading?: string;
 		/** Accent color token — tailwind text/border class suffix, e.g. 'resort-green' */
 		accent?: string;
+		/**
+		 * Optional background image shown at low opacity behind the section.
+		 * Replace the file to change the photo — no code changes needed.
+		 */
+		bgImage?: string;
 	}
 
 	let {
@@ -30,15 +35,19 @@
 		viewAllHref,
 		eyebrow = 'FAQ',
 		heading = 'Common questions.',
-		accent = 'resort-green'
+		accent = 'resort-green',
+		bgImage
 	}: Props = $props();
 
 	const resolvedBase = $derived(baseItems.slice(0, limit));
 	const items = $derived([...extraItems, ...resolvedBase]);
 </script>
 
-<section class="border-y border-resort-sand/20 bg-gray-50 py-20">
-	<div class="mx-auto max-w-3xl px-6">
+<section class="relative overflow-hidden border-y border-resort-sand/20 bg-gray-50 py-20">
+	{#if bgImage}
+		<img src={bgImage} alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-[0.07]" />
+	{/if}
+	<div class="relative z-10 mx-auto max-w-3xl px-6">
 		<!-- Section header -->
 		<div class="mb-10 text-center">
 			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-{accent}">

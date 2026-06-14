@@ -2,6 +2,10 @@
 	import heroUrl from '$lib/assets/images/falcon/hero.jpg';
 	// CTA background — replace src/lib/assets/images/falcon/cta-bg.jpg to change this photo
 	import ctaBg from '$lib/assets/images/falcon/cta-bg.jpg';
+	// Section backgrounds — replace these files to change the wash photos
+	import aboutBg from '$lib/assets/images/falcon/about-bg.jpg';
+	import roomsBg from '$lib/assets/images/falcon/rooms-bg.jpg';
+	import faqBg from '$lib/assets/images/falcon/faq-bg.jpg';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import url1 from '$lib/assets/images/gallery-1.jpg';
 	import url2 from '$lib/assets/images/gallery-2.jpg';
@@ -126,8 +130,10 @@
 </section>
 
 <!-- About -->
-<section class="bg-resort-dark/3 py-24">
-	<div class="mx-auto max-w-6xl px-6">
+<!-- Background: replace src/lib/assets/images/falcon/about-bg.jpg to change this photo -->
+<section class="relative overflow-hidden bg-resort-dark/3 py-24">
+	<img src={aboutBg} alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-[0.07]" loading="lazy" />
+	<div class="relative z-10 mx-auto max-w-6xl px-6">
 		<div class="grid items-center gap-14 md:grid-cols-2">
 			<div>
 				<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
@@ -195,8 +201,10 @@
 </section>
 
 <!-- Rooms -->
-<section class="border-y border-resort-sand/20 bg-gray-50 py-20">
-	<div class="mx-auto max-w-6xl px-6">
+<!-- Background: replace src/lib/assets/images/falcon/rooms-bg.jpg to change this photo -->
+<section class="relative overflow-hidden border-y border-resort-sand/20 bg-gray-50 py-20">
+	<img src={roomsBg} alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-[0.06]" loading="lazy" />
+	<div class="relative z-10 mx-auto max-w-6xl px-6">
 		<div class="mb-12 text-center">
 			<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-resort-stone">
 				Accommodations
@@ -286,7 +294,7 @@
 	</div>
 </section>
 
-<FaqSection accent="resort-stone" eyebrow="Questions" heading="Before you book." limit={4} extraItems={propertyFaq.falcon} viewAllHref="/falcon/faq" />
+<FaqSection accent="resort-stone" eyebrow="Questions" heading="Before you book." limit={4} extraItems={propertyFaq.falcon} viewAllHref="/falcon/faq" bgImage={faqBg} />
 
 <!-- Book CTA -->
 <!-- Background: replace src/lib/assets/images/falcon/cta-bg.jpg to change this photo -->

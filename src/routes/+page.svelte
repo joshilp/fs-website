@@ -11,6 +11,8 @@
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	// CTA background — replace src/lib/assets/images/cta-bg.jpg with a real resort photo
 	import ctaBg from '$lib/assets/images/cta-bg.jpg';
+	// About section background — replace src/lib/assets/images/about-bg.jpg to change this photo
+	import aboutBg from '$lib/assets/images/about-bg.jpg';
 
 	const teaserPhotos = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
@@ -114,8 +116,10 @@
 </section>
 
 <!-- About -->
-<section class="bg-resort-dark/3 py-24">
-	<div class="mx-auto max-w-6xl px-6">
+<!-- Background: replace src/lib/assets/images/about-bg.jpg to change this photo -->
+<section class="relative overflow-hidden bg-resort-dark/3 py-24">
+	<img src={aboutBg} alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-[0.07]" loading="lazy" />
+	<div class="relative z-10 mx-auto max-w-6xl px-6">
 		<div class="grid items-center gap-14 md:grid-cols-2">
 			<div>
 				<p class="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-resort-green">
