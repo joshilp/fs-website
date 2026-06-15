@@ -2,59 +2,23 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { properties } from '$lib/config.js';
+	import { getProductsByCategory } from '$lib/data/products.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
-	import imgRoomA from '$lib/assets/images/falcon/rooms/room-a-large-family.jpg';
-	import imgRoomB from '$lib/assets/images/falcon/rooms/room-b-double-kitchen.jpg';
-	import imgRoomC from '$lib/assets/images/falcon/rooms/room-c-queen-kitchen.jpg';
-	import imgRoomD from '$lib/assets/images/falcon/rooms/room-d-queen.jpg';
 
 	const p = properties.falcon;
-
-	const roomImages: Record<string, string> = {
-		'falcon-a': imgRoomA,
-		'falcon-b': imgRoomB,
-		'falcon-c': imgRoomC,
-		'falcon-d': imgRoomD
-	};
-
-	const amenities = [
-		{
-			title: 'Private Sandy Beach',
-			body: 'Step right out to our safe, shallow sandy beach on Osoyoos Lake. Walk 500 feet and still touch the sandy bottom.'
-		},
-		{
-			title: '2 Outdoor Pools & Hot Tub',
-			body: 'Falcon and Spanish Fiesta share connected grounds — guests have full access to both outdoor pools and the hot tub across the property.'
-		},
-		{
-			title: 'BBQ & Picnic Area',
-			body: 'Fire up the BBQ and enjoy an al fresco dinner on the grounds. Picnic tables available for guests.'
-		},
-		{
-			title: 'Air Conditioning',
-			body: 'Every room is fully air conditioned — essential for Osoyoos summers, which regularly top 38°C.'
-		},
-		{
-			title: 'Free Parking',
-			body: 'On-site parking included with your stay. No extra charge, no worries.'
-		},
-		{
-			title: 'Prime Location',
-			body: 'Right on Main Street in Osoyoos — restaurants, shops, the marina, and the beach are all within easy walking distance.'
-		}
-	];
+	const categories = getProductsByCategory('falcon');
 </script>
 
 <svelte:head>
 	<title>Falcon Resort Rooms | Osoyoos BC Motel Rooms &amp; Suites</title>
 	<meta
 		name="description"
-		content="Falcon Resort motel rooms in Osoyoos BC. Family rooms, kitchen rooms, and queen rooms — all air-conditioned, steps from the beach and pool. Call (250) 495-7544 to book."
+		content="Falcon Resort motel rooms in Osoyoos BC. Retro suites, beachside studios, and beachfront suites — all air-conditioned, steps from the beach and pool. Call (250) 495-7544 to book."
 	/>
 	<meta property="og:title" content="Falcon Resort Rooms | Osoyoos BC Motel Rooms & Suites" />
 	<meta
 		property="og:description"
-		content="Falcon Resort motel rooms in Osoyoos BC. Family rooms, kitchen rooms, queen rooms. Steps from the beach and pool. Call (250) 495-7544."
+		content="Falcon Resort motel rooms in Osoyoos BC. Retro suites, beachside studios, beachfront suites. Steps from the beach and pool. Call (250) 495-7544."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://falcon-spanish.com/falcon/rooms" />
@@ -79,7 +43,7 @@
 	</div>
 </section>
 
-<!-- Room cards -->
+<!-- Product cards grouped by category -->
 <section class="mx-auto max-w-6xl px-6 py-20">
 	<div class="mb-12 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-stone">
@@ -91,45 +55,66 @@
 		</p>
 	</div>
 
-	<div class="grid gap-8 md:grid-cols-2">
-		{#each p.rooms as room}
-			<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
-			<div class="relative overflow-hidden">
-				<img
-					src={roomImages[room.id]}
-					alt="{room.name} at Falcon Resort, Osoyoos BC"
-					width="600"
-					height="400"
-					class="h-56 w-full object-cover"
-					loading="lazy"
-					decoding="async"
-				/>
-					<div
-						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-stone font-sans text-sm font-bold text-white shadow"
-					>
-						{room.letter}
-					</div>
-				</div>
-				<div class="flex flex-1 flex-col p-6">
-					<h3 class="font-serif text-xl font-bold text-resort-dark">{room.name}</h3>
-					<p class="mt-2 flex-1 font-sans text-sm leading-relaxed text-resort-dark/65">
-						{room.description}
-					</p>
-					<div class="mt-4 flex flex-wrap gap-1.5">
-						{#each room.features as f}
-							<Badge
-								variant="outline"
-								class="border-resort-stone/30 font-sans text-xs text-resort-stone"
-							>
-								{f}
-							</Badge>
-						{/each}
-					</div>
+	<div class="space-y-16">
+		{#each categories as group}
+			<div>
+				<h3 class="mb-8 font-serif text-2xl font-bold text-resort-dark">{group.categoryLabel}</h3>
+				<div class="grid gap-8 md:grid-cols-2">
+					{#each group.products as product}
+						<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
+							<div class="relative overflow-hidden">
+								{#if product.coverImage}
+									<img
+										src={product.coverImage}
+										alt="{product.name} at Falcon Resort, Osoyoos BC"
+										width="600"
+										height="400"
+										class="h-56 w-full object-cover"
+										loading="lazy"
+										decoding="async"
+									/>
+								{/if}
+							</div>
+							<div class="flex flex-1 flex-col p-6">
+								<h4 class="font-serif text-xl font-bold text-resort-dark">{product.name}</h4>
+								<p class="mt-2 flex-1 font-sans text-sm leading-relaxed text-resort-dark/65">
+									{product.description.website}
+								</p>
+								<div class="mt-4 flex flex-wrap gap-1.5">
+									{#each product.features as f}
+										<Badge
+											variant="outline"
+											class="border-resort-stone/30 font-sans text-xs text-resort-stone"
+										>
+											{f}
+										</Badge>
+									{/each}
+								</div>
+								<div class="mt-5 flex flex-wrap gap-3">
+									<a
+										href="tel:{p.phone.tel}"
+										class="inline-flex h-9 items-center rounded-lg bg-resort-stone px-4 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
+									>
+										Call to Book
+									</a>
+									{#if product.booking.onres}
+										<a
+											href={product.booking.onres}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="inline-flex h-9 items-center rounded-lg border border-resort-stone px-4 font-sans text-sm font-semibold text-resort-stone transition-colors hover:bg-resort-stone/5"
+										>
+											Book Online
+										</a>
+									{/if}
+								</div>
+							</div>
+						</div>
+					{/each}
 				</div>
 			</div>
 		{/each}
 	</div>
-
 </section>
 
 <!-- Amenities -->
@@ -142,7 +127,32 @@
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Everything you need.</h2>
 		</div>
 		<div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-			{#each amenities as item}
+			{#each [
+				{
+					title: 'Private Sandy Beach',
+					body: 'Step right out to our safe, shallow sandy beach on Osoyoos Lake. Walk 500 feet and still touch the sandy bottom.'
+				},
+				{
+					title: '2 Outdoor Pools & Hot Tub',
+					body: 'Falcon and Spanish Fiesta share connected grounds — guests have full access to both outdoor pools and the hot tub across the property.'
+				},
+				{
+					title: 'BBQ & Picnic Area',
+					body: 'Fire up the BBQ and enjoy an al fresco dinner on the grounds. Picnic tables available for guests.'
+				},
+				{
+					title: 'Air Conditioning',
+					body: 'Every room is fully air conditioned — essential for Osoyoos summers, which regularly top 38°C.'
+				},
+				{
+					title: 'Free Parking',
+					body: 'On-site parking included with your stay. No extra charge, no worries.'
+				},
+				{
+					title: 'Prime Location',
+					body: 'Right on Main Street in Osoyoos — restaurants, shops, the marina, and the beach are all within easy walking distance.'
+				}
+			] as item}
 				<div class="rounded-xl border border-resort-sand/30 bg-white p-6">
 					<h3 class="font-sans text-base font-semibold text-resort-dark">{item.title}</h3>
 					<p class="mt-2 font-sans text-sm leading-relaxed text-resort-dark/65">{item.body}</p>

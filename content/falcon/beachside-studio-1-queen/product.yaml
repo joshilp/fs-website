@@ -1,0 +1,26 @@
+slug: beachside-studio-1-queen
+name: "Beachside Studio - 1 Queen"
+category: beachside
+categoryLabel: Beachside
+
+beds:
+  queens: 1
+  doubles: 0
+  kitchen: false
+
+sleeps: 2
+features:
+  - 1 Queen Bed
+  - Air Conditioning
+  - Private Bathroom
+  - TV
+
+description:
+  short: "1 queen. Sleeps up to 2."
+  website: "The Beachside Studio - 1 Queen at our Osoyoos lakeside motel offers 1 queen. Air-conditioned, with a private bathroom — steps from the pool and beach."
+  ota: "Beachside Studio - 1 Queen — 1 queen. Sleeps up to 2. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
+
+booking:
+  onres: ""
+
+sortOrder: 5

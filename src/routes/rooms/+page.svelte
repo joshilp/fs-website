@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { propertyList } from '$lib/config.js';
+	import { getProducts, type PropertyId } from '$lib/data/products.js';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 
@@ -85,20 +86,14 @@
 
 			<!-- Room grid -->
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-				{#each p.rooms as room}
+				{#each getProducts(p.id as PropertyId).slice(0, 4) as product}
 					<div class="rounded-xl border border-resort-sand/30 bg-white p-5">
-						<div
-							class="mb-3 flex h-8 w-8 items-center justify-center rounded-full font-sans text-sm font-bold text-white
-							{p.id === 'falcon' ? 'bg-resort-green' : 'bg-resort-brown'}"
-						>
-							{room.letter}
-						</div>
-						<h3 class="font-serif text-base font-bold text-resort-dark">{room.name}</h3>
+						<h3 class="font-serif text-base font-bold text-resort-dark">{product.name}</h3>
 						<p class="mt-1.5 font-sans text-xs leading-relaxed text-resort-dark/60">
-							{room.description}
+							{product.description.short}
 						</p>
 						<div class="mt-3 flex flex-wrap gap-1.5">
-							{#each room.features as f}
+							{#each product.features as f}
 								<Badge
 									variant="outline"
 									class="font-sans text-xs

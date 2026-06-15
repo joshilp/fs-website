@@ -2,50 +2,18 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { properties } from '$lib/config.js';
+	import { getProductsByCategory } from '$lib/data/products.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
-	import imgRoomA from '$lib/assets/images/spanish/rooms/room-a-family.jpg';
-	import imgRoomB from '$lib/assets/images/spanish/rooms/room-b-queen-kitchen.jpg';
-	import imgRoomC from '$lib/assets/images/spanish/rooms/room-c-studio-queen.jpg';
-	import imgRoomD from '$lib/assets/images/spanish/rooms/room-d-double-queen.jpg';
 
 	const p = properties.spanish;
-
-	const roomImages: Record<string, string> = {
-		'spanish-a': imgRoomA,
-		'spanish-b': imgRoomB,
-		'spanish-c': imgRoomC,
-		'spanish-d': imgRoomD
-	};
-
-	const amenities = [
-		{
-			title: 'Private Sandy Beach',
-			body: 'Direct access to a safe, shallow sandy beach on Osoyoos Lake. Walk 500 feet and still touch the bottom — perfect for families with kids.'
-		},
-		{
-			title: '2 Outdoor Pools & Hot Tub',
-			body: 'Spanish Fiesta and Falcon share connected grounds — guests have full access to both outdoor pools and the hot tub across the property.'
-		},
-		{
-			title: 'BBQ & Picnic Area',
-			body: 'Barbeques and picnic tables on the grounds — ideal for al fresco dinners on warm Osoyoos evenings.'
-		},
-		{
-			title: 'Air Conditioning',
-			body: 'Every room is fully air conditioned — a must for Osoyoos summers, which regularly top 38°C.'
-		},
-		{
-			title: 'Prime Location',
-			body: 'Right on Main Street in Osoyoos — restaurants, shops, the marina, and the beach are all within walking distance.'
-		}
-	];
+	const categories = getProductsByCategory('spanish');
 </script>
 
 <svelte:head>
 	<title>Spanish Fiesta Resort Rooms | Osoyoos BC Motel Rooms &amp; Suites</title>
 	<meta
 		name="description"
-		content="Spanish Fiesta Resort motel rooms in Osoyoos BC. Family rooms, kitchen rooms, and queen rooms — all air-conditioned, steps from the beach, pool, and hot tub. Call (250) 495-6833 to book."
+		content="Spanish Fiesta Resort motel rooms in Osoyoos BC. Beachfront studios, family suites, and townside rooms — all air-conditioned, steps from the beach, pool, and hot tub. Call (250) 495-6833 to book."
 	/>
 	<meta
 		property="og:title"
@@ -53,7 +21,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="Spanish Fiesta Resort rooms in Osoyoos BC. Family rooms, kitchen rooms, queen rooms. Steps from the beach, pool, and hot tub. Call (250) 495-6833."
+		content="Spanish Fiesta Resort rooms in Osoyoos BC. Beachfront studios, family suites, townside studios. Steps from the beach, pool, and hot tub. Call (250) 495-6833."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://falcon-spanish.com/spanish/rooms" />
@@ -78,7 +46,7 @@
 	</div>
 </section>
 
-<!-- Room cards -->
+<!-- Product cards grouped by category -->
 <section class="mx-auto max-w-6xl px-6 py-20">
 	<div class="mb-12 text-center">
 		<p class="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-resort-red">
@@ -90,47 +58,66 @@
 		</p>
 	</div>
 
-	<div class="grid gap-8 md:grid-cols-2">
-		{#each p.rooms as room}
-			<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
-				<div class="relative overflow-hidden">
-				<img
-					src={roomImages[room.id]}
-					alt="{room.name} at Spanish Fiesta Resort, Osoyoos BC"
-					width="600"
-					height="400"
-					class="h-56 w-full object-cover"
-					loading="lazy"
-					decoding="async"
-				/>
-					<div
-						class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-resort-red font-sans text-sm font-bold text-white shadow"
-					>
-						{room.letter}
-					</div>
-				</div>
-				<div class="flex flex-1 flex-col p-6">
-					<h3 class="font-serif text-xl font-bold text-resort-dark">{room.name}</h3>
-					<p class="mt-2 flex-1 font-sans text-sm leading-relaxed text-resort-dark/65">
-						{room.description}
-					</p>
-					<div class="mt-4 flex flex-wrap gap-1.5">
-						{#each room.features as f}
-							<Badge
-								variant="outline"
-								class="border-resort-red/30 font-sans text-xs text-resort-red"
-							>
-								{f}
-							</Badge>
-						{/each}
-					</div>
+	<div class="space-y-16">
+		{#each categories as group}
+			<div>
+				<h3 class="mb-8 font-serif text-2xl font-bold text-resort-dark">{group.categoryLabel}</h3>
+				<div class="grid gap-8 md:grid-cols-2">
+					{#each group.products as product}
+						<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">
+							<div class="relative overflow-hidden">
+								{#if product.coverImage}
+									<img
+										src={product.coverImage}
+										alt="{product.name} at Spanish Fiesta Resort, Osoyoos BC"
+										width="600"
+										height="400"
+										class="h-56 w-full object-cover"
+										loading="lazy"
+										decoding="async"
+									/>
+								{/if}
+							</div>
+							<div class="flex flex-1 flex-col p-6">
+								<h4 class="font-serif text-xl font-bold text-resort-dark">{product.name}</h4>
+								<p class="mt-2 flex-1 font-sans text-sm leading-relaxed text-resort-dark/65">
+									{product.description.website}
+								</p>
+								<div class="mt-4 flex flex-wrap gap-1.5">
+									{#each product.features as f}
+										<Badge
+											variant="outline"
+											class="border-resort-red/30 font-sans text-xs text-resort-red"
+										>
+											{f}
+										</Badge>
+									{/each}
+								</div>
+								<div class="mt-5 flex flex-wrap gap-3">
+									<a
+										href="tel:{p.phone.tel}"
+										class="inline-flex h-9 items-center rounded-lg bg-resort-red px-4 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
+									>
+										Call to Book
+									</a>
+									{#if product.booking.onres}
+										<a
+											href={product.booking.onres}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="inline-flex h-9 items-center rounded-lg border border-resort-red px-4 font-sans text-sm font-semibold text-resort-red transition-colors hover:bg-resort-red/5"
+										>
+											Book Online
+										</a>
+									{/if}
+								</div>
+							</div>
+						</div>
+					{/each}
 				</div>
 			</div>
 		{/each}
 	</div>
-
-	<p class="mt-8 text-center font-sans text-sm text-resort-dark/50">
-	</p>
 </section>
 
 <!-- Amenities -->
@@ -143,7 +130,28 @@
 			<h2 class="font-serif text-4xl font-bold text-resort-dark">Everything you need.</h2>
 		</div>
 		<div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-			{#each amenities as item}
+			{#each [
+				{
+					title: 'Private Sandy Beach',
+					body: 'Direct access to a safe, shallow sandy beach on Osoyoos Lake. Walk 500 feet and still touch the bottom — perfect for families with kids.'
+				},
+				{
+					title: '2 Outdoor Pools & Hot Tub',
+					body: 'Spanish Fiesta and Falcon share connected grounds — guests have full access to both outdoor pools and the hot tub across the property.'
+				},
+				{
+					title: 'BBQ & Picnic Area',
+					body: 'Barbeques and picnic tables on the grounds — ideal for al fresco dinners on warm Osoyoos evenings.'
+				},
+				{
+					title: 'Air Conditioning',
+					body: 'Every room is fully air conditioned — a must for Osoyoos summers, which regularly top 38°C.'
+				},
+				{
+					title: 'Prime Location',
+					body: 'Right on Main Street in Osoyoos — restaurants, shops, the marina, and the beach are all within walking distance.'
+				}
+			] as item}
 				<div class="rounded-xl border border-resort-sand/30 bg-white p-6">
 					<h3 class="font-sans text-base font-semibold text-resort-dark">{item.title}</h3>
 					<p class="mt-2 font-sans text-sm leading-relaxed text-resort-dark/65">{item.body}</p>

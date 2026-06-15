@@ -1,0 +1,26 @@
+slug: beachside-family-suite-1-queen-1-double
+name: "Beachside Family Suite - 1 Queen + 1 Double"
+category: beachside
+categoryLabel: Beachside
+
+beds:
+  queens: 1
+  doubles: 1
+  kitchen: false
+
+sleeps: 4
+features:
+  - 1 Queen + 1 Double
+  - Air Conditioning
+  - Private Bathroom
+  - TV
+
+description:
+  short: "1 queen and 1 double. Sleeps up to 4."
+  website: "The Beachside Family Suite - 1 Queen + 1 Double at our Osoyoos lakeside motel offers 1 queen and 1 double. Air-conditioned, with a private bathroom — steps from the pool and beach."
+  ota: "Beachside Family Suite - 1 Queen + 1 Double — 1 queen and 1 double. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
+
+booking:
+  onres: ""
+
+sortOrder: 6

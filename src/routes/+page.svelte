@@ -7,6 +7,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Waves, Droplets, AirVent, Flame, Sun, Thermometer, Building2, MapPin } from 'lucide-svelte';
 	import { properties, site } from '$lib/config.js';
+	import { getProductCount } from '$lib/data/products.js';
 	import falconLogoColor from '$lib/assets/falcon-logo-color-tight.png';
 	import spanishLogoColor from '$lib/assets/spanish-logo-color-tight.png';
 	// CTA background — replace src/lib/assets/images/cta-bg.jpg with a real resort photo
@@ -217,7 +218,7 @@
 					{properties.falcon.phone.display}
 				</a>
 				<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/65">
-					{properties.falcon.rooms.length} room types — family rooms, kitchen rooms, and queen rooms.
+					{getProductCount('falcon')} room types — retro suites, beachside studios, and beachfront suites.
 					Outdoor pool and direct beach access.
 				</p>
 				<a
@@ -257,7 +258,7 @@
 					{properties.spanish.phone.display}
 				</a>
 				<p class="mt-4 font-sans text-sm leading-relaxed text-resort-dark/65">
-					{properties.spanish.rooms.length} room types — family rooms, kitchen rooms, and queen rooms.
+					{getProductCount('spanish')} room types — beachfront studios, family suites, and townside rooms.
 					Outdoor pool, hot tub, and direct beach access.
 				</p>
 				<a

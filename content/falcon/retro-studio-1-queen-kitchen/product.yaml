@@ -1,0 +1,27 @@
+slug: retro-studio-1-queen-kitchen
+name: "Retro Studio - 1 Queen + Kitchen"
+category: retro
+categoryLabel: Retro
+
+beds:
+  queens: 1
+  doubles: 0
+  kitchen: full
+
+sleeps: 2
+features:
+  - 1 Queen Bed
+  - Full Kitchen
+  - Air Conditioning
+  - Private Bathroom
+  - TV
+
+description:
+  short: "1 queen with a full kitchen. Sleeps up to 2."
+  website: "The Retro Studio - 1 Queen + Kitchen at our Osoyoos lakeside motel offers 1 queen with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
+  ota: "Retro Studio - 1 Queen + Kitchen — 1 queen with a full kitchen. Sleeps up to 2. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
+
+booking:
+  onres: ""
+
+sortOrder: 4

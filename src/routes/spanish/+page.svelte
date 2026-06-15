@@ -16,11 +16,13 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Waves, Droplets, AirVent, Flame } from 'lucide-svelte';
 	import { properties } from '$lib/config.js';
+	import { getProducts } from '$lib/data/products.js';
 	import BookingLinks from '$lib/components/BookingLinks.svelte';
 	import FaqSection from '$lib/components/FaqSection.svelte';
 	import { propertyFaq } from '$lib/data/faq.js';
 
 	const p = properties.spanish;
+	const roomTeasers = getProducts('spanish').slice(0, 4);
 	const teaserPhotos = [url1, url2, url3, url4, url5];
 
 	const highlights = [
@@ -219,14 +221,11 @@
 		</div>
 
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-		{#each p.rooms as room}
+		{#each roomTeasers as product}
 			<div class="rounded-xl border border-resort-sand/30 bg-white p-5">
-				<div class="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-resort-red font-sans text-sm font-bold text-white">
-					{room.letter}
-				</div>
-				<h3 class="font-serif text-base font-bold text-resort-dark">{room.name}</h3>
+				<h3 class="font-serif text-base font-bold text-resort-dark">{product.name}</h3>
 				<div class="mt-3 flex flex-wrap gap-1.5">
-					{#each room.features as f}
+					{#each product.features as f}
 						<Badge
 							variant="outline"
 							class="border-resort-red/30 font-sans text-xs text-resort-red"

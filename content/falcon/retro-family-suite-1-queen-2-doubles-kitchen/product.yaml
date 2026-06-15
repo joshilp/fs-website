@@ -1,0 +1,27 @@
+slug: retro-family-suite-1-queen-2-doubles-kitchen
+name: "Retro Family Suite - 1 Queen + 2 Doubles + Kitchen"
+category: retro
+categoryLabel: Retro
+
+beds:
+  queens: 1
+  doubles: 2
+  kitchen: full
+
+sleeps: 6
+features:
+  - 1 Queen + 2 Doubles
+  - Full Kitchen
+  - Air Conditioning
+  - Private Bathroom
+  - TV
+
+description:
+  short: "1 queen and 2 doubles with a full kitchen. Sleeps up to 6."
+  website: "The Retro Family Suite - 1 Queen + 2 Doubles + Kitchen at our Osoyoos lakeside motel offers 1 queen and 2 doubles with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
+  ota: "Retro Family Suite - 1 Queen + 2 Doubles + Kitchen — 1 queen and 2 doubles with a full kitchen. Sleeps up to 6. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
+
+booking:
+  onres: ""
+
+sortOrder: 3

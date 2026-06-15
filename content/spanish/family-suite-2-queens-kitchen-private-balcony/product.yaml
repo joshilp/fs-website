@@ -1,0 +1,28 @@
+slug: family-suite-2-queens-kitchen-private-balcony
+name: "Family Suite - 2 Queens + Kitchen + Private Balcony"
+category: family
+categoryLabel: Family Suite
+
+beds:
+  queens: 2
+  doubles: 0
+  kitchen: full
+
+sleeps: 4
+features:
+  - 2 Queen Beds
+  - Full Kitchen
+  - Private Balcony
+  - Air Conditioning
+  - Private Bathroom
+  - TV
+
+description:
+  short: "2 queens with a full kitchen. Sleeps up to 4."
+  website: "The Family Suite - 2 Queens + Kitchen + Private Balcony at our Osoyoos lakeside motel offers 2 queens with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
+  ota: "Family Suite - 2 Queens + Kitchen + Private Balcony — 2 queens with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
+
+booking:
+  onres: ""
+
+sortOrder: 12
