@@ -1,27 +1,30 @@
 slug: beachside-suite-2-doubles-kitchen
-name: "Beachside Suite - 2 Doubles + Kitchen"
+name: Beachside Suite - 2 Doubles + Kitchen
 category: beachside
 categoryLabel: Beachside
-
 beds:
   queens: 0
   doubles: 2
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Double Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 doubles with a full kitchen. Sleeps up to 4."
-  website: "The Beachside Suite - 2 Doubles + Kitchen at our Osoyoos lakeside motel offers 2 doubles with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Beachside Suite - 2 Doubles + Kitchen — 2 doubles with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two doubles and a full kitchen near the lake. Sleeps 4.
+  website: >-
+    Beachside suite with two double beds and a full kitchen — room for four near the lake. Cook breakfast before a day
+    on the beach or at the pool.
+  ota: >-
+    Beachside Suite with two double beds and a full kitchen. Sleeps up to 4. A short walk to Osoyoos Lake, our private
+    beach, and outdoor pool. Air-conditioned with cable TV. Steps from Osoyoos Lake at Falcon Resort. Guests enjoy our
+    private sandy beach, outdoor pool, shared hot tub, and BBQ area. Free parking and Wi-Fi. On Main Street in Osoyoos,
+    BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 7

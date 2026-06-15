@@ -1,27 +1,30 @@
 slug: beachside-family-suite-2-queens-kitchen
-name: "Beachside Family Suite - 2 Queens + Kitchen"
+name: Beachside Family Suite - 2 Queens + Kitchen
 category: beachside
 categoryLabel: Beachside
-
 beds:
   queens: 2
   doubles: 0
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens with a full kitchen. Sleeps up to 4."
-  website: "The Beachside Family Suite - 2 Queens + Kitchen at our Osoyoos lakeside motel offers 2 queens with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Beachside Family Suite - 2 Queens + Kitchen — 2 queens with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two queens and a full kitchen near the lake. Sleeps 4.
+  website: >-
+    Beachside family suite with two queen beds and a full kitchen — near the lake with a short walk to the beach, pool,
+    and hot tub.
+  ota: >-
+    Beachside Family Suite with two queen beds and a full kitchen. Sleeps up to 4. Near Osoyoos Lake with easy access to
+    the private beach, pool, and hot tub. Air-conditioned with cable TV. Steps from Osoyoos Lake at Spanish Fiesta
+    Resort. Guests enjoy our private sandy beach, outdoor pool, hot tub, and BBQ area. Free parking and Wi-Fi. On Main
+    Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 2

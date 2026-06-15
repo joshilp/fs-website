@@ -1,11 +1,11 @@
 # Falcon & Spanish Fiesta Resorts — Website
 
 Website for Falcon Resort and Spanish Fiesta Resort, Osoyoos BC.
-Built with SvelteKit, Tailwind CSS, and `@sveltejs/enhanced-img`.
+Built with SvelteKit, Tailwind CSS, and `@sveltejs/enhanced-img`. Deployed as a static site (no server required) — runs on Tera-Byte or any static host.
 
 ---
 
-## Development
+## Quick start
 
 ```sh
 pnpm install
@@ -14,130 +14,247 @@ pnpm dev
 
 Open [http://localhost:5173](http://localhost:5173). The port may shift if 5173 is in use — check the terminal output.
 
-## Building
+---
 
-```sh
-pnpm build
-pnpm preview   # preview the production build locally
-```
+## Dev commands
+
+| Command | What it does |
+|---|---|
+| `pnpm dev` | Start development server with hot reload |
+| `pnpm build` | Build static site to `build/` |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm check` | TypeScript + Svelte type checking |
+| `pnpm lint` | ESLint + Prettier checks |
+| `pnpm format` | Auto-format all files |
+
+### Content scripts
+
+| Command | What it does |
+|---|---|
+| `pnpm products:copy` | Regenerate all 21 `product.yaml` files from the master script |
+| `pnpm photos:apply` | Copy photos from `.dev-photos/` into product folders using `.dev/photo-mapping.json` |
+| `pnpm ota:worksheet` | Regenerate `.dev/OTA-WORKSHEET.md` (unit counts + OTA descriptions) |
+| `pnpm products:scaffold` | Initial scaffold — only needed when adding new product slugs |
+
+**Full content refresh order:** `pnpm products:copy` → `pnpm photos:apply` → `pnpm ota:worksheet` → `pnpm build`
 
 ---
 
-## Project Structure
+## Deploying to Tera-Byte
+
+1. Run `pnpm build` — produces a `build/` folder of static files
+2. Upload the contents of `build/` to `public_html` on Tera-Byte via Virtualmin
+3. Replace the old site files — email, DNS, and Virtualmin are untouched
+
+No server runtime needed. The site is plain HTML/CSS/JS after the build.
+
+---
+
+## Project structure
 
 ```
+content/
+  falcon/
+    categories.yaml              ← Category headings + intro text for /falcon/rooms
+    {slug}/product.yaml          ← One file per room type — copy, beds, features, photos
+  spanish/
+    categories.yaml
+    {slug}/product.yaml
+
+inventory/
+  falcon-rooms.tsv               ← Maps physical room numbers → product slug
+  spanish-rooms.tsv
+
+scripts/
+  update-product-copy.mjs        ← Writes product.yaml files from master copy data
+  apply-product-photos.mjs       ← Copies .dev-photos/ files into product image folders
+  generate-ota-worksheet.mjs     ← Builds .dev/OTA-WORKSHEET.md
+  scaffold-products.mjs          ← Initial scaffold (rarely needed)
+
 src/
   lib/
-    config.ts           ← Property data, addresses, phones, geo coords, schema builder
+    config.ts                    ← Property data: address, phone, geo, amenities, OTA links
     data/
-      faq.ts            ← FAQ questions and answers
-      guides.ts         ← Area guide article index
+      products.ts                ← Build-time loader: reads YAML + images + TSV
+      faq.ts                     ← FAQ questions and answers
+      guides.ts                  ← Area guide article index
     components/
-      GuideLayout.svelte  ← Shared layout for all area guide articles
+      BookingLinks.svelte        ← OTA booking buttons (Booking.com / Expedia)
+      GuideLayout.svelte         ← Shared layout for area guide articles
     assets/
-      images/           ← Site images (hero, gallery, rooms)
-      favicon.svg
+      images/                    ← All site images (see images/README.md)
   routes/
-    +layout.svelte      ← Site-wide nav, footer, schema
-    +page.svelte        ← Homepage
-    rooms/              ← Rooms page
-    gallery/            ← Gallery page
-    location/           ← Location & things to do
-    contact/            ← Contact / book page
-    faq/                ← FAQ page
-    guides/             ← Area guide index + articles
-    sitemap.xml/        ← Auto-generated sitemap
+    +layout.svelte               ← Site-wide nav, footer, JSON-LD schema
+    +page.svelte                 ← Homepage (portal for both properties)
+    falcon/                      ← Falcon Resort pages
+      +page.svelte               ← Falcon home
+      rooms/                     ← Falcon rooms (reads from content/falcon/)
+      gallery/
+      location/
+      faq/
+      contact/
+    spanish/                     ← Spanish Fiesta Resort pages (same structure)
+    rooms/                       ← Shared rooms overview (both properties)
+    gallery/
+    location/
+    faq/
+    contact/
+    guides/                      ← Area guide index + articles
+    sitemap.xml/                 ← Auto-generated sitemap
+
+.dev/
+  COPY-STANDARDS.md              ← Rules for writing product copy
+  OTA-WORKSHEET.md               ← Generated: OTA descriptions + unit counts per product
+  photo-mapping.json             ← Maps product slugs → source photo filenames
+  image map.txt                  ← Source notes for photo assignments
+  images-GUIDE.md                ← Photo shoot checklist
+  online_setup.md                ← Guide: moving from Tera-Byte to Cloudflare
+  GBP-GUIDE.md                   ← Google Business Profile setup guide
+
+.dev-photos/                     ← Raw photos from shoots (gitignored — stays local)
+  Falcon/
+  Spanish/
 ```
 
 ---
 
-## Updating Property Data
+## Room products
 
-All property information (addresses, phone numbers, geo coordinates) lives in one place:
+Room types ("products") are the unit guests book — not individual room numbers. Physical room numbers map to products via `inventory/*.tsv`.
+
+**Each product lives in `content/{property}/{slug}/`:**
+
+```
+content/falcon/retro-suite-2-queens-kitchen/
+  product.yaml       ← name, beds, features, descriptions, photos, OnRes URL
+```
+
+**`product.yaml` fields:**
+
+```yaml
+slug: retro-suite-2-queens-kitchen
+name: "Retro Suite - 2 Queens + Kitchen"
+category: retro          # groups cards on rooms page
+categoryLabel: Retro
+beds:
+  queens: 2
+  doubles: 0
+  kitchen: full
+sleeps: 4
+features:
+  - 2 Queen Beds
+  - Full Kitchen
+  - Air Conditioning
+  - TV
+description:
+  short: "One-liner for teasers."
+  website: "2–3 sentences shown on the rooms page card."
+  ota: "4–8 sentences — paste directly into Booking.com / Expedia room description."
+photos:
+  cover: IMG_9498.jpg    # source filename in .dev-photos/Falcon/
+  gallery:
+    - IMG_9505.jpg
+booking:
+  onres: ""              # OnRes deep link — fill when ready
+sortOrder: 1
+```
+
+Edit copy and photos in the YAML, run `pnpm build` — the site updates automatically. No code changes needed.
+
+**Falcon — 8 products:** Retro Suite, Retro Family Suite (2 Doubles), Retro Family Suite (1Q+2D), Retro Studio, Beachside Studio, Beachside Family Suite, Beachside Suite, Beachfront Suite.
+
+**Spanish — 13 products:** Beachfront Studio, Beachside Family Suite, Family Suite, Studio (4 variants), Two Bedroom Suite, Townside Studio (3 variants), Family Suite with Balcony.
+
+---
+
+## Updating product copy
+
+Edit `content/{property}/{slug}/product.yaml` directly — or run `pnpm products:copy` to regenerate from the master script at `scripts/update-product-copy.mjs`.
+
+See `.dev/COPY-STANDARDS.md` for copy rules (feature list conventions, OTA closing block, tone).
+
+---
+
+## Updating product photos
+
+**Quick swap (single photo):**
+1. Replace `src/lib/assets/images/{property}/products/{slug}/cover.jpg` with the new file
+2. Run `pnpm build`
+
+**Batch assignment from `.dev-photos/`:**
+1. Edit `.dev/photo-mapping.json` — set source filenames per product
+2. Run `pnpm photos:apply`
+3. Run `pnpm build`
+
+See `src/lib/assets/images/README.md` for the full folder layout and product table.
+
+---
+
+## Updating property data
+
+All property-level data (address, phone, geo coordinates, amenities, OTA links) lives in one file:
 
 **`src/lib/config.ts`**
 
-Edit it there and the change flows through to the nav, footer, contact page, location page, schema markup, and anywhere else it is used. Do not update phone numbers or addresses in individual page files.
+Changes flow automatically to nav, footer, contact page, location page, and JSON-LD schema.
 
-When Google Business Profile is verified, update the following in `config.ts`:
-- `properties.falcon.mapEmbedUrl` — embed URL from Falcon's verified GBP listing
-- `properties.spanish.mapEmbedUrl` — embed URL from Spanish Fiesta's verified GBP listing
-- `site.mapEmbedUrl` — a zoomed-out embed showing both property pins simultaneously
+**After Google Business Profile is verified**, update these three fields in `config.ts`:
+- `properties.falcon.mapEmbedUrl`
+- `properties.spanish.mapEmbedUrl`
+- `site.mapEmbedUrl` (zoomed-out view showing both properties)
 
 ---
 
-## Adding OTA Booking Links (Booking.com / Expedia)
+## OTA booking links (property level)
 
-OTA links are configured in **`src/lib/config.ts`** inside the `booking` object for each property. Once you have your listing URLs, paste them in:
+Once you have listing URLs, paste them into `src/lib/config.ts`:
 
 ```ts
-// In properties.falcon:
 booking: {
-  bookingCom: 'https://www.booking.com/hotel/ca/YOUR-SLUG.html',
-  expedia: 'https://www.expedia.ca/Osoyoos-Hotels-YOUR-SLUG.h12345678.Hotel-Information'
-}
-
-// In properties.spanish:
-booking: {
-  bookingCom: 'https://www.booking.com/hotel/ca/YOUR-SLUG.html',
-  expedia: 'https://www.expedia.ca/Osoyoos-Hotels-YOUR-SLUG.h12345678.Hotel-Information'
+  bookingCom: 'https://www.booking.com/hotel/ca/falcon-resort.html',
+  expedia: 'https://www.expedia.ca/Osoyoos-Hotels-Falcon-Resort.h9064558.Hotel-Information'
 }
 ```
 
-**Where to find the URLs:**
+Booking.com and Expedia buttons appear on rooms and contact pages automatically. Leave a field as `''` and that button stays hidden.
 
-- **Booking.com** — Log into the Extranet → click your property name → click "View on Booking.com" → copy the URL from your browser.
-- **Expedia** — Log into Partner Central → Properties → find your listing → click "View listing" → copy the URL.
+**For room-level booking (OnRes):** paste the deep link into `booking.onres` in each `product.yaml`. The "Book Online" button on that product's card appears automatically once the field is non-empty.
 
-**How it works:** Buttons for Booking.com and Expedia appear automatically on the Rooms and Contact pages as soon as a URL is set. Leave a field as an empty string `''` and that button stays hidden. Each property's buttons are shown independently, so you can add Falcon's links before Spanish Fiesta's (or vice versa).
-
-**Future room-level links:** The `Room` interface in `config.ts` has a `bookingUrl` field on each room. Leave it empty for now. When you have your own booking engine, populate it and the room cards will link directly to that room's booking page instead of the general contact/OTA path.
+See `.dev/OTA-WORKSHEET.md` for the full list of OTA descriptions and unit counts per product.
 
 ---
 
-## Adding a New FAQ Question
+## Adding a FAQ question
 
-Open **`src/lib/data/faq.ts`** and add an object to the `faq` array:
+Open `src/lib/data/faq.ts` and add to the array:
 
 ```ts
 {
   question: 'Your question here?',
-  answer: 'Your answer here. Plain text only — this goes into schema markup.'
+  answer: 'Your answer here.'
 }
 ```
 
-The FAQ page and the FAQPage schema (which powers Google rich results) both update automatically. No other files need to be touched.
+Updates the FAQ page and FAQPage schema markup automatically.
 
 ---
 
-## Adding a New Area Guide Article
+## Adding an area guide article
 
-Two steps — that's it.
-
-### Step 1 — Add the metadata
-
-Open **`src/lib/data/guides.ts`** and add an entry to the `guides` array:
+**Step 1 — Add metadata** to `src/lib/data/guides.ts`:
 
 ```ts
 {
-  slug: 'your-article-slug',          // used in the URL: /guides/your-article-slug
+  slug: 'your-article-slug',
   title: 'Your Article Title',
-  description: 'One or two sentences for the meta description and guide card preview.',
-  publishedAt: '2026-06-01',          // ISO date: YYYY-MM-DD
-  tags: ['osoyoos', 'relevant-tag'],
-  readingTimeMinutes: 5               // rough estimate
+  description: 'One or two sentences for the card and meta description.',
+  publishedAt: '2026-06-01',
+  tags: ['osoyoos'],
+  readingTimeMinutes: 5
 }
 ```
 
-### Step 2 — Create the article file
-
-Create a new folder and page file:
-
-```
-src/routes/guides/your-article-slug/+page.svelte
-```
-
-Use this template — paste it in and replace the content:
+**Step 2 — Create the page** at `src/routes/guides/your-article-slug/+page.svelte`:
 
 ```svelte
 <script lang="ts">
@@ -147,60 +264,22 @@ Use this template — paste it in and replace the content:
 </script>
 
 <GuideLayout {guide}>
-  <p>Your opening paragraph.</p>
-
-  <h2>Section Heading</h2>
-  <p>Section content. Use plain HTML inside GuideLayout.</p>
-
-  <h2>Another Section</h2>
-  <ul>
-    <li>List item</li>
-    <li>List item</li>
-  </ul>
+  <p>Your content here.</p>
+  <h2>Section</h2>
+  <p>Section content.</p>
 </GuideLayout>
 ```
 
-**That's all.** The following happen automatically:
-- SEO meta title and description
-- Article schema markup (`@type: Article`)
-- Prose styling via Tailwind Typography
-- "Book Your Stay" CTA at the bottom
-- Entry in the guides index page
-- Entry in the sitemap
-
-### Content tips
-
-- Aim for 500–900 words of genuine, useful information
-- Use `<h2>` for main sections, `<h3>` for sub-sections
-- Put the target keyword in the title and naturally in the first paragraph
-- Mention the resort once at the end — the `GuideLayout` CTA handles the booking prompt, so keep the article itself informational
-- `<strong>` for emphasis, `<ul>` / `<ol>` for lists — all styled automatically by Tailwind Typography
+SEO meta, schema markup, prose styling, booking CTA, guide index entry, and sitemap entry all happen automatically.
 
 ---
 
-## Images
+## Launch checklist
 
-Source images live in `src/lib/assets/images/`. They are processed at build time by `@sveltejs/enhanced-img` — automatically converted to WebP/AVIF and served with proper `srcset`. No CDN required.
+See `.dev/online_setup.md` (full guide) and `.dev/online_setup-PRINT.md` (checklist). Short version:
 
-When new photos are ready, replace the files in that folder. The filenames the site expects:
-
-| File | Used on |
-|---|---|
-| `hero.jpg` | Homepage hero, location page header |
-| `gallery-1.jpg` — `gallery-6.jpg` | Gallery page, homepage gallery teaser |
-| `room-placeholder.jpg` | Rooms page header and room cards |
-
-Replace any of these with better photos when available — same filename, same folder.
-
----
-
-## Dev Commands
-
-| Command | What it does |
-|---|---|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Build for production |
-| `pnpm preview` | Preview production build locally |
-| `pnpm check` | TypeScript and Svelte type checking |
-| `pnpm lint` | Run ESLint and Prettier checks |
-| `pnpm format` | Auto-format all files |
+1. `pnpm build` → upload `build/` to Tera-Byte `public_html` via Virtualmin
+2. Set up Google Business Profiles for both properties
+3. Update `mapEmbedUrl` fields in `config.ts` after GBP verification
+4. Add Booking.com / Expedia URLs to `config.ts` once listings are live
+5. Add OnRes deep links to each `product.yaml` once OnRes is configured

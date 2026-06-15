@@ -1,0 +1,32 @@
+beachfront:
+  label: Beachfront
+  intro: >-
+    Beachfront rooms face Osoyoos Lake — steps from our private sandy beach and outdoor pool.
+
+beachside:
+  label: Beachside
+  intro: >-
+    Beachside rooms are near the lake — a short walk to the beach, pool, and hot tub.
+
+family:
+  label: Family Suite
+  intro: >-
+    Family suites offer extra space and full kitchens — ideal for families and small groups
+    staying a few nights or longer.
+
+studio:
+  label: Studio
+  intro: >-
+    Studio rooms are practical, comfortable units in the main building — close to the pool,
+    hot tub, and beach.
+
+two-bedroom:
+  label: Two Bedroom
+  intro: >-
+    Our largest layout — two queen beds and a full kitchen for families who want room to spread out.
+
+townside:
+  label: Townside
+  intro: >-
+    Townside rooms face Main Street — a good fit if you prefer a quieter spot away from pool
+    and beach foot traffic, while still on the property.

@@ -20,6 +20,11 @@ export interface ProductDescription {
 	ota: string;
 }
 
+export interface ProductPhotos {
+	cover?: string;
+	gallery?: string[];
+}
+
 export interface ProductYaml {
 	slug: string;
 	name: string;
@@ -29,10 +34,16 @@ export interface ProductYaml {
 	sleeps: number;
 	features: string[];
 	description: ProductDescription;
+	photos?: ProductPhotos;
 	booking: {
 		onres: string;
 	};
 	sortOrder: number;
+}
+
+export interface CategoryMeta {
+	label: string;
+	intro?: string;
 }
 
 export interface Product extends ProductYaml {
@@ -44,6 +55,7 @@ export interface Product extends ProductYaml {
 export interface ProductCategoryGroup {
 	category: string;
 	categoryLabel: string;
+	intro?: string;
 	products: Product[];
 }
 
@@ -63,6 +75,19 @@ const inventoryModules = import.meta.glob('/inventory/*-rooms.tsv', {
 	query: '?raw',
 	import: 'default'
 }) as Record<string, string>;
+
+const categoryModules = import.meta.glob('/content/*/categories.yaml', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+}) as Record<string, string>;
+
+function parseCategories(property: PropertyId): Record<string, CategoryMeta> {
+	const path = `/content/${property}/categories.yaml`;
+	const raw = categoryModules[path];
+	if (!raw) return {};
+	return yaml.load(raw) as Record<string, CategoryMeta>;
+}
 
 function parseInventory(): Record<PropertyId, Record<string, string[]>> {
 	const result: Record<PropertyId, Record<string, string[]>> = {
@@ -137,13 +162,16 @@ export function getProducts(property: PropertyId): Product[] {
 /** Products grouped by category for rooms page headings */
 export function getProductsByCategory(property: PropertyId): ProductCategoryGroup[] {
 	const products = getProducts(property);
+	const categoryMeta = parseCategories(property);
 	const groups = new Map<string, ProductCategoryGroup>();
 
 	for (const product of products) {
 		if (!groups.has(product.category)) {
+			const meta = categoryMeta[product.category];
 			groups.set(product.category, {
 				category: product.category,
-				categoryLabel: product.categoryLabel,
+				categoryLabel: meta?.label ?? product.categoryLabel,
+				intro: meta?.intro,
 				products: []
 			});
 		}

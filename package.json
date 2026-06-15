@@ -11,7 +11,11 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"products:copy": "node scripts/update-product-copy.mjs",
+		"photos:apply": "node scripts/apply-product-photos.mjs",
+		"ota:worksheet": "node scripts/generate-ota-worksheet.mjs",
+		"products:scaffold": "node scripts/scaffold-products.mjs"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

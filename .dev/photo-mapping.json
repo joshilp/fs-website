@@ -1,0 +1,90 @@
+{
+  "falcon": {
+    "retro-suite-2-queens-kitchen": {
+      "cover": "IMG_9498.jpg",
+      "gallery": ["IMG_9505.jpg"]
+    },
+    "retro-family-suite-2-doubles-kitchen": {
+      "cover": "IMG_9476.jpg",
+      "gallery": ["IMG_9520.jpg", "IMG_9482.jpg"]
+    },
+    "retro-family-suite-1-queen-2-doubles-kitchen": {
+      "cover": "IMG_9519.jpg",
+      "gallery": ["IMG_9522.jpg", "IMG_9515.jpg"]
+    },
+    "retro-studio-1-queen-kitchen": {
+      "cover": "IMG_9512.jpg",
+      "gallery": ["IMG_9513.jpg"]
+    },
+    "beachside-studio-1-queen": {
+      "cover": "IMG_4298.JPEG",
+      "gallery": ["IMG_4295.JPEG", "IMG_9347.jpg"]
+    },
+    "beachside-family-suite-1-queen-1-double": {
+      "cover": "IMG_4298.JPEG",
+      "gallery": ["IMG_4295.JPEG", "IMG_9347.jpg"]
+    },
+    "beachside-suite-2-doubles-kitchen": {
+      "cover": "IMG_9370.jpg",
+      "gallery": ["IMG_9378.jpg"]
+    },
+    "beachfront-suite-2-queens-kitchen": {
+      "cover": "IMG_9372.jpg",
+      "gallery": ["IMG_9373.jpg", "IMG_9370.jpg", "IMG_9371.jpg", "IMG_9376.jpg"]
+    }
+  },
+  "spanish": {
+    "beachfront-studio-1-queen-kitchen": {
+      "cover": "IMG_9309.jpg",
+      "gallery": ["IMG_9310.jpg", "IMG_4280.JPEG", "IMG_9319.jpg", "IMG_9320.jpg", "IMG_9318.jpg", "IMG_9313.jpg", "IMG_9316.jpg"]
+    },
+    "beachside-family-suite-2-queens-kitchen": {
+      "cover": "IMG_4239.JPEG",
+      "gallery": ["IMG_9325.jpg", "IMG_9326.jpg", "IMG_9322.jpg"]
+    },
+    "family-suite-2-queens-kitchen": {
+      "cover": "IMG_9409.jpg",
+      "gallery": ["IMG_4273.JPEG", "IMG_4272.JPEG"]
+    },
+    "studio-2-queens-kitchen": {
+      "cover": null,
+      "gallery": []
+    },
+    "studio-1-queen-kitchen": {
+      "cover": "IMG_9420.jpg",
+      "gallery": ["IMG_9421.jpg", "IMG_9425.jpg"]
+    },
+    "two-bedroom-suite-2-queens-kitchen": {
+      "cover": null,
+      "gallery": []
+    },
+    "studio-suite-2-queens-kitchen": {
+      "cover": null,
+      "gallery": []
+    },
+    "studio-1-queen": {
+      "cover": "IMG_9431.jpg",
+      "gallery": ["IMG_9430.jpg"]
+    },
+    "studio-2-queens": {
+      "cover": "IMG_9437.jpg",
+      "gallery": []
+    },
+    "townside-studio-2-queens": {
+      "cover": "IMG_9437.jpg",
+      "gallery": ["IMG_9440.jpg", "IMG_9445.jpg", "IMG_4256.JPEG"]
+    },
+    "townside-studio-1-queen": {
+      "cover": "IMG_4255.JPEG",
+      "gallery": []
+    },
+    "family-suite-2-queens-kitchen-private-balcony": {
+      "cover": "IMG_4246.JPEG",
+      "gallery": []
+    },
+    "townside-studio-2-queens-kitchen": {
+      "cover": "IMG_4256.JPEG",
+      "gallery": []
+    }
+  }
+}

@@ -1,26 +1,29 @@
 slug: beachside-studio-1-queen
-name: "Beachside Studio - 1 Queen"
+name: Beachside Studio - 1 Queen
 category: beachside
 categoryLabel: Beachside
-
 beds:
   queens: 1
   doubles: 0
   kitchen: false
-
 sleeps: 2
 features:
   - 1 Queen Bed
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "1 queen. Sleeps up to 2."
-  website: "The Beachside Studio - 1 Queen at our Osoyoos lakeside motel offers 1 queen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Beachside Studio - 1 Queen — 1 queen. Sleeps up to 2. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: One queen bed near the lake — no kitchen. Sleeps 2.
+  website: >-
+    Simple beachside studio with one queen bed — no kitchen, just a clean place to sleep near the lake. Ideal for
+    couples who plan to eat out and spend time at the beach and pool.
+  ota: >-
+    Beachside Studio with one queen bed (no kitchen). Sleeps 2. Near Osoyoos Lake with a short walk to our private sandy
+    beach and outdoor pool. Air-conditioned with cable TV. Steps from Osoyoos Lake at Falcon Resort. Guests enjoy our
+    private sandy beach, outdoor pool, shared hot tub, and BBQ area. Free parking and Wi-Fi. On Main Street in Osoyoos,
+    BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 5

@@ -1,27 +1,30 @@
 slug: retro-suite-2-queens-kitchen
-name: "Retro Suite - 2 Queens + Kitchen"
+name: Retro Suite - 2 Queens + Kitchen
 category: retro
 categoryLabel: Retro
-
 beds:
   queens: 2
   doubles: 0
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens with a full kitchen. Sleeps up to 4."
-  website: "The Retro Suite - 2 Queens + Kitchen at our Osoyoos lakeside motel offers 2 queens with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Retro Suite - 2 Queens + Kitchen — 2 queens with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two queen beds and a full kitchen in our original Retro wing. Sleeps 4.
+  website: >-
+    Two queen beds and a full kitchen in Falcon's Retro wing — classic lakeside motel comfort with room to cook in.
+    Air-conditioned and a short walk to the pool and beach.
+  ota: >-
+    Retro Suite with two queen beds and a full kitchen (stove, fridge, and sink). Sleeps up to 4. Located in Falcon's
+    original motel wing — straightforward, comfortable rooms with the property's classic character. Air-conditioned with
+    cable TV. Steps from Osoyoos Lake at Falcon Resort. Guests enjoy our private sandy beach, outdoor pool, shared hot
+    tub, and BBQ area. Free parking and Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 1

@@ -1,26 +1,29 @@
 slug: townside-studio-2-queens
-name: "Townside Studio - 2 Queens"
+name: Townside Studio - 2 Queens
 category: townside
 categoryLabel: Townside
-
 beds:
   queens: 2
   doubles: 0
   kitchen: false
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens. Sleeps up to 4."
-  website: "The Townside Studio - 2 Queens at our Osoyoos lakeside motel offers 2 queens. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Townside Studio - 2 Queens — 2 queens. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two queens facing Main Street. No kitchen. Sleeps 4.
+  website: >-
+    Townside studio with two queen beds facing Main Street — quieter from pool traffic, still on the property with beach
+    and pool access.
+  ota: >-
+    Townside Studio with two queen beds (no kitchen). Sleeps up to 4. Faces Main Street — a quieter side of the property
+    while still steps from the pool, hot tub, and beach. Air-conditioned with cable TV. Steps from Osoyoos Lake at
+    Spanish Fiesta Resort. Guests enjoy our private sandy beach, outdoor pool, hot tub, and BBQ area. Free parking and
+    Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 10

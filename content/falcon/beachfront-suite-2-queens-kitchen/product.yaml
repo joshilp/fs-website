@@ -1,27 +1,30 @@
 slug: beachfront-suite-2-queens-kitchen
-name: "Beachfront Suite - 2 Queens + Kitchen"
+name: Beachfront Suite - 2 Queens + Kitchen
 category: beachfront
 categoryLabel: Beachfront
-
 beds:
   queens: 2
   doubles: 0
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens with a full kitchen. Sleeps up to 4."
-  website: "The Beachfront Suite - 2 Queens + Kitchen at our Osoyoos lakeside motel offers 2 queens with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Beachfront Suite - 2 Queens + Kitchen — 2 queens with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Lake-facing suite with two queens and a full kitchen. Sleeps 4.
+  website: >-
+    Our closest rooms to the water — two queen beds, a full kitchen, and lake-facing beachfront location. Wake up steps
+    from Osoyoos Lake.
+  ota: >-
+    Beachfront Suite with two queen beds and a full kitchen. Sleeps up to 4. Lake-facing — our closest accommodation to
+    the water, with direct access to the private sandy beach and pool. Air-conditioned with cable TV. Steps from Osoyoos
+    Lake at Falcon Resort. Guests enjoy our private sandy beach, outdoor pool, shared hot tub, and BBQ area. Free
+    parking and Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 8

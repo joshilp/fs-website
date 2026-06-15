@@ -61,7 +61,14 @@
 	<div class="space-y-16">
 		{#each categories as group}
 			<div>
-				<h3 class="mb-8 font-serif text-2xl font-bold text-resort-dark">{group.categoryLabel}</h3>
+				<h3 class="mb-3 font-serif text-2xl font-bold text-resort-dark">{group.categoryLabel}</h3>
+				{#if group.intro}
+					<p class="mb-8 max-w-3xl font-sans text-base leading-relaxed text-resort-dark/65">
+						{group.intro}
+					</p>
+				{:else}
+					<div class="mb-8"></div>
+				{/if}
 				<div class="grid gap-8 md:grid-cols-2">
 					{#each group.products as product}
 						<div class="flex flex-col overflow-hidden rounded-xl border border-resort-sand/30 bg-white">

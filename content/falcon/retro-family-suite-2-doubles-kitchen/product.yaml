@@ -1,27 +1,30 @@
 slug: retro-family-suite-2-doubles-kitchen
-name: "Retro Family Suite - 2 Doubles + Kitchen"
+name: Retro Family Suite - 2 Doubles + Kitchen
 category: retro
 categoryLabel: Retro
-
 beds:
   queens: 0
   doubles: 2
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Double Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 doubles with a full kitchen. Sleeps up to 4."
-  website: "The Retro Family Suite - 2 Doubles + Kitchen at our Osoyoos lakeside motel offers 2 doubles with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Retro Family Suite - 2 Doubles + Kitchen — 2 doubles with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two double beds and a full kitchen in the Retro wing. Sleeps 4.
+  website: >-
+    A practical family pick in the Retro wing — two double beds and a full kitchen for longer stays. Air-conditioned,
+    with easy access to the pool and private beach.
+  ota: >-
+    Retro Family Suite with two double beds and a full kitchen. Sleeps up to 4. In Falcon's original wing — simple,
+    comfortable lodging ideal for families who want to cook some meals in. Air-conditioned with cable TV. Steps from
+    Osoyoos Lake at Falcon Resort. Guests enjoy our private sandy beach, outdoor pool, shared hot tub, and BBQ area.
+    Free parking and Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 2

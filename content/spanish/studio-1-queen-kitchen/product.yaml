@@ -1,27 +1,27 @@
 slug: studio-1-queen-kitchen
-name: "Studio - 1 Queen + Kitchen"
+name: Studio - 1 Queen + Kitchen
 category: studio
 categoryLabel: Studio
-
 beds:
   queens: 1
   doubles: 0
   kitchen: full
-
 sleeps: 2
 features:
   - 1 Queen Bed
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "1 queen with a full kitchen. Sleeps up to 2."
-  website: "The Studio - 1 Queen + Kitchen at our Osoyoos lakeside motel offers 1 queen with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Studio - 1 Queen + Kitchen — 1 queen with a full kitchen. Sleeps up to 2. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: One queen and a full kitchen. Sleeps 2.
+  website: Compact studio with one queen bed and a full kitchen — ideal for couples or solo travellers on extended stays.
+  ota: >-
+    Studio with one queen bed and a full kitchen. Sleeps 2. Cozy, air-conditioned unit with cable TV — cook in and enjoy
+    the Okanagan at your own pace. Steps from Osoyoos Lake at Spanish Fiesta Resort. Guests enjoy our private sandy
+    beach, outdoor pool, hot tub, and BBQ area. Free parking and Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 5

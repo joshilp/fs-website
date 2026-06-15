@@ -1,27 +1,30 @@
 slug: two-bedroom-suite-2-queens-kitchen
-name: "Two Bedroom Suite - 2 Queens + Kitchen"
+name: Two Bedroom Suite - 2 Queens + Kitchen
 category: two-bedroom
 categoryLabel: Two Bedroom
-
 beds:
   queens: 2
   doubles: 0
   kitchen: full
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Full Kitchen
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens with a full kitchen. Sleeps up to 4."
-  website: "The Two Bedroom Suite - 2 Queens + Kitchen at our Osoyoos lakeside motel offers 2 queens with a full kitchen. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Two Bedroom Suite - 2 Queens + Kitchen — 2 queens with a full kitchen. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two-bedroom layout with two queens and a full kitchen. Sleeps 4.
+  website: >-
+    Our largest suite — two queen beds in a two-bedroom layout plus a full kitchen. Extra separation for families or two
+    couples travelling together.
+  ota: >-
+    Two Bedroom Suite with two queen beds and a full kitchen. Sleeps up to 4. Separate sleeping areas and a full kitchen
+    — our most spacious layout at Spanish Fiesta. Air-conditioned with cable TV. Steps from Osoyoos Lake at Spanish
+    Fiesta Resort. Guests enjoy our private sandy beach, outdoor pool, hot tub, and BBQ area. Free parking and Wi-Fi. On
+    Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 6

@@ -1,26 +1,28 @@
 slug: studio-2-queens
-name: "Studio - 2 Queens"
+name: Studio - 2 Queens
 category: studio
 categoryLabel: Studio
-
 beds:
   queens: 2
   doubles: 0
   kitchen: false
-
 sleeps: 4
 features:
   - 2 Queen Beds
   - Air Conditioning
-  - Private Bathroom
   - TV
-
 description:
-  short: "2 queens. Sleeps up to 4."
-  website: "The Studio - 2 Queens at our Osoyoos lakeside motel offers 2 queens. Air-conditioned, with a private bathroom — steps from the pool and beach."
-  ota: "Studio - 2 Queens — 2 queens. Sleeps up to 4. Air-conditioned room with private bathroom, free Wi-Fi, and access to our private sandy beach, outdoor pools, and hot tub. Located on Main Street in Osoyoos, BC — Canada's warmest valley."
-
+  short: Two queen beds, no kitchen. Sleeps 4.
+  website: >-
+    Two queen beds without a kitchen — sleeping space for four at a practical price. Close to the pool, hot tub, and
+    beach.
+  ota: >-
+    Studio with two queen beds (no kitchen). Sleeps up to 4. Air-conditioned with cable TV — ideal for groups who plan
+    to eat out. Steps from Osoyoos Lake at Spanish Fiesta Resort. Guests enjoy our private sandy beach, outdoor pool,
+    hot tub, and BBQ area. Free parking and Wi-Fi. On Main Street in Osoyoos, BC.
+photos:
+  cover: null
+  gallery: []
 booking:
   onres: ""
-
 sortOrder: 9
